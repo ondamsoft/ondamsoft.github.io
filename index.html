@@ -292,6 +292,15 @@
       width: 100%;
       justify-content: center;
     }
+    .download-count {
+      margin-top: 0.75rem;
+      font-size: 12px;
+      color: #94a3b8;
+    }
+    .download-count strong {
+      color: #3b82f6;
+      font-weight: 700;
+    }
 
     /* Footer */
     footer {
@@ -676,6 +685,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
           <span data-i18n="dl.win_btn">Windows 다운로드</span>
         </a>
+        <p class="download-count" data-i18n-html="dl.win_count"></p>
       </div>
       <div class="download-card">
         <div class="os-icon">🍎</div>
@@ -685,6 +695,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
           <span data-i18n="dl.mac_btn">macOS 다운로드</span>
         </a>
+        <p class="download-count" data-i18n-html="dl.mac_count"></p>
       </div>
     </div>
   </section>
@@ -851,6 +862,34 @@
       var saved = localStorage.getItem('lang');
       var browserLang = navigator.language.startsWith('ko') ? 'ko' : 'en';
       switchLang(saved || browserLang);
+
+      // GitHub Releases 다운로드 수 가져오기
+      fetch('https://api.github.com/repos/ondamsoft/ondamsoft.github.io/releases', { cache: 'no-cache' })
+        .then(function(r) { return r.ok ? r.json() : [] })
+        .then(function(releases) {
+          var win = 0, mac = 0;
+          releases.forEach(function(rel) {
+            (rel.assets || []).forEach(function(a) {
+              if (a.name.indexOf('.exe') !== -1) win += a.download_count;
+              if (a.name.indexOf('.dmg') !== -1) mac += a.download_count;
+            });
+          });
+          var lang = localStorage.getItem('lang') || 'ko';
+          var winEl = document.querySelector('[data-i18n-html="dl.win_count"]');
+          var macEl = document.querySelector('[data-i18n-html="dl.mac_count"]');
+          if (winEl) winEl.innerHTML = (lang === 'ko'
+            ? '누적 다운로드 <strong>' + win.toLocaleString() + '</strong>회'
+            : '<strong>' + win.toLocaleString() + '</strong> downloads');
+          if (macEl) macEl.innerHTML = (lang === 'ko'
+            ? '누적 다운로드 <strong>' + mac.toLocaleString() + '</strong>회'
+            : '<strong>' + mac.toLocaleString() + '</strong> downloads');
+          // 번역 데이터에도 반영
+          LANG.ko['dl.win_count'] = '누적 다운로드 <strong>' + win.toLocaleString() + '</strong>회';
+          LANG.ko['dl.mac_count'] = '누적 다운로드 <strong>' + mac.toLocaleString() + '</strong>회';
+          LANG.en['dl.win_count'] = '<strong>' + win.toLocaleString() + '</strong> downloads';
+          LANG.en['dl.mac_count'] = '<strong>' + mac.toLocaleString() + '</strong> downloads';
+        })
+        .catch(function() {});
     });
   </script>
 
