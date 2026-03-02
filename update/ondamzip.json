@@ -1,11 +1,11 @@
 {
-  "version": "1.0.2",
-  "notes": "자동 업데이트 알림 추가, macOS 코드 서명 개선",
-  "date": "2025-03-02",
+  "version": "1.0.3",
+  "notes": "macOS 호환성 수정 (liblzma 정적 링크)",
+  "date": "2026-03-02",
   "windows": {
-    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/latest/download/OndamZip_1.0.2_x64-setup.exe"
+    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/latest/download/OndamZip_1.0.3_x64-setup.exe"
   },
   "macos": {
-    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/latest/download/OndamZip_1.0.2_aarch64.dmg"
+    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/latest/download/OndamZip_1.0.3_aarch64.dmg"
   }
 }
