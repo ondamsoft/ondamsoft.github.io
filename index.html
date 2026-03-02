@@ -444,12 +444,56 @@
     .compare-table .cross { color: #ef4444; }
     .compare-table .paid { color: #f59e0b; font-weight: 600; }
 
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+      color: #475569;
+    }
+    .hamburger svg { width: 22px; height: 22px; }
+
     /* Responsive */
     @media (max-width: 768px) {
       .hero h1 { font-size: 2rem; }
       .header-inner { height: 56px; }
-      nav a { margin-left: 1rem; font-size: 13px; }
-      #lang-select { margin-left: 0.75rem; font-size: 12px; padding: 4px 6px; }
+      .hamburger { display: block; }
+      .nav-wrap {
+        display: none;
+        position: absolute;
+        top: 56px;
+        left: 0;
+        right: 0;
+        background: white;
+        border-bottom: 1px solid #e2e8f0;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        padding: 1rem 1.5rem;
+        flex-direction: column;
+        align-items: stretch;
+        z-index: 99;
+      }
+      .nav-wrap.open { display: flex; }
+      .nav-wrap nav {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+      .nav-wrap nav a {
+        margin-left: 0;
+        padding: 10px 0;
+        font-size: 15px;
+        border-bottom: 1px solid #f1f5f9;
+      }
+      .nav-wrap nav a:last-child { border-bottom: none; }
+      #lang-select {
+        margin-left: 0;
+        margin-top: 10px;
+        padding: 8px 10px;
+        font-size: 14px;
+        width: 100%;
+      }
       .feature-grid { grid-template-columns: 1fr; }
       .compare-table { font-size: 12px; }
       .compare-table th, .compare-table td { padding: 8px 6px; }
@@ -465,11 +509,14 @@
         <div class="logo-icon">OZ</div>
         <span class="logo-text">OndamSoft</span>
       </a>
+      <button class="hamburger" onclick="document.querySelector('.nav-wrap').classList.toggle('open')" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      </button>
       <div class="nav-wrap">
         <nav>
-          <a href="#features" data-i18n="nav.features">기능</a>
-          <a href="#download" data-i18n="nav.download">다운로드</a>
-          <a href="#donate" data-i18n="nav.donate">후원</a>
+          <a href="#features" data-i18n="nav.features" onclick="document.querySelector('.nav-wrap').classList.remove('open')">기능</a>
+          <a href="#download" data-i18n="nav.download" onclick="document.querySelector('.nav-wrap').classList.remove('open')">다운로드</a>
+          <a href="#donate" data-i18n="nav.donate" onclick="document.querySelector('.nav-wrap').classList.remove('open')">후원</a>
           <a href="mailto:ondamsoft@gmail.com" data-i18n="nav.contact">문의</a>
         </nav>
         <select id="lang-select" onchange="switchLang(this.value)">
