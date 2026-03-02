@@ -37,25 +37,11 @@
     .logo {
       display: flex;
       align-items: center;
-      gap: 10px;
       text-decoration: none;
-      color: #1e293b;
     }
-    .logo-icon {
-      width: 36px;
+    .logo img {
       height: 36px;
-      background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-weight: 800;
-      font-size: 14px;
-    }
-    .logo-text {
-      font-size: 20px;
-      font-weight: 700;
+      width: auto;
     }
     .nav-wrap {
       display: flex;
@@ -506,8 +492,7 @@
   <header>
     <div class="header-inner">
       <a href="/" class="logo">
-        <div class="logo-icon">OZ</div>
-        <span class="logo-text">OndamSoft</span>
+        <img src="logo.png" alt="OndamSoft">
       </a>
       <button class="hamburger" onclick="document.querySelector('.nav-wrap').classList.toggle('open')" aria-label="Menu">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
