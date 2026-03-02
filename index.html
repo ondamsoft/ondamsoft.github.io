@@ -425,91 +425,6 @@
     .compare-table .cross { color: #ef4444; }
     .compare-table .paid { color: #f59e0b; font-weight: 600; }
 
-    /* macOS Install Guide */
-    .install-guide {
-      max-width: 700px;
-      margin: 2rem auto 0;
-      text-align: left;
-    }
-    .install-guide-toggle {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      background: #fff7ed;
-      border: 1px solid #fed7aa;
-      border-radius: 12px;
-      padding: 14px 20px;
-      cursor: pointer;
-      width: 100%;
-      font-size: 14px;
-      font-weight: 600;
-      color: #c2410c;
-      transition: all 0.2s;
-    }
-    .install-guide-toggle:hover {
-      background: #ffedd5;
-      border-color: #fdba74;
-    }
-    .install-guide-toggle .arrow {
-      transition: transform 0.3s;
-      font-size: 12px;
-      margin-left: auto;
-    }
-    .install-guide-toggle.open .arrow {
-      transform: rotate(180deg);
-    }
-    .install-guide-content {
-      display: none;
-      background: white;
-      border: 1px solid #e2e8f0;
-      border-top: none;
-      border-radius: 0 0 12px 12px;
-      padding: 1.5rem 1.5rem 1.5rem;
-      font-size: 14px;
-      color: #475569;
-      line-height: 1.8;
-    }
-    .install-guide-content.open {
-      display: block;
-    }
-    .install-guide-content h4 {
-      font-size: 14px;
-      font-weight: 700;
-      color: #1e293b;
-      margin: 1rem 0 0.5rem;
-    }
-    .install-guide-content h4:first-child {
-      margin-top: 0;
-    }
-    .install-guide-content ol {
-      padding-left: 1.2rem;
-      margin: 0.5rem 0;
-    }
-    .install-guide-content li {
-      margin-bottom: 0.4rem;
-    }
-    .install-guide-content code {
-      background: #f1f5f9;
-      padding: 2px 8px;
-      border-radius: 4px;
-      font-family: 'SF Mono', 'Consolas', monospace;
-      font-size: 13px;
-      color: #c2410c;
-    }
-    .install-guide-content .method-box {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-radius: 8px;
-      padding: 1rem 1.2rem;
-      margin: 0.5rem 0;
-    }
-    .install-guide-content .method-label {
-      font-weight: 700;
-      color: #3b82f6;
-      font-size: 13px;
-      margin-bottom: 0.3rem;
-    }
-
     /* Responsive */
     @media (max-width: 768px) {
       .hero h1 { font-size: 2rem; }
@@ -715,45 +630,6 @@
       </div>
     </div>
 
-    <!-- macOS 설치 안내 -->
-    <div class="install-guide">
-      <button class="install-guide-toggle" onclick="toggleGuide(this)">
-        🍎 macOS 처음 설치하시나요? (설치 안내)
-        <span class="arrow">▼</span>
-      </button>
-      <div class="install-guide-content">
-        <p>macOS에서는 App Store 외부에서 다운로드한 앱을 처음 실행할 때 <strong>"손상되었기 때문에 열 수 없습니다"</strong> 경고가 뜰 수 있습니다. 이는 Apple의 보안 정책(Gatekeeper)이며, 앱이 손상된 것이 아닙니다.</p>
-
-        <h4>📥 설치 방법</h4>
-        <ol>
-          <li>DMG 파일을 다운로드하여 더블클릭합니다.</li>
-          <li>OndamZip 아이콘을 <strong>Applications</strong> 폴더로 드래그합니다.</li>
-        </ol>
-
-        <h4>⚠️ "손상된 앱" 경고가 뜰 때</h4>
-
-        <div class="method-box">
-          <div class="method-label">방법 1: 우클릭으로 열기 (추천)</div>
-          <ol>
-            <li>Applications 폴더에서 OndamZip을 <strong>마우스 우클릭</strong> (또는 Control + 클릭)</li>
-            <li><strong>"열기"</strong> 를 선택합니다.</li>
-            <li>경고창에서 다시 <strong>"열기"</strong> 버튼을 클릭합니다.</li>
-            <li>처음 한 번만 하면 이후에는 정상 실행됩니다.</li>
-          </ol>
-        </div>
-
-        <div class="method-box">
-          <div class="method-label">방법 2: 터미널 명령어</div>
-          <ol>
-            <li><strong>터미널</strong>을 열고 (Launchpad → 기타 → 터미널) 아래 명령어를 입력합니다:</li>
-          </ol>
-          <code>xattr -cr /Applications/OndamZip.app</code>
-          <p style="margin-top:0.5rem;">입력 후 Enter를 누르면 바로 OndamZip을 실행할 수 있습니다.</p>
-        </div>
-
-        <p style="margin-top:1rem;color:#94a3b8;font-size:13px;">💡 이 과정은 최초 1회만 필요합니다. 향후 Apple Developer 인증을 적용할 예정입니다.</p>
-      </div>
-    </div>
   </section>
 
   <!-- Donate -->
@@ -765,14 +641,6 @@
       <!-- <a href="#" class="donate-btn">💙 PayPal</a> -->
     </div>
   </section>
-
-  <script>
-    function toggleGuide(btn) {
-      btn.classList.toggle('open');
-      const content = btn.nextElementSibling;
-      content.classList.toggle('open');
-    }
-  </script>
 
   <!-- Footer -->
   <footer>
