@@ -1,11 +1,11 @@
 {
-  "version": "1.0.9",
-  "notes": "macOS 파일 더블클릭 시 리스트 표시 수정",
+  "version": "1.0.10",
+  "notes": "__MACOSX 폴더 필터링 + 압축해제 경로 수정",
   "date": "2026-03-03",
   "windows": {
-    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.9/OndamZip_1.0.9_x64-setup.exe"
+    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.10/OndamZip_1.0.10_x64-setup.exe"
   },
   "macos": {
-    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.9/OndamZip_1.0.9_aarch64.dmg"
+    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.10/OndamZip_1.0.10_aarch64.dmg"
   }
 }
