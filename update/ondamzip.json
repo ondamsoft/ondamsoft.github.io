@@ -1,11 +1,11 @@
 {
-  "version": "1.0.6",
-  "notes": "멀티스레드 압축 최적화 + APP_VERSION 동기화 수정",
+  "version": "1.0.7",
+  "notes": "멀티스레드 압축 최적화 + 버전 동기화 수정",
   "date": "2026-03-02",
   "windows": {
-    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/latest/download/OndamZip_1.0.6_x64-setup.exe"
+    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.7/OndamZip_1.0.7_x64-setup.exe"
   },
   "macos": {
-    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/latest/download/OndamZip_1.0.6_aarch64.dmg"
+    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.7/OndamZip_1.0.7_aarch64.dmg"
   }
 }
