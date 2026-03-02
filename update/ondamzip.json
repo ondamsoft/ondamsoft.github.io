@@ -1,11 +1,11 @@
 {
-  "version": "1.0.3",
-  "notes": "macOS 호환성 수정 (liblzma 정적 링크)",
+  "version": "1.0.4",
+  "notes": "제품 정보 업데이트 (이용 안내, 저작권 정보 개선)",
   "date": "2026-03-02",
   "windows": {
-    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/latest/download/OndamZip_1.0.3_x64-setup.exe"
+    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/latest/download/OndamZip_1.0.4_x64-setup.exe"
   },
   "macos": {
-    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/latest/download/OndamZip_1.0.3_aarch64.dmg"
+    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/latest/download/OndamZip_1.0.4_aarch64.dmg"
   }
 }
