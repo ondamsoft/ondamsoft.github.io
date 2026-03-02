@@ -367,12 +367,72 @@
       box-shadow: 0 4px 12px rgba(251,191,36,0.15);
     }
 
+    /* Compare */
+    .compare {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+    .compare h2 {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .compare .subtitle {
+      text-align: center;
+      color: #64748b;
+      margin-bottom: 2rem;
+    }
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid #e2e8f0;
+    }
+    .compare-table th {
+      background: #f8fafc;
+      padding: 14px 16px;
+      font-size: 14px;
+      font-weight: 700;
+      text-align: center;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .compare-table th.highlight {
+      background: #eff6ff;
+      color: #3b82f6;
+    }
+    .compare-table td {
+      padding: 12px 16px;
+      font-size: 14px;
+      text-align: center;
+      border-bottom: 1px solid #f1f5f9;
+      color: #475569;
+    }
+    .compare-table td:first-child {
+      text-align: left;
+      font-weight: 600;
+      color: #1e293b;
+    }
+    .compare-table td.highlight {
+      background: #fafbff;
+      color: #3b82f6;
+      font-weight: 700;
+    }
+    .compare-table .check { color: #22c55e; }
+    .compare-table .cross { color: #ef4444; }
+    .compare-table .paid { color: #f59e0b; font-weight: 600; }
+
     /* Responsive */
     @media (max-width: 768px) {
       .hero h1 { font-size: 2rem; }
       .header-inner { height: 56px; }
       nav a { margin-left: 1rem; font-size: 13px; }
       .feature-grid { grid-template-columns: 1fr; }
+      .compare-table { font-size: 12px; }
+      .compare-table th, .compare-table td { padding: 8px 6px; }
     }
   </style>
 </head>
@@ -396,9 +456,9 @@
 
   <!-- Hero -->
   <section class="hero">
-    <div class="hero-badge">🆓 완전 무료</div>
-    <h1>빠르고 안전한 압축,<br><span>OndamZip</span></h1>
-    <p>ZIP, 7Z, RAR 등 11가지 포맷 지원. AES-256 암호화, 분할 압축까지.<br>Windows &amp; macOS 모두 지원합니다.</p>
+    <div class="hero-badge">🆓 Windows · macOS 완전 무료</div>
+    <h1>20배 빠른 압축,<br><span>OndamZip</span></h1>
+    <p>ZIP, 7Z, RAR 등 11가지 포맷 지원. AES-256 암호화, 분할 압축까지.<br><strong>macOS도 무료!</strong> 다른 압축 프로그램은 유료인 거 아시죠?</p>
     <div class="hero-buttons">
       <a href="#download" class="btn btn-primary">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
@@ -431,8 +491,8 @@
       </div>
       <div class="feature-card">
         <div class="feature-icon" style="background:#fdf2f8;color:#ec4899;">⚡</div>
-        <h3>빠른 속도</h3>
-        <p>Rust로 구현된 고성능 엔진으로 빠르고 안정적인 압축/해제를 경험하세요.</p>
+        <h3>20배 빠른 속도</h3>
+        <p>Rust 기반 고성능 엔진으로 기존 압축 프로그램 대비 최대 20배 빠른 압축/해제 속도를 제공합니다.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon" style="background:#f5f3ff;color:#8b5cf6;">🖥️</div>
@@ -466,7 +526,75 @@
     </div>
   </section>
 
-  <!-- AdSense 광고 영역 1: 포맷 아래, 다운로드 위 -->
+  <!-- Compare -->
+  <section class="compare" id="compare">
+    <h2>압축 프로그램 비교</h2>
+    <p class="subtitle">왜 OndamZip을 선택해야 할까요?</p>
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>기능</th>
+          <th class="highlight">OndamZip</th>
+          <th>알집</th>
+          <th>반디집</th>
+          <th>7-Zip</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Windows</td>
+          <td class="highlight"><span class="check">✓ 무료</span></td>
+          <td><span class="check">✓ 무료</span></td>
+          <td><span class="check">✓ 무료</span></td>
+          <td><span class="check">✓ 무료</span></td>
+        </tr>
+        <tr>
+          <td>macOS</td>
+          <td class="highlight"><span class="check">✓ 무료</span></td>
+          <td><span class="cross">✗ 미지원</span></td>
+          <td><span class="paid">₩29,700</span></td>
+          <td><span class="cross">✗ 미지원</span></td>
+        </tr>
+        <tr>
+          <td>압축 속도</td>
+          <td class="highlight"><strong>⚡ 20배 빠름</strong></td>
+          <td>보통</td>
+          <td>10배 빠름</td>
+          <td>보통</td>
+        </tr>
+        <tr>
+          <td>AES-256 암호화</td>
+          <td class="highlight"><span class="check">✓</span></td>
+          <td><span class="check">✓</span></td>
+          <td><span class="check">✓</span></td>
+          <td><span class="check">✓</span></td>
+        </tr>
+        <tr>
+          <td>분할 압축</td>
+          <td class="highlight"><span class="check">✓</span></td>
+          <td><span class="check">✓</span></td>
+          <td><span class="check">✓</span></td>
+          <td><span class="check">✓</span></td>
+        </tr>
+        <tr>
+          <td>광고</td>
+          <td class="highlight"><span class="check">✓ 없음</span></td>
+          <td><span class="cross">✗ 있음</span></td>
+          <td><span class="cross">✗ 있음</span></td>
+          <td><span class="check">✓ 없음</span></td>
+        </tr>
+        <tr>
+          <td>자체 포맷</td>
+          <td class="highlight"><span class="check">✓ .ondam</span></td>
+          <td><span class="check">✓ .alz/.egg</span></td>
+          <td><span class="cross">✗</span></td>
+          <td><span class="cross">✗</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- AdSense 광고 영역 1: 비교표 아래, 다운로드 위 -->
   <div style="max-width:1100px;margin:2rem auto;padding:0 2rem;text-align:center;">
     <ins class="adsbygoogle"
          style="display:block"
