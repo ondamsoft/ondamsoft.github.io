@@ -1,0 +1,11 @@
+{
+  "version": "1.0.1",
+  "notes": "크로스플랫폼 지원 (macOS), 파일 연결 개선",
+  "date": "2025-03-02",
+  "windows": {
+    "download_url": "https://github.com/ondamsoft/ondamzip/releases/latest/download/OndamZip_1.0.1_x64-setup.exe"
+  },
+  "macos": {
+    "download_url": "https://github.com/ondamsoft/ondamzip/releases/latest/download/OndamZip_1.0.1_aarch64.dmg"
+  }
+}
