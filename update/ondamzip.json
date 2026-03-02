@@ -1,11 +1,11 @@
 {
-  "version": "1.0.7",
-  "notes": "멀티스레드 압축 최적화 + 버전 동기화 수정",
-  "date": "2026-03-02",
+  "version": "1.0.8",
+  "notes": "실시간 진행률 표시 + 경과시간 포맷 개선 + 한글 폴더명/다중 폴더 압축 수정",
+  "date": "2026-03-03",
   "windows": {
-    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.7/OndamZip_1.0.7_x64-setup.exe"
+    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.8/OndamZip_1.0.8_x64-setup.exe"
   },
   "macos": {
-    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.7/OndamZip_1.0.7_aarch64.dmg"
+    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.8/OndamZip_1.0.8_aarch64.dmg"
   }
 }
