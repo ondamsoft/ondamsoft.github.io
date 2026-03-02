@@ -1,11 +1,11 @@
 {
-  "version": "1.0.10",
-  "notes": "__MACOSX 폴더 필터링 + 압축해제 경로 수정",
+  "version": "1.0.11",
+  "notes": "압축해제 경로 (2) 버그 완전 수정 + __MACOSX 필터링",
   "date": "2026-03-03",
   "windows": {
-    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.10/OndamZip_1.0.10_x64-setup.exe"
+    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.11/OndamZip_1.0.11_x64-setup.exe"
   },
   "macos": {
-    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.10/OndamZip_1.0.10_aarch64.dmg"
+    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.11/OndamZip_1.0.11_aarch64.dmg"
   }
 }
