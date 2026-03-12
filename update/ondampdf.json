@@ -1,0 +1,11 @@
+{
+  "version": "1.0.0",
+  "notes": "OndamPDF 첫 릴리즈\n- PDF 보기, 병합, 분할\n- 페이지 회전/삭제\n- 이미지 변환, 워터마크\n- 암호 설정/해제\n- 서명 삽입\n- 소책자/모아찍기 인쇄",
+  "date": "2026-03-07",
+  "windows": {
+    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/ondampdf-v1.0.0/OndamPDF_1.0.0_x64-setup.exe"
+  },
+  "macos": {
+    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/ondampdf-v1.0.0/OndamPDF_1.0.0_aarch64.dmg"
+  }
+}

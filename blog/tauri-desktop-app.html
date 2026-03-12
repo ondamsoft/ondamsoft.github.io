@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tauri로 데스크톱 앱 만들기 - 개발 후기 | OndamSoft</title>
+  <meta name="description" content="Tauri 2.x로 데스크톱 앱을 만든 실전 경험기. Electron 대비 장단점, Rust 백엔드, React 프론트엔드, 빌드 및 배포까지.">
+  <meta property="og:title" content="Tauri로 데스크톱 앱 만들기 - 개발 후기">
+  <meta property="og:description" content="Tauri 2.x로 데스크톱 앱을 만든 실전 경험기. Electron과의 비교, 겪은 문제와 해결 방법.">
+  <meta property="og:url" content="https://ondamsoft.com/blog/tauri-desktop-app.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://ondamsoft.com/logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://ondamsoft.com/blog/tauri-desktop-app.html">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="/css/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5085077973402796" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-inner">
+      <a href="/" class="logo"><img src="/logo.png" alt="OndamSoft"></a>
+      <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      </button>
+      <div class="nav-wrap">
+        <nav>
+          <a href="/#products" data-i18n="nav.products">제품</a>
+          <a href="/blog/" data-i18n="nav.blog">블로그</a>
+          <a href="/#donate" data-i18n="nav.donate">후원</a>
+          <a href="mailto:ondamsoft@gmail.com" data-i18n="nav.contact">문의</a>
+        </nav>
+        <select id="lang-select" onchange="switchLang(this.value)">
+          <option value="ko">한국어</option>
+          <option value="en">English</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <div class="article-wrap">
+    <div class="breadcrumb">
+      <a href="/">OndamSoft</a> &gt; <a href="/blog/">블로그</a> &gt; Tauri로 데스크톱 앱 만들기
+    </div>
+
+    <h1>Tauri로 데스크톱 앱 만들기 - 개발 후기</h1>
+    <div class="post-meta">
+      2026.03.05 · <span class="blog-category cat-dev" style="font-size:11px;padding:2px 8px;border-radius:4px;">개발 이야기</span> · 약 8분
+    </div>
+
+    <div class="article-content">
+
+      <h2>Electron의 한계를 느끼다</h2>
+
+      <p>데스크톱 앱을 웹 기술로 만드는 프레임워크 하면 대부분 Electron을 떠올립니다. VS Code, Discord, Slack, Notion 등 수많은 유명 앱이 Electron으로 만들어졌습니다. 하지만 Electron에는 근본적인 문제가 있습니다.</p>
+
+      <p>Electron은 Chromium 브라우저를 통째로 내장합니다. 간단한 메모장 앱을 만들어도 설치 파일이 150MB를 넘기고, 실행 시 메모리를 300MB 이상 사용합니다. 사용자 입장에서는 브라우저 탭 하나를 위해 브라우저 전체를 설치하는 셈입니다.</p>
+
+      <p>보안도 문제입니다. Electron 앱은 Node.js 런타임을 포함하므로, 취약점이 발견되면 앱 전체를 업데이트해야 합니다. Chromium과 Node.js 모두의 보안 패치를 추적해야 하니 유지보수 부담이 큽니다.</p>
+
+      <p>OndamZip과 OndamPDF를 만들면서 이런 제약 없이 가볍고 빠른 데스크톱 앱을 만들 수 있는 대안을 찾았고, 그것이 Tauri였습니다.</p>
+
+      <!-- AdSense -->
+      <div class="ad-container">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5085077973402796" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+
+      <h2>Tauri란 무엇인가</h2>
+
+      <p>Tauri는 Rust로 작성된 데스크톱 앱 프레임워크입니다. Electron과 같은 목적(웹 기술로 데스크톱 앱 만들기)을 가지고 있지만, 접근 방식이 근본적으로 다릅니다.</p>
+
+      <p>가장 큰 차이는 Chromium을 내장하지 않는다는 점입니다. 대신 각 OS에 이미 설치된 WebView를 사용합니다. Windows에서는 WebView2(Edge 기반), macOS에서는 WKWebView(Safari 기반), Linux에서는 WebKitGTK를 사용합니다. 브라우저 엔진을 따로 포함하지 않으니 앱 크기가 극적으로 줄어듭니다.</p>
+
+      <p>백엔드는 Rust로 작성합니다. Rust는 C/C++ 수준의 성능을 제공하면서도 메모리 안전성을 컴파일 타임에 보장합니다. Node.js 대비 CPU 집약적 작업에서 수십 배 빠른 성능을 보여줍니다.</p>
+
+      <h2>Tauri vs Electron 비교</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>항목</th>
+            <th>Tauri 2.x</th>
+            <th>Electron</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>설치 파일 크기</td>
+            <td><strong>3~10MB</strong></td>
+            <td>50~150MB</td>
+          </tr>
+          <tr>
+            <td>메모리 사용량</td>
+            <td><strong>50~100MB</strong></td>
+            <td>200~500MB</td>
+          </tr>
+          <tr>
+            <td>백엔드 언어</td>
+            <td>Rust</td>
+            <td>Node.js</td>
+          </tr>
+          <tr>
+            <td>프론트엔드</td>
+            <td>자유 (React, Vue, Svelte 등)</td>
+            <td>자유</td>
+          </tr>
+          <tr>
+            <td>보안 모델</td>
+            <td>권한 기반 (allowlist)</td>
+            <td>전체 접근</td>
+          </tr>
+          <tr>
+            <td>빌드 시간</td>
+            <td>느림 (Rust 컴파일)</td>
+            <td>빠름</td>
+          </tr>
+          <tr>
+            <td>생태계</td>
+            <td>성장 중</td>
+            <td>성숙</td>
+          </tr>
+          <tr>
+            <td>자동 업데이트</td>
+            <td>내장</td>
+            <td>내장</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>숫자만 보면 Tauri가 압도적이지만, 모든 상황에서 Tauri가 정답은 아닙니다. Rust 학습 곡선이 있고, npm 생태계를 직접 활용할 수 없으며, 빌드 시간이 상대적으로 깁니다. 이런 트레이드오프를 이해하고 선택해야 합니다.</p>
+
+      <h2>실전 경험: OndamZip 개발기</h2>
+
+      <h3>프로젝트 구조</h3>
+
+      <p>OndamZip은 Tauri 2.x + React 19 + TypeScript 구성입니다. Rust 백엔드에서 압축/해제 로직을 처리하고, React 프론트엔드에서 파일 목록, 진행률, 설정 UI를 담당합니다.</p>
+
+      <p>Tauri의 <code>invoke</code> 함수로 프론트엔드에서 Rust 함수를 호출합니다. JSON 직렬화/역직렬화가 자동으로 이루어지므로, TypeScript에서 Rust 함수를 마치 비동기 API처럼 호출할 수 있습니다.</p>
+
+      <h3>Rust 백엔드의 위력</h3>
+
+      <p>압축 프로그램에서 Rust의 장점이 극대화됩니다. 파일 I/O, 압축 알고리즘, 암호화 모두 CPU와 메모리를 집중적으로 사용하는 작업인데, Rust는 이런 작업에서 최고의 성능을 발휘합니다.</p>
+
+      <p>rayon 라이브러리를 사용한 멀티스레드 압축은 특히 인상적이었습니다. 코어 수만큼 병렬로 파일을 처리하면서도, Rust의 소유권 시스템 덕분에 데이터 경합이 컴파일 타임에 방지됩니다. Node.js에서는 Worker Thread를 별도로 관리해야 하는 것과 대비됩니다.</p>
+
+      <p>실시간 진행률 표시에도 Rust의 Atomic 타입이 활용됩니다. <code>AtomicUsize</code>와 <code>AtomicU64</code>로 스레드 안전한 카운터를 구현하고, 프론트엔드에서 200ms 간격으로 폴링하여 진행률을 업데이트합니다.</p>
+
+      <h3>React 프론트엔드</h3>
+
+      <p>프론트엔드는 일반적인 React 앱과 동일하게 개발합니다. Vite로 빌드하고, 핫 리로드도 됩니다. Tauri가 제공하는 <code>@tauri-apps/api</code> 패키지를 통해 파일 시스템 접근, 다이얼로그, 시스템 트레이 등 네이티브 기능을 사용합니다.</p>
+
+      <p>한 가지 주의할 점은 렌더링 타이밍입니다. <code>setLoading(true)</code> 후 바로 <code>await invoke()</code>를 호출하면, React가 렌더링할 기회를 얻지 못합니다. <code>setTimeout(r, 0)</code>으로 한 틱을 양보해야 로딩 화면이 표시됩니다. 이 문제로 한참을 헤맸습니다.</p>
+
+      <h2>빌드와 배포</h2>
+
+      <h3>Windows: NSIS 설치 파일</h3>
+
+      <p>Tauri는 Windows에서 NSIS 또는 MSI 형식의 설치 파일을 생성합니다. OndamZip은 NSIS를 선택했는데, 설치 스크립트를 커스터마이징할 수 있어 파일 연결, 컨텍스트 메뉴 등록 같은 기능을 추가할 수 있었습니다.</p>
+
+      <p>빌드 명령은 <code>npx tauri build --bundles nsis</code>입니다. Rust 컴파일이 포함되므로 첫 빌드에 5~10분이 걸리지만, 이후 증분 빌드는 1~2분이면 됩니다.</p>
+
+      <h3>macOS: DMG + 코드 서명 + 공증</h3>
+
+      <p>macOS에서는 DMG 파일을 생성합니다. Apple의 Gatekeeper 정책상 코드 서명과 공증(Notarization)이 필수입니다. 서명 없는 앱은 실행 자체가 차단됩니다. 이 과정은 별도의 글에서 자세히 다루겠습니다.</p>
+
+      <h2>겪은 문제들</h2>
+
+      <h3>MSVC STATUS_ACCESS_VIOLATION</h3>
+
+      <p>Windows에서 멀티스레드 Rust 빌드 시 MSVC 컴파일러가 간헐적으로 크래시하는 문제가 있었습니다. <code>CARGO_BUILD_JOBS=1</code>로 빌드 병렬성을 제한하면 해결되지만 빌드 시간이 늘어납니다. zstd 라이브러리의 legacy 기능을 비활성화하는 것도 중요합니다.</p>
+
+      <h3>파일 연결 대화상자 중복</h3>
+
+      <p>NSIS 설치 후 파일 연결 설정 대화상자가 매번 뜨는 문제가 있었습니다. 원인은 마커 파일을 Program Files에 생성한 것이었습니다. 일반 사용자 권한으로는 Program Files의 파일을 삭제할 수 없어서, 설정 완료 마커가 제거되지 않았습니다. 마커를 <code>LOCALAPPDATA</code>로 옮겨 해결했습니다.</p>
+
+      <h3>앱 시작 시 하얀 화면</h3>
+
+      <p>Tauri WebView가 HTML을 로드하기 전에 짧은 하얀 화면이 표시되는 문제가 있었습니다. 0.3초 정도지만 체감상 불쾌합니다. index.html에 인라인 SVG 스플래시 화면을 넣어 해결했습니다. 외부 이미지 파일을 사용하면 로드 지연이 생기므로, 반드시 인라인 SVG나 CSS만 사용해야 합니다.</p>
+
+      <h2>Tauri를 추천하는 경우</h2>
+
+      <ul>
+        <li><strong>앱 크기와 성능이 중요할 때</strong>: 사용자에게 가벼운 앱을 제공하고 싶다면 Tauri가 적합합니다.</li>
+        <li><strong>Rust를 배우고 싶거나 이미 알고 있을 때</strong>: Rust 학습 곡선이 가장 큰 진입 장벽입니다.</li>
+        <li><strong>CPU 집약적 작업이 있을 때</strong>: 압축, 이미지 처리, 암호화 등 성능이 중요한 백엔드 로직에 Rust가 빛납니다.</li>
+        <li><strong>보안이 중요할 때</strong>: Tauri의 권한 기반 보안 모델은 Electron보다 안전합니다.</li>
+      </ul>
+
+      <p>반대로, npm 생태계에 의존하는 앱이거나, 빠른 프로토타이핑이 필요하거나, 팀에 Rust 경험이 없다면 Electron이 여전히 합리적인 선택입니다.</p>
+
+      <blockquote>
+        OndamZip과 OndamPDF는 모두 Tauri 2.x로 만들어졌으며, <a href="/">ondamsoft.com</a>에서 무료로 다운로드할 수 있습니다.
+      </blockquote>
+
+      <!-- AdSense -->
+      <div class="ad-container">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5085077973402796" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo"><img src="/logo-icon.png" alt="OndamSoft" style="height:40px;width:auto;margin-bottom:8px;"></div>
+      <p data-i18n-html="footer.desc">문의: <a href="mailto:ondamsoft@gmail.com">ondamsoft@gmail.com</a></p>
+      <div class="footer-links">
+        <a href="/ondamzip/">OndamZip</a>
+        <a href="/ondampdf/">OndamPDF</a>
+        <a href="/blog/" data-i18n="nav.blog">블로그</a>
+        <a href="/#donate" data-i18n="nav.donate">후원</a>
+        <a href="/privacy.html" data-i18n="footer.privacy">개인정보처리방침</a>
+        <a href="/terms.html" data-i18n="footer.terms">이용약관</a>
+      </div>
+      <p style="margin-top:1.5rem;font-size:12px;color:#64748b;">&copy; 2025 OndamSoft. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

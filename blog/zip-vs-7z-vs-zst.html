@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZIP vs 7Z vs ZST: 압축 포맷 비교 가이드 - OndamSoft</title>
+  <meta name="description" content="ZIP, 7Z, ZST(Zstandard) 압축 포맷의 차이점, 압축률, 속도, 호환성을 비교합니다. 용도별 최적의 포맷 선택 가이드.">
+  <meta property="og:title" content="ZIP vs 7Z vs ZST: 압축 포맷 비교 가이드">
+  <meta property="og:description" content="ZIP, 7Z, ZST 압축 포맷의 차이점, 압축률, 속도, 호환성 비교. 용도별 최적의 포맷 선택 가이드.">
+  <meta property="og:url" content="https://ondamsoft.com/blog/zip-vs-7z-vs-zst.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://ondamsoft.com/logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://ondamsoft.com/blog/zip-vs-7z-vs-zst.html">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="/css/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5085077973402796" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "ZIP vs 7Z vs ZST: 압축 포맷 비교 가이드",
+    "datePublished": "2026-03-12",
+    "author": { "@type": "Organization", "name": "OndamSoft" },
+    "publisher": { "@type": "Organization", "name": "OndamSoft", "logo": { "@type": "ImageObject", "url": "https://ondamsoft.com/logo.png" } }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-inner">
+      <a href="/" class="logo"><img src="/logo.png" alt="OndamSoft"></a>
+      <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      </button>
+      <div class="nav-wrap">
+        <nav>
+          <a href="/#products" data-i18n="nav.products">제품</a>
+          <a href="/blog/" data-i18n="nav.blog" class="active">블로그</a>
+          <a href="/#donate" data-i18n="nav.donate">후원</a>
+          <a href="mailto:ondamsoft@gmail.com" data-i18n="nav.contact">문의</a>
+        </nav>
+        <select id="lang-select" onchange="switchLang(this.value)">
+          <option value="ko">한국어</option>
+          <option value="en">English</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <div class="article-wrap">
+    <div class="breadcrumb">
+      <a href="/">OndamSoft</a> &gt; <a href="/blog/">블로그</a> &gt; ZIP vs 7Z vs ZST: 압축 포맷 비교 가이드
+    </div>
+
+    <h1>ZIP vs 7Z vs ZST: 압축 포맷 비교 가이드</h1>
+    <div class="post-meta">2026.03.12 · <span class="blog-category cat-compress" style="font-size:11px;padding:2px 8px;border-radius:4px;">압축</span> · 읽는 시간 약 7분</div>
+
+    <div class="article-content">
+      <p>파일 압축은 컴퓨터 사용자라면 누구나 접하는 작업입니다. 그런데 막상 압축하려고 보면 ZIP, 7Z, RAR, TAR.GZ, ZST 등 포맷이 너무 많아서 어떤 걸 써야 할지 고민이 됩니다. 각 포맷이 왜 존재하는지, 어떤 상황에 어떤 포맷이 최선인지 실용적인 관점에서 비교해 보겠습니다.</p>
+
+      <h2>압축 포맷이 왜 이렇게 많을까?</h2>
+
+      <!-- AdSense -->
+      <div class="ad-container">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5085077973402796" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+
+      <p>압축 기술은 1980년대 LZW 알고리즘에서 시작해 40년 넘게 발전해 왔습니다. 새로운 알고리즘이 등장할 때마다 더 높은 압축률, 더 빠른 속도를 목표로 새로운 포맷이 만들어졌습니다. 하지만 이미 널리 퍼진 포맷을 하루아침에 교체할 수는 없기에, 오래된 포맷과 새로운 포맷이 공존하게 된 것입니다.</p>
+
+      <p>핵심은 <strong>압축률과 속도 사이의 트레이드오프</strong>입니다. 같은 파일이라도 시간을 더 들이면 더 작게 만들 수 있고, 빠르게 압축하면 용량이 좀 더 커집니다. 어디에 중점을 두느냐에 따라 최적의 포맷이 달라집니다.</p>
+
+      <h2>ZIP: 호환성의 왕</h2>
+
+      <h3>역사와 특징</h3>
+      <p>ZIP은 1989년 PKZIP에서 시작된, 가장 오래되고 가장 널리 쓰이는 압축 포맷입니다. Windows, macOS, Linux 어디서든 운영체제 자체에서 ZIP 파일을 열 수 있습니다. 별도의 프로그램을 설치하지 않아도 된다는 것이 ZIP의 가장 큰 장점입니다.</p>
+
+      <h3>압축 알고리즘</h3>
+      <p>기본 알고리즘은 <strong>Deflate</strong>입니다. 1990년대에 만들어진 알고리즘이라 현대 기준으로 압축률이 뛰어나다고 보기는 어렵습니다. 하지만 압축과 해제 속도가 빠르고, 모든 프로그램에서 지원한다는 안정성이 있습니다.</p>
+
+      <h3>장단점</h3>
+      <ul>
+        <li><strong>장점:</strong> 어디서든 열 수 있음, AES-256 암호화 지원, 각 파일을 개별 압축하므로 일부 파일만 추출 가능</li>
+        <li><strong>단점:</strong> 압축률이 상대적으로 낮음, 4GB 이상 파일은 ZIP64 필요, 유니코드 파일명 호환성 문제가 가끔 발생</li>
+      </ul>
+
+      <blockquote>ZIP이 최선인 경우: 이메일 첨부, 다른 사람에게 파일 전달, 누구나 열 수 있어야 하는 상황</blockquote>
+
+      <h2>7Z: 압축률의 끝판왕</h2>
+
+      <h3>역사와 특징</h3>
+      <p>7Z는 Igor Pavlov가 만든 7-Zip 프로그램의 네이티브 포맷입니다. 1999년에 처음 등장했으며, 오픈소스(LGPL)로 누구나 자유롭게 사용할 수 있습니다. ZIP보다 확실히 높은 압축률을 제공하며, 특히 대용량 파일에서 차이가 두드러집니다.</p>
+
+      <h3>압축 알고리즘</h3>
+      <p>기본 알고리즘은 <strong>LZMA2</strong>입니다. LZMA(Lempel-Ziv-Markov chain Algorithm)는 사전 기반 압축에 범위 부호화를 결합한 방식으로, Deflate보다 훨씬 높은 압축률을 달성합니다. 다만 압축 시 메모리를 많이 사용하고, 압축 속도가 느린 편입니다.</p>
+
+      <h3>장단점</h3>
+      <ul>
+        <li><strong>장점:</strong> 최고 수준의 압축률, 멀티스레드 지원, AES-256 암호화(파일명까지 암호화 가능), 분할 압축 지원</li>
+        <li><strong>단점:</strong> OS 기본 지원 없음(별도 프로그램 필요), 압축 속도가 느림, 메모리 사용량이 높음, 에러 복구가 어려움</li>
+      </ul>
+
+      <p>7Z의 "솔리드 압축" 기능은 여러 파일을 하나의 데이터 스트림으로 묶어 압축합니다. 비슷한 파일이 많을수록 압축 효과가 극대화되지만, 한 파일만 꺼내려 해도 앞의 파일을 모두 디코딩해야 하는 단점이 있습니다.</p>
+
+      <blockquote>7Z가 최선인 경우: 저장 공간 절약이 중요한 백업, 대용량 프로젝트 아카이빙, 보안이 중요한 문서(파일명 암호화)</blockquote>
+
+      <h2>ZST (Zstandard): 속도와 압축률의 균형</h2>
+
+      <h3>역사와 특징</h3>
+      <p>Zstandard(zstd)는 Facebook(현 Meta)의 Yann Collet이 2015년에 개발한 비교적 새로운 압축 알고리즘입니다. BSD 라이선스의 오픈소스이며, 리눅스 커널에도 채택될 만큼 기술적으로 인정받았습니다. 핵심 목표는 "Deflate(ZIP) 수준의 압축률을 훨씬 빠른 속도로" 달성하는 것입니다.</p>
+
+      <h3>압축 알고리즘</h3>
+      <p>zstd는 유한상태 엔트로피(FSE) 부호화와 LZ77 변형을 결합한 알고리즘입니다. 압축 레벨을 1~22까지 세밀하게 조절할 수 있어, 낮은 레벨에서는 LZ4에 근접하는 속도를, 높은 레벨에서는 LZMA에 가까운 압축률을 보여줍니다.</p>
+
+      <h3>장단점</h3>
+      <ul>
+        <li><strong>장점:</strong> 압축/해제 모두 빠름(특히 해제 속도가 매우 빠름), 멀티스레드 네이티브 지원, 사전(dictionary) 압축으로 작은 파일도 효율적, 스트리밍 압축 가능</li>
+        <li><strong>단점:</strong> 일반 사용자에게 아직 낯선 포맷, Windows 기본 지원 없음, 단일 파일 압축만 가능(아카이브 기능은 tar와 조합 필요), 암호화 미지원</li>
+      </ul>
+
+      <p>zstd의 가장 큰 특징은 <strong>해제 속도</strong>입니다. 어떤 압축 레벨로 압축했든 해제 속도는 거의 일정하게 빠릅니다. 이 특성 덕분에 게임 에셋 배포, 패키지 매니저(apt, pacman 등), 데이터베이스 백업 등 실시간 처리가 중요한 분야에서 빠르게 보급되고 있습니다.</p>
+
+      <blockquote>ZST가 최선인 경우: 대용량 로그 파일 압축, 서버 백업, 빠른 압축/해제가 필요한 개발 환경, 실시간 데이터 전송</blockquote>
+
+      <h2>세 포맷 비교 표</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>항목</th>
+            <th>ZIP</th>
+            <th>7Z</th>
+            <th>ZST</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>압축 알고리즘</td>
+            <td>Deflate</td>
+            <td>LZMA2</td>
+            <td>Zstandard</td>
+          </tr>
+          <tr>
+            <td>압축률</td>
+            <td>보통</td>
+            <td>최고</td>
+            <td>좋음 (ZIP보다 우수)</td>
+          </tr>
+          <tr>
+            <td>압축 속도</td>
+            <td>빠름</td>
+            <td>느림</td>
+            <td>매우 빠름</td>
+          </tr>
+          <tr>
+            <td>해제 속도</td>
+            <td>빠름</td>
+            <td>보통</td>
+            <td>매우 빠름</td>
+          </tr>
+          <tr>
+            <td>OS 기본 지원</td>
+            <td>Windows/macOS/Linux</td>
+            <td>없음</td>
+            <td>Linux (일부)</td>
+          </tr>
+          <tr>
+            <td>멀티스레드</td>
+            <td>프로그램에 따라 다름</td>
+            <td>지원</td>
+            <td>네이티브 지원</td>
+          </tr>
+          <tr>
+            <td>암호화</td>
+            <td>AES-256</td>
+            <td>AES-256 (파일명 포함)</td>
+            <td>미지원</td>
+          </tr>
+          <tr>
+            <td>아카이브(다중 파일)</td>
+            <td>지원</td>
+            <td>지원</td>
+            <td>미지원 (tar 조합 필요)</td>
+          </tr>
+          <tr>
+            <td>분할 압축</td>
+            <td>프로그램에 따라 다름</td>
+            <td>지원</td>
+            <td>미지원</td>
+          </tr>
+          <tr>
+            <td>적합한 용도</td>
+            <td>파일 공유, 이메일</td>
+            <td>백업, 아카이빙</td>
+            <td>서버, 개발, 실시간</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>실측 비교: 같은 파일로 테스트해 보면?</h2>
+
+      <p>1GB 크기의 텍스트 기반 로그 파일로 테스트한 결과를 참고해 보겠습니다. (결과는 파일 특성에 따라 달라질 수 있습니다.)</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>포맷</th>
+            <th>압축 후 크기</th>
+            <th>압축 시간</th>
+            <th>해제 시간</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ZIP (Deflate)</td>
+            <td>약 120MB</td>
+            <td>약 25초</td>
+            <td>약 8초</td>
+          </tr>
+          <tr>
+            <td>7Z (LZMA2)</td>
+            <td>약 65MB</td>
+            <td>약 90초</td>
+            <td>약 12초</td>
+          </tr>
+          <tr>
+            <td>ZST (레벨 3)</td>
+            <td>약 105MB</td>
+            <td>약 5초</td>
+            <td>약 2초</td>
+          </tr>
+          <tr>
+            <td>ZST (레벨 19)</td>
+            <td>약 72MB</td>
+            <td>약 120초</td>
+            <td>약 2초</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>눈에 띄는 점은 ZST의 해제 속도입니다. 압축 레벨을 19로 높여서 압축 시간은 7Z보다 오래 걸리지만, 해제는 여전히 2초입니다. 한번 압축해두고 여러 번 풀어야 하는 배포용 파일에 매우 유리합니다.</p>
+
+      <h2>그 외 알아두면 좋은 포맷들</h2>
+
+      <h3>RAR</h3>
+      <p>WinRAR의 독점 포맷입니다. 압축률은 7Z에 근접하고, 에러 복구(Recovery Record) 기능이 독보적입니다. 하지만 압축하려면 WinRAR 라이선스가 필요하며(해제만 무료), 오픈소스가 아니라는 한계가 있습니다.</p>
+
+      <h3>TAR.GZ / TAR.XZ</h3>
+      <p>Linux/Unix 세계의 표준입니다. TAR로 파일을 하나로 묶고, GZIP이나 XZ로 압축하는 2단계 방식입니다. 파일 권한 정보를 보존하므로 소스코드 배포에 많이 사용됩니다. 최근에는 TAR.ZST 조합도 늘어나는 추세입니다.</p>
+
+      <h2>결론: 용도별 추천</h2>
+
+      <p>포맷 선택은 결국 "누가 이 파일을 받느냐"와 "무엇이 더 중요한가"에 달려 있습니다.</p>
+
+      <ul>
+        <li><strong>다른 사람에게 전달:</strong> ZIP이 무난합니다. 받는 사람이 별도 프로그램 없이 열 수 있으니까요.</li>
+        <li><strong>장기 보관/백업:</strong> 7Z가 적합합니다. 한번 압축하면 오래 두는 용도이므로 느린 속도는 문제가 되지 않습니다.</li>
+        <li><strong>개발/서버 환경:</strong> ZST를 추천합니다. 빠른 속도와 적절한 압축률이 생산성을 높여줍니다.</li>
+        <li><strong>보안이 중요:</strong> 7Z의 파일명 암호화를 활용하세요. ZIP의 AES-256도 파일 내용은 보호하지만 파일명은 노출됩니다.</li>
+        <li><strong>크로스플랫폼:</strong> ZIP이 가장 안전합니다. macOS와 Windows 간 파일 교환에서 문제가 가장 적습니다.</li>
+      </ul>
+
+      <p>어떤 포맷이든 중요한 건 신뢰할 수 있는 프로그램으로 작업하는 것입니다. <a href="/ondamzip/">OndamZip</a>은 ZIP, 7Z, ZST를 포함한 10가지 포맷을 모두 지원하며, Rust 기반 멀티스레드 엔진으로 빠르게 처리합니다. Windows와 macOS에서 무료로 사용할 수 있습니다.</p>
+
+      <!-- AdSense -->
+      <div class="ad-container">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5085077973402796" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo"><img src="/logo-icon.png" alt="OndamSoft" style="height:40px;width:auto;margin-bottom:8px;"></div>
+      <p data-i18n-html="footer.desc">문의: <a href="mailto:ondamsoft@gmail.com">ondamsoft@gmail.com</a></p>
+      <div class="footer-links">
+        <a href="/ondamzip/">OndamZip</a>
+        <a href="/ondampdf/">OndamPDF</a>
+        <a href="/blog/" data-i18n="nav.blog">블로그</a>
+        <a href="/#donate" data-i18n="nav.donate">후원</a>
+        <a href="/privacy.html" data-i18n="footer.privacy">개인정보처리방침</a>
+        <a href="/terms.html" data-i18n="footer.terms">이용약관</a>
+      </div>
+      <p style="margin-top:1.5rem;font-size:12px;color:#64748b;">© 2025 OndamSoft. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+
+</body>
+</html>

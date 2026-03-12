@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>macOS 앱 공증(Notarization) 완전 가이드 | OndamSoft</title>
+  <meta name="description" content="macOS 앱 공증(Notarization) 전 과정을 실전 경험과 함께 설명합니다. Apple Developer 계정, 코드 서명, notarytool, GitHub Actions CI/CD 자동화까지.">
+  <meta property="og:title" content="macOS 앱 공증(Notarization) 완전 가이드">
+  <meta property="og:description" content="macOS 앱 코드 서명과 공증의 전 과정. Apple Developer 계정부터 CI/CD 자동화까지 실전 가이드.">
+  <meta property="og:url" content="https://ondamsoft.com/blog/macos-notarization.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://ondamsoft.com/logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://ondamsoft.com/blog/macos-notarization.html">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="/css/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5085077973402796" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-inner">
+      <a href="/" class="logo"><img src="/logo.png" alt="OndamSoft"></a>
+      <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      </button>
+      <div class="nav-wrap">
+        <nav>
+          <a href="/#products" data-i18n="nav.products">제품</a>
+          <a href="/blog/" data-i18n="nav.blog">블로그</a>
+          <a href="/#donate" data-i18n="nav.donate">후원</a>
+          <a href="mailto:ondamsoft@gmail.com" data-i18n="nav.contact">문의</a>
+        </nav>
+        <select id="lang-select" onchange="switchLang(this.value)">
+          <option value="ko">한국어</option>
+          <option value="en">English</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <div class="article-wrap">
+    <div class="breadcrumb">
+      <a href="/">OndamSoft</a> &gt; <a href="/blog/">블로그</a> &gt; macOS 앱 공증 가이드
+    </div>
+
+    <h1>macOS 앱 공증(Notarization) 완전 가이드</h1>
+    <div class="post-meta">
+      2026.03.03 · <span class="blog-category cat-dev" style="font-size:11px;padding:2px 8px;border-radius:4px;">개발 이야기</span> · 약 9분
+    </div>
+
+    <div class="article-content">
+
+      <h2>공증이 필요한 이유</h2>
+
+      <p>macOS에는 Gatekeeper라는 보안 시스템이 있습니다. macOS 10.15 Catalina부터 Apple은 Mac App Store 외부에서 배포되는 모든 앱에 공증(Notarization)을 요구합니다. 공증되지 않은 앱을 실행하면 경고 대화상자가 표시되고, 일부 macOS 버전에서는 실행 자체가 차단됩니다.</p>
+
+      <p>공증이란 개발자가 앱을 Apple 서버에 제출하면, Apple이 악성 코드 검사를 수행하고 안전하다고 판단되면 티켓을 발행하는 과정입니다. 이 티켓이 있는 앱만 Gatekeeper 경고 없이 실행됩니다.</p>
+
+      <p>정리하면, macOS에서 앱을 배포하려면 세 가지가 필요합니다.</p>
+
+      <ol>
+        <li><strong>코드 서명</strong>: 개발자 신원 증명</li>
+        <li><strong>공증</strong>: Apple의 악성 코드 검사 통과</li>
+        <li><strong>스테이플링</strong>: 공증 티켓을 앱에 첨부 (오프라인 검증용)</li>
+      </ol>
+
+      <!-- AdSense -->
+      <div class="ad-container">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5085077973402796" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+
+      <h2>준비물</h2>
+
+      <h3>1. Apple Developer 계정</h3>
+      <p>Apple Developer Program에 등록해야 합니다. 연간 $99(약 13만 원)의 비용이 발생합니다. 무료 Apple ID만으로는 배포용 인증서를 발급받을 수 없습니다.</p>
+
+      <h3>2. Developer ID Application 인증서</h3>
+      <p>Mac App Store 외부 배포에 사용하는 인증서입니다. Apple Developer 웹사이트 > Certificates, Identifiers &amp; Profiles에서 생성합니다. "Developer ID Application" 유형을 선택해야 합니다. "Mac Development"나 "Mac App Distribution"과는 다릅니다.</p>
+
+      <p>인증서 생성 절차는 다음과 같습니다.</p>
+
+      <ol>
+        <li>Mac의 키체인 접근 > 인증서 지원 > 인증 기관에서 인증서 요청에서 CSR(Certificate Signing Request) 생성</li>
+        <li>Apple Developer 사이트에서 CSR을 업로드하여 인증서 발급</li>
+        <li>발급된 .cer 파일을 다운로드하여 더블 클릭으로 키체인에 설치</li>
+      </ol>
+
+      <h3>3. 앱 전용 비밀번호</h3>
+      <p>공증 API 인증에 Apple ID 비밀번호를 직접 사용할 수 없습니다. 대신 앱 전용 비밀번호(App-Specific Password)를 생성합니다. appleid.apple.com > 보안 > 앱 전용 비밀번호에서 생성할 수 있습니다.</p>
+
+      <p>생성된 비밀번호는 <code>xxxx-xxxx-xxxx-xxxx</code> 형식입니다. 이 비밀번호는 한 번만 표시되므로 안전하게 보관해야 합니다.</p>
+
+      <h3>4. Team ID</h3>
+      <p>Apple Developer 계정의 Team ID입니다. developer.apple.com > 멤버십에서 확인할 수 있습니다. 10자리 영문 숫자 조합입니다.</p>
+
+      <h2>코드 서명 과정</h2>
+
+      <p>Tauri 프레임워크를 사용하는 경우, 빌드 시 자동으로 코드 서명이 이루어집니다. 환경 변수만 올바르게 설정하면 됩니다.</p>
+
+      <p>필요한 환경 변수는 다음과 같습니다.</p>
+
+      <ul>
+        <li><code>APPLE_SIGNING_IDENTITY</code>: 인증서 이름 (예: "Developer ID Application: Your Name (TEAMID)")</li>
+        <li><code>APPLE_ID</code>: Apple 계정 이메일</li>
+        <li><code>APPLE_PASSWORD</code>: 앱 전용 비밀번호</li>
+        <li><code>APPLE_TEAM_ID</code>: Team ID</li>
+      </ul>
+
+      <p>Tauri가 아닌 일반 앱의 경우, <code>codesign</code> 명령어로 직접 서명합니다.</p>
+
+      <p><code>codesign --deep --force --verify --verbose --sign "Developer ID Application: ..." YourApp.app</code></p>
+
+      <p>서명이 올바른지 확인하려면 아래 명령을 사용합니다.</p>
+
+      <p><code>codesign --verify --verbose=2 YourApp.app</code></p>
+
+      <h2>공증 제출 (notarytool)</h2>
+
+      <p>macOS 13부터는 <code>notarytool</code>이 공식 도구입니다. 이전의 <code>altool</code>은 더 이상 사용되지 않습니다.</p>
+
+      <p>공증 제출 명령은 다음과 같습니다.</p>
+
+      <p><code>xcrun notarytool submit YourApp.dmg --apple-id "email" --password "app-specific-password" --team-id "TEAMID" --wait</code></p>
+
+      <p><code>--wait</code> 옵션을 추가하면 공증이 완료될 때까지 기다립니다. 완료 후 상태가 "Accepted"이면 성공입니다.</p>
+
+      <p>공증이 완료되면 스테이플링을 수행합니다.</p>
+
+      <p><code>xcrun stapler staple YourApp.dmg</code></p>
+
+      <p>스테이플링은 공증 티켓을 파일에 직접 첨부하는 과정입니다. 이렇게 하면 사용자가 오프라인에서도 공증 상태를 확인할 수 있습니다.</p>
+
+      <h2>GitHub Actions에서 자동화</h2>
+
+      <p>CI/CD 환경에서 공증을 자동화하는 것이 실무에서 가장 중요합니다. 매번 수동으로 서명하고 공증하는 것은 비현실적입니다.</p>
+
+      <h3>시크릿 설정</h3>
+
+      <p>GitHub 저장소의 Settings > Secrets and variables > Actions에 다음 시크릿을 등록합니다.</p>
+
+      <ul>
+        <li><code>APPLE_CERTIFICATE</code>: .p12 인증서 파일의 Base64 인코딩</li>
+        <li><code>APPLE_CERTIFICATE_PASSWORD</code>: .p12 파일 비밀번호</li>
+        <li><code>APPLE_ID</code>: Apple 계정 이메일</li>
+        <li><code>APPLE_PASSWORD</code>: 앱 전용 비밀번호</li>
+        <li><code>APPLE_TEAM_ID</code>: Team ID</li>
+        <li><code>APPLE_SIGNING_IDENTITY</code>: 인증서 이름</li>
+      </ul>
+
+      <h3>인증서를 Base64로 변환</h3>
+
+      <p>키체인에서 인증서와 개인 키를 .p12 파일로 내보낸 후, Base64로 인코딩합니다.</p>
+
+      <p><code>base64 -i certificate.p12 | pbcopy</code></p>
+
+      <p>이 값을 <code>APPLE_CERTIFICATE</code> 시크릿에 저장합니다.</p>
+
+      <h3>워크플로우에서 인증서 설치</h3>
+
+      <p>GitHub Actions 워크플로우에서 키체인을 생성하고 인증서를 설치합니다. Tauri의 공식 GitHub Action을 사용하면 이 과정이 대부분 자동화됩니다. 환경 변수에 시크릿 값을 전달하기만 하면 됩니다.</p>
+
+      <h2>트러블슈팅</h2>
+
+      <h3>첫 공증에 26분 소요</h3>
+
+      <p>OndamZip의 첫 공증은 무려 26분이 걸렸습니다. Apple 서버가 새로운 앱과 개발자를 처음 검사할 때 시간이 오래 걸리는 것으로 보입니다. 두 번째 공증부터는 12분 정도로 줄었고, 이후에는 5~8분 정도 걸립니다.</p>
+
+      <p>CI/CD 타임아웃을 넉넉하게 설정하는 것이 중요합니다. OndamZip은 GitHub Actions 타임아웃을 120분으로 설정했습니다. 기본 타임아웃(360분)을 사용해도 되지만, 명시적으로 설정하는 것이 좋습니다.</p>
+
+      <h3>공증 실패: Invalid Signature</h3>
+
+      <p>가장 흔한 실패 원인은 서명 문제입니다. 확인할 사항은 다음과 같습니다.</p>
+
+      <ul>
+        <li>인증서 유형이 "Developer ID Application"인지 확인 (다른 유형의 인증서는 배포용으로 사용 불가)</li>
+        <li><code>--deep</code> 옵션으로 모든 번들 내부까지 서명했는지 확인</li>
+        <li>Hardened Runtime이 활성화되어 있는지 확인</li>
+        <li>entitlements 파일이 올바른지 확인</li>
+      </ul>
+
+      <h3>공증 실패: Contains Unsigned Binaries</h3>
+
+      <p>앱 번들 내부의 모든 실행 파일과 동적 라이브러리가 서명되어야 합니다. 서드파티 라이브러리가 서명 없이 포함되면 공증이 거부됩니다. <code>codesign --deep</code>으로 전체를 재서명하면 해결되는 경우가 많습니다.</p>
+
+      <h2>팁과 모범 사례</h2>
+
+      <h3>앱 전용 비밀번호 관리</h3>
+      <p>앱 전용 비밀번호는 최대 25개까지 생성 가능합니다. CI/CD용, 로컬 개발용 등 용도별로 분리하여 생성하는 것을 권장합니다. 비밀번호가 노출되었거나 사용하지 않는 비밀번호는 즉시 폐기하세요.</p>
+
+      <h3>인증서 갱신</h3>
+      <p>Developer ID Application 인증서의 유효 기간은 5년입니다. 만료 전에 새 인증서를 발급받아야 합니다. 만료되면 기존에 서명한 앱은 계속 작동하지만, 새로운 빌드에 서명할 수 없습니다. 인증서를 갱신하면 GitHub 시크릿도 함께 업데이트해야 합니다.</p>
+
+      <h3>로컬 테스트</h3>
+      <p>CI에 올리기 전에 로컬에서 서명과 공증을 테스트하는 것이 좋습니다. CI에서 실패하면 디버깅이 어렵기 때문입니다. 로컬에서 성공한 설정을 그대로 CI 환경 변수로 옮기면 대부분 문제가 없습니다.</p>
+
+      <blockquote>
+        macOS 공증은 처음 설정할 때 복잡하지만, 한 번 자동화해두면 이후에는 신경 쓸 일이 거의 없습니다. 이 가이드가 도움이 되셨다면 <a href="/">OndamSoft의 다른 글</a>도 확인해보세요.
+      </blockquote>
+
+      <!-- AdSense -->
+      <div class="ad-container">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5085077973402796" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo"><img src="/logo-icon.png" alt="OndamSoft" style="height:40px;width:auto;margin-bottom:8px;"></div>
+      <p data-i18n-html="footer.desc">문의: <a href="mailto:ondamsoft@gmail.com">ondamsoft@gmail.com</a></p>
+      <div class="footer-links">
+        <a href="/ondamzip/">OndamZip</a>
+        <a href="/ondampdf/">OndamPDF</a>
+        <a href="/blog/" data-i18n="nav.blog">블로그</a>
+        <a href="/#donate" data-i18n="nav.donate">후원</a>
+        <a href="/privacy.html" data-i18n="footer.privacy">개인정보처리방침</a>
+        <a href="/terms.html" data-i18n="footer.terms">이용약관</a>
+      </div>
+      <p style="margin-top:1.5rem;font-size:12px;color:#64748b;">&copy; 2025 OndamSoft. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
