@@ -91,7 +91,7 @@
 
   <!-- Hero -->
   <section class="hero pdf-hero">
-    <div class="hero-badge" data-i18n="pdf.badge">Windows 무료</div>
+    <div class="hero-badge" data-i18n="pdf.badge">Windows · macOS 무료</div>
     <h1 data-i18n-html="pdf.title">무료 PDF 편집기,<br><span class="purple">OndamPDF</span></h1>
     <p data-i18n-html="pdf.desc">보기, 병합, 분할, 워터마크, 암호 설정, 소책자 인쇄까지.<br>PDF에 필요한 모든 기능을 <strong>무료</strong>로 제공합니다.</p>
     <div class="hero-buttons">
@@ -101,7 +101,7 @@
       </a>
       <a href="#features" class="btn btn-secondary" data-i18n="pdf.btn_features">기능 살펴보기</a>
     </div>
-    <p class="version-info">v1.0.0 · Windows (macOS 준비 중)</p>
+    <p class="version-info">v1.0.0 · Windows / macOS</p>
   </section>
 
   <!-- AdSense -->
@@ -187,11 +187,12 @@
         <p class="download-count" id="win-count"></p>
       </div>
 
-      <div class="download-card disabled">
+      <div class="download-card">
         <div class="os-icon">🍎</div>
         <h3>macOS</h3>
-        <p class="os-desc" data-i18n="pdf.mac_coming">준비 중 (Coming Soon)</p>
-        <span class="btn btn-pdf" style="background:#cbd5e1;box-shadow:none;cursor:default;" data-i18n="pdf.mac_coming">준비 중</span>
+        <p class="os-desc">macOS 12+ (Apple Silicon)</p>
+        <a href="https://github.com/ondamsoft/ondamPDF/releases/download/v1.0.0/OndamPDF_1.0.0_aarch64.dmg" class="btn btn-pdf" data-i18n="pdf.btn_download">무료 다운로드</a>
+        <p class="download-count" id="mac-count"></p>
       </div>
 
     </div>
@@ -235,7 +236,7 @@
   <script>
     var PAGE_LANG = {
       ko: {
-        'pdf.badge': 'Windows 무료',
+        'pdf.badge': 'Windows · macOS 무료',
         'pdf.title': '무료 PDF 편집기,<br><span class="purple">OndamPDF</span>',
         'pdf.desc': '보기, 병합, 분할, 워터마크, 암호 설정, 소책자 인쇄까지.<br>PDF에 필요한 모든 기능을 <strong>무료</strong>로 제공합니다.',
         'pdf.btn_download': '무료 다운로드',
@@ -260,10 +261,9 @@
         'pdf.feat8_desc': '소책자 인쇄, 모아찍기(N-up) 인쇄. 용지 절약 옵션.',
         'pdf.download_title': '다운로드',
         'pdf.download_subtitle': '개인/기업/기관 모두 무료입니다',
-        'pdf.mac_coming': '준비 중'
-      },
+              },
       en: {
-        'pdf.badge': 'Free for Windows',
+        'pdf.badge': 'Free for Windows & macOS',
         'pdf.title': 'Free PDF Editor,<br><span class="purple">OndamPDF</span>',
         'pdf.desc': 'View, merge, split, watermark, encryption, and booklet printing.<br>All the PDF tools you need, completely <strong>free</strong>.',
         'pdf.btn_download': 'Free Download',
@@ -287,8 +287,7 @@
         'pdf.feat8_title': 'Print',
         'pdf.feat8_desc': 'Booklet printing, N-up printing. Paper saving options.',
         'pdf.download_title': 'Download',
-        'pdf.download_subtitle': 'Free for individuals, businesses, and institutions',
-        'pdf.mac_coming': 'Coming Soon'
+        'pdf.download_subtitle': 'Free for individuals, businesses, and institutions'
       }
     };
   </script>
