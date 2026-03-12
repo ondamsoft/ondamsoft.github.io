@@ -10,6 +10,9 @@ var LANG = {
     'donate.title': '☕ 후원하기',
     'donate.desc': '온담소프트는 광고와 후원으로 운영됩니다.',
     'donate.kakao': '💛 카카오페이',
+    'donate.crypto_title': '🪙 암호화폐 후원',
+    'donate.crypto_note': '주소를 클릭하면 복사됩니다 · RedotPay',
+    'donate.copied': '복사됨!',
     'footer.desc': '문의: <a href="mailto:ondamsoft@gmail.com">ondamsoft@gmail.com</a>',
     'footer.privacy': '개인정보처리방침',
     'footer.terms': '이용약관',
@@ -32,6 +35,9 @@ var LANG = {
     'donate.title': '☕ Support Us',
     'donate.desc': 'OndamSoft is funded by ads and donations.',
     'donate.kakao': '💛 KakaoPay',
+    'donate.crypto_title': '🪙 Crypto Donations',
+    'donate.crypto_note': 'Click address to copy · RedotPay',
+    'donate.copied': 'Copied!',
     'footer.desc': 'Contact: <a href="mailto:ondamsoft@gmail.com">ondamsoft@gmail.com</a>',
     'footer.privacy': 'Privacy Policy',
     'footer.terms': 'Terms of Service',
@@ -99,6 +105,18 @@ function toggleMenu() {
 function closeMenu() {
   var nw = document.querySelector('.nav-wrap');
   if (nw) nw.classList.remove('open');
+}
+
+// Copy crypto address
+function copyCrypto(el) {
+  var text = el.textContent;
+  navigator.clipboard.writeText(text).then(function() {
+    var badge = el.parentElement.querySelector('.crypto-copied');
+    if (badge) {
+      badge.classList.add('show');
+      setTimeout(function() { badge.classList.remove('show'); }, 1500);
+    }
+  });
 }
 
 // Init

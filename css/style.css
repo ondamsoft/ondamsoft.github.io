@@ -430,6 +430,80 @@ nav a.active { color: #3b82f6; font-weight: 600; }
 }
 .donate-btn:hover { border-color: #fbbf24; box-shadow: 0 4px 12px rgba(251,191,36,0.15); }
 
+/* Crypto Donate */
+.crypto-donate {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(0,0,0,0.06);
+}
+.crypto-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 1rem !important;
+}
+.crypto-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 620px;
+  margin: 0 auto;
+}
+.crypto-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 8px 14px;
+  position: relative;
+}
+.crypto-item:hover { border-color: #fbbf24; }
+.crypto-label {
+  min-width: 72px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #f59e0b;
+  text-align: left;
+}
+.crypto-label small {
+  font-size: 10px;
+  font-weight: 500;
+  color: #94a3b8;
+}
+.crypto-addr {
+  flex: 1;
+  font-size: 12px;
+  font-family: 'SF Mono', 'Consolas', monospace;
+  color: #475569;
+  cursor: pointer;
+  word-break: break-all;
+  text-align: left;
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  transition: color 0.2s;
+}
+.crypto-addr:hover { color: #3b82f6; }
+.crypto-copied {
+  display: none;
+  font-size: 11px;
+  color: #22c55e;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.crypto-copied.show { display: inline; }
+.crypto-note {
+  margin-top: 1rem !important;
+  font-size: 12px !important;
+  color: #94a3b8 !important;
+}
+@media (max-width: 768px) {
+  .crypto-label { min-width: 60px; font-size: 12px; }
+  .crypto-addr { font-size: 10px; }
+}
+
 /* === Footer === */
 footer {
   background: #1e293b;
