@@ -23,14 +23,14 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 80px;
+  height: 100px;
 }
 .logo {
   display: flex;
   align-items: center;
   text-decoration: none;
 }
-.logo img { height: 64px; width: auto; }
+.logo img { height: 150px; width: auto; }
 .nav-wrap {
   display: flex;
   align-items: center;
