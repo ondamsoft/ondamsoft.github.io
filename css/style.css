@@ -432,20 +432,8 @@ nav a.active { color: #3b82f6; font-weight: 600; }
 
 /* Crypto Donate */
 .crypto-donate {
-  margin-top: 2rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid rgba(0,0,0,0.06);
+  margin-top: 1.5rem;
 }
-.crypto-title {
-  font-size: 15px;
-  font-weight: 700;
-  color: #1e293b;
-  margin-bottom: 1rem !important;
-  cursor: pointer;
-  user-select: none;
-  transition: color 0.2s;
-}
-.crypto-title:hover { color: #3b82f6; }
 .crypto-list {
   display: flex;
   flex-direction: column;
