@@ -147,8 +147,8 @@
       <a href="https://link.kakaopay.com/_/X5c6lXs" class="donate-btn" target="_blank" data-i18n="donate.kakao">💛 카카오페이</a>
     </div>
     <div class="crypto-donate">
-      <p class="crypto-title" data-i18n="donate.crypto_title">🪙 암호화폐 후원</p>
-      <div class="crypto-list">
+      <p class="crypto-title" onclick="toggleCrypto()" data-i18n="donate.crypto_title">🪙 암호화폐 후원 ▼</p>
+      <div class="crypto-list" id="cryptoList">
         <div class="crypto-item">
           <span class="crypto-label">BTC</span>
           <code class="crypto-addr" onclick="copyCrypto(this)" title="Click to copy">14QyG6oVWDtLjDxu52VhHrbB7NWGB7FDuC</code>
@@ -180,7 +180,7 @@
           <span class="crypto-copied" data-i18n="donate.copied">복사됨!</span>
         </div>
       </div>
-      <p class="crypto-note" data-i18n="donate.crypto_note">주소를 클릭하면 복사됩니다 · RedotPay</p>
+      <p class="crypto-note" id="cryptoNote" data-i18n="donate.crypto_note">주소를 클릭하면 복사됩니다 · RedotPay</p>
     </div>
   </section>
 

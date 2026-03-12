@@ -441,13 +441,25 @@ nav a.active { color: #3b82f6; font-weight: 600; }
   font-weight: 700;
   color: #1e293b;
   margin-bottom: 1rem !important;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.2s;
 }
+.crypto-title:hover { color: #3b82f6; }
 .crypto-list {
   display: flex;
   flex-direction: column;
   gap: 8px;
   max-width: 620px;
   margin: 0 auto;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+.crypto-list.open {
+  max-height: 500px;
+  opacity: 1;
 }
 .crypto-item {
   display: flex;
@@ -498,6 +510,14 @@ nav a.active { color: #3b82f6; font-weight: 600; }
   margin-top: 1rem !important;
   font-size: 12px !important;
   color: #94a3b8 !important;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+.crypto-note.open {
+  max-height: 40px;
+  opacity: 1;
 }
 @media (max-width: 768px) {
   .crypto-label { min-width: 60px; font-size: 12px; }
