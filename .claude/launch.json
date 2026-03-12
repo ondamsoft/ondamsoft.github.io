@@ -1,11 +1,1 @@
-{
-  "version": "0.0.1",
-  "configurations": [
-    {
-      "name": "homepage",
-      "runtimeExecutable": "npx",
-      "runtimeArgs": ["serve", "-l", "3080", "."],
-      "port": 3080
-    }
-  ]
-}
+{"version":"0.0.1","configurations":[{"name":"homepage","runtimeExecutable":"npx","runtimeArgs":["serve","-l","3088","D:\\ondam\\ondamsoft.github.io"],"port":3088}]}

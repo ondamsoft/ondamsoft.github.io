@@ -294,10 +294,12 @@
   <script src="/js/main.js"></script>
   <script>
     // Fetch download counts for OndamPDF
-    fetchDownloadCounts('ondamsoft/ondamPDF', function(win, mac) {
-      var el = document.getElementById('win-count');
-      if (el && win > 0) el.innerHTML = '<strong>' + win.toLocaleString() + '</strong> downloads';
-    });
+    fetchDownloadCounts('ondamsoft/ondamsoft.github.io', function(win, mac) {
+      var wEl = document.getElementById('win-count');
+      var mEl = document.getElementById('mac-count');
+      if (wEl && win > 0) wEl.innerHTML = '<strong>' + win.toLocaleString() + '</strong> downloads';
+      if (mEl && mac > 0) mEl.innerHTML = '<strong>' + mac.toLocaleString() + '</strong> downloads';
+    }, 'OndamPDF');
   </script>
 
 </body>

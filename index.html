@@ -84,6 +84,7 @@
           <a href="/ondamzip/#download" class="btn btn-secondary" data-i18n="home.btn_download">무료 다운로드</a>
         </div>
         <p class="version-info">v1.0.16 · Windows / macOS</p>
+        <p class="download-count" id="zip-total-count"></p>
       </div>
 
       <!-- OndamPDF -->
@@ -99,6 +100,7 @@
           <a href="/ondampdf/#download" class="btn btn-secondary" data-i18n="home.btn_download">무료 다운로드</a>
         </div>
         <p class="version-info">v1.0.0 · Windows / macOS</p>
+        <p class="download-count" id="pdf-total-count"></p>
       </div>
 
     </div>
@@ -237,6 +239,18 @@
     };
   </script>
   <script src="/js/main.js"></script>
+  <script>
+    fetchDownloadCounts('ondamsoft/ondamsoft.github.io', function(win, mac) {
+      var el = document.getElementById('zip-total-count');
+      var total = win + mac;
+      if (el && total > 0) el.innerHTML = '총 <strong>' + total.toLocaleString() + '</strong> downloads';
+    }, 'OndamZip');
+    fetchDownloadCounts('ondamsoft/ondamsoft.github.io', function(win, mac) {
+      var el = document.getElementById('pdf-total-count');
+      var total = win + mac;
+      if (el && total > 0) el.innerHTML = '총 <strong>' + total.toLocaleString() + '</strong> downloads';
+    }, 'OndamPDF');
+  </script>
 
 </body>
 </html>

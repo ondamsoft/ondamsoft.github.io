@@ -82,13 +82,15 @@ function initLang() {
 }
 
 // GitHub download count fetcher
-function fetchDownloadCounts(repo, callback) {
+// filter: 제품명 필터 (예: 'OndamZip', 'OndamPDF') - 같은 repo에 여러 제품이 있을 때 구분
+function fetchDownloadCounts(repo, callback, filter) {
   fetch('https://api.github.com/repos/' + repo + '/releases', { cache: 'no-cache' })
     .then(function(r) { return r.ok ? r.json() : [] })
     .then(function(releases) {
       var win = 0, mac = 0;
       releases.forEach(function(rel) {
         (rel.assets || []).forEach(function(a) {
+          if (filter && a.name.indexOf(filter) === -1) return;
           if (a.name.indexOf('.exe') !== -1) win += a.download_count;
           if (a.name.indexOf('.dmg') !== -1) mac += a.download_count;
         });
