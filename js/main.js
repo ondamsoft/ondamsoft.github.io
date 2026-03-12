@@ -12,7 +12,17 @@ var LANG = {
     'donate.kakao': '💛 카카오페이',
     'footer.desc': '문의: <a href="mailto:ondamsoft@gmail.com">ondamsoft@gmail.com</a>',
     'footer.privacy': '개인정보처리방침',
-    'footer.terms': '이용약관'
+    'footer.terms': '이용약관',
+    'footer.blog': '블로그',
+    'footer.donate': '후원',
+    'blog.title': '블로그',
+    'blog.subtitle': '압축, PDF, 개발에 관한 유용한 이야기',
+    'blog.breadcrumb': '블로그',
+    'blog.cat.compress': '압축',
+    'blog.cat.review': '비교/리뷰',
+    'blog.cat.pdf': 'PDF',
+    'blog.cat.dev': '개발 이야기',
+    'blog.related': '관련 글'
   },
   en: {
     'nav.products': 'Products',
@@ -24,7 +34,17 @@ var LANG = {
     'donate.kakao': '💛 KakaoPay',
     'footer.desc': 'Contact: <a href="mailto:ondamsoft@gmail.com">ondamsoft@gmail.com</a>',
     'footer.privacy': 'Privacy Policy',
-    'footer.terms': 'Terms of Service'
+    'footer.terms': 'Terms of Service',
+    'footer.blog': 'Blog',
+    'footer.donate': 'Donate',
+    'blog.title': 'Blog',
+    'blog.subtitle': 'Useful stories about compression, PDF, and development',
+    'blog.breadcrumb': 'Blog',
+    'blog.cat.compress': 'Compression',
+    'blog.cat.review': 'Reviews',
+    'blog.cat.pdf': 'PDF',
+    'blog.cat.dev': 'Dev Stories',
+    'blog.related': 'Related Posts'
   }
 };
 
