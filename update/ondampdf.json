@@ -1,11 +1,11 @@
 {
-  "version": "1.0.2",
-  "notes": "v1.0.2 업데이트\n- 암호 PDF 열기 시 커스텀 비밀번호 다이얼로그 (브라우저 prompt 제거)\n- 작업표시줄에 열린 파일명 표시\n- 우클릭 컨텍스트 메뉴 'OndamPDF로 열기' 추가\n- 정보 탭에 '기본 PDF 뷰어로 설정' 버튼",
+  "version": "1.0.3",
+  "notes": "v1.0.3 업데이트\n- 암호 PDF 열기 시 브라우저 prompt 완전 제거\n- 커스텀 비밀번호 다이얼로그만 표시\n- 작업표시줄에 열린 파일명 표시\n- 우클릭 컨텍스트 메뉴 'OndamPDF로 열기' 추가\n- 정보 탭에 '기본 PDF 뷰어로 설정' 버튼",
   "date": "2026-03-13",
   "windows": {
-    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.2/OndamPDF_1.0.2_x64-setup.exe"
+    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.3/OndamPDF_1.0.3_x64-setup.exe"
   },
   "macos": {
-    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.2/OndamPDF_1.0.2_aarch64.dmg"
+    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.3/OndamPDF_1.0.3_aarch64.dmg"
   }
 }
