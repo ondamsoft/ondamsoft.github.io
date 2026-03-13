@@ -241,6 +241,52 @@
     </div>
   </div>
 
+  <!-- Donate -->
+  <section class="donate" id="donate">
+    <h2 data-i18n="donate.title">☕ 후원하기</h2>
+    <p data-i18n-html="donate.mission" style="max-width:560px;margin:0 auto 0.75rem;font-size:13px;color:#92400e;font-weight:600;">이 소프트웨어가 누군가에게 희망이 되기를.</p>
+    <p data-i18n-html="donate.desc" style="max-width:560px;margin:0 auto 1.5rem;">온담소프트는 광고와 후원으로 운영됩니다.<br>여러분의 응원이 더 좋은 무료 소프트웨어를 만드는 힘이 됩니다!</p>
+    <div class="donate-buttons">
+      <a href="https://link.kakaopay.com/_/X5c6lXs" class="donate-btn" target="_blank" data-i18n="donate.kakao">💛 카카오페이</a>
+      <button class="donate-btn" onclick="toggleCrypto()" data-i18n="donate.crypto_title">🪙 암호화폐</button>
+    </div>
+    <div class="crypto-donate">
+      <div class="crypto-list" id="cryptoList">
+        <div class="crypto-item">
+          <span class="crypto-label">BTC</span>
+          <code class="crypto-addr" onclick="copyCrypto(this)" title="Click to copy">14QyG6oVWDtLjDxu52VhHrbB7NWGB7FDuC</code>
+          <span class="crypto-copied" data-i18n="donate.copied">복사됨!</span>
+        </div>
+        <div class="crypto-item">
+          <span class="crypto-label">ETH <small>ERC20</small></span>
+          <code class="crypto-addr" onclick="copyCrypto(this)" title="Click to copy">0xDA52e55c671aF0C4f090089c4D213494b2B4e291</code>
+          <span class="crypto-copied" data-i18n="donate.copied">복사됨!</span>
+        </div>
+        <div class="crypto-item">
+          <span class="crypto-label">USDT <small>TRC20</small></span>
+          <code class="crypto-addr" onclick="copyCrypto(this)" title="Click to copy">TQQrQUwBaEdjH9LqpxGX5u5A1z7YmNwZX4</code>
+          <span class="crypto-copied" data-i18n="donate.copied">복사됨!</span>
+        </div>
+        <div class="crypto-item">
+          <span class="crypto-label">SOL</span>
+          <code class="crypto-addr" onclick="copyCrypto(this)" title="Click to copy">BhxLxecjN7yrTpSJtEwKRdgrkUAfuxGpNZ9jB9hr1PL9</code>
+          <span class="crypto-copied" data-i18n="donate.copied">복사됨!</span>
+        </div>
+        <div class="crypto-item">
+          <span class="crypto-label">XRP</span>
+          <code class="crypto-addr" onclick="copyCrypto(this)" title="Click to copy">rGyhY8nNhNuoh5VhB9yZXAMXkCRJG3oMr</code>
+          <span class="crypto-copied" data-i18n="donate.copied">복사됨!</span>
+        </div>
+        <div class="crypto-item">
+          <span class="crypto-label">TRX <small>TRC20</small></span>
+          <code class="crypto-addr" onclick="copyCrypto(this)" title="Click to copy">TQQrQUwBaEdjH9LqpxGX5u5A1z7YmNwZX4</code>
+          <span class="crypto-copied" data-i18n="donate.copied">복사됨!</span>
+        </div>
+      </div>
+      <p class="crypto-note" id="cryptoNote" data-i18n="donate.crypto_note">주소를 클릭하면 복사됩니다 · RedotPay</p>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer>
     <div class="footer-inner">
