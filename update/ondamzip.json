@@ -1,11 +1,11 @@
 {
-  "version": "1.0.17",
-  "notes": "자동 업데이트 기능 추가 (다운로드 + 설치파일 자동 실행)",
+  "version": "1.0.18",
+  "notes": "개발자 소개 탭 추가, 알아서 풀기 기능 (빵집 스타일 스마트 압축해제)",
   "date": "2026-03-13",
   "windows": {
-    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.17/OndamZip_1.0.17_x64-setup.exe"
+    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.18/OndamZip_1.0.18_x64-setup.exe"
   },
   "macos": {
-    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.17/OndamZip_1.0.17_aarch64.dmg"
+    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.18/OndamZip_1.0.18_aarch64.dmg"
   }
 }

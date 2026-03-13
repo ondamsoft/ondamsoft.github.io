@@ -1,11 +1,11 @@
 {
-  "version": "1.0.4",
-  "notes": "v1.0.4 업데이트\n- 앱 내 자동 업데이트 기능 (프로그래스바 + 자동 설치)\n- 앱 시작 시 업데이트 자동 확인 + 상단 배너 알림\n- 외부 링크 열기 버그 수정",
+  "version": "1.0.5",
+  "notes": "개발자 소개 탭 추가",
   "date": "2026-03-13",
   "windows": {
-    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.4/OndamPDF_1.0.4_x64-setup.exe"
+    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.5/OndamPDF_1.0.5_x64-setup.exe"
   },
   "macos": {
-    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.4/OndamPDF_1.0.4_aarch64.dmg"
+    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.5/OndamPDF_1.0.5_aarch64.dmg"
   }
 }
