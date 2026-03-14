@@ -91,7 +91,7 @@
 
   <!-- Hero -->
   <section class="hero viewer-hero">
-    <div class="hero-badge" data-i18n="viewer.badge">Windows 완전 무료</div>
+    <div class="hero-badge" data-i18n="viewer.badge">Windows · macOS 완전 무료</div>
     <h1 data-i18n-html="viewer.title"><span class="green">가볍고 빠른</span> 이미지 뷰어</h1>
     <p data-i18n-html="viewer.desc">JPG, PNG, GIF, WebP, AVIF 등 다양한 이미지 포맷을 지원.<br>인쇄, 회전, 확대, 영역 선택 저장까지. <strong>완전 무료</strong></p>
     <div class="hero-buttons">
@@ -101,7 +101,7 @@
       </a>
       <a href="#features" class="btn btn-secondary" data-i18n="viewer.btn_features">기능 살펴보기</a>
     </div>
-    <p class="version-info">v1.0.0 · Windows</p>
+    <p class="version-info">v1.0.0 · Windows / macOS</p>
   </section>
 
   <!-- AdSense -->
@@ -270,6 +270,13 @@
         <a href="https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.0-viewer/OndamViewer_1.0.0_x64-setup.exe" class="btn btn-viewer" data-i18n="viewer.btn_download_exe">설치파일 다운로드 (.exe)</a>
         <p class="download-count" id="win-count"></p>
       </div>
+      <div class="download-card viewer-active">
+        <div class="os-icon">🍎</div>
+        <h3>macOS</h3>
+        <p class="os-desc">macOS 12+ (Apple Silicon)</p>
+        <a href="https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.0-viewer/OndamViewer_1.0.0_aarch64.dmg" class="btn btn-viewer" data-i18n="viewer.btn_download_dmg">설치파일 다운로드 (.dmg)</a>
+        <p class="download-count" id="mac-count"></p>
+      </div>
     </div>
     <p class="version-info">v1.0.0</p>
   </section>
@@ -343,7 +350,7 @@
   <script>
     var PAGE_LANG = {
       ko: {
-        'viewer.badge': 'Windows 완전 무료',
+        'viewer.badge': 'Windows · macOS 완전 무료',
         'viewer.title': '<span class="green">가볍고 빠른</span> 이미지 뷰어',
         'viewer.desc': 'JPG, PNG, GIF, WebP, AVIF 등 다양한 이미지 포맷을 지원.<br>인쇄, 회전, 확대, 영역 선택 저장까지. <strong>완전 무료</strong>',
         'viewer.btn_download': '무료 다운로드',
@@ -390,7 +397,7 @@
         'viewer.btn_download_exe': '설치파일 다운로드 (.exe)'
       },
       en: {
-        'viewer.badge': 'Free for Windows',
+        'viewer.badge': 'Free for Windows & macOS',
         'viewer.title': '<span class="green">Light & Fast</span> Image Viewer',
         'viewer.desc': 'Supports JPG, PNG, GIF, WebP, AVIF and more.<br>Print, rotate, zoom, crop & save. Completely <strong>free</strong>.',
         'viewer.btn_download': 'Free Download',
@@ -442,7 +449,9 @@
   <script>
     fetchDownloadCounts('ondamsoft/ondamsoft.github.io', function(win, mac) {
       var wEl = document.getElementById('win-count');
+      var mEl = document.getElementById('mac-count');
       if (wEl && win > 0) wEl.innerHTML = '<strong>' + win.toLocaleString() + '</strong> downloads';
+      if (mEl && mac > 0) mEl.innerHTML = '<strong>' + mac.toLocaleString() + '</strong> downloads';
     }, 'OndamViewer');
   </script>
 
