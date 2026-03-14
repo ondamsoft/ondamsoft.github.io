@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OndamSoft - 온담소프트 | 무료 데스크톱 소프트웨어</title>
-  <meta name="description" content="OndamSoft - 빠르고 안전한 무료 데스크톱 소프트웨어. OndamZip 압축 프로그램, OndamPDF PDF 편집기.">
+  <meta name="description" content="OndamSoft - 빠르고 안전한 무료 데스크톱 소프트웨어. OndamZip 압축, OndamPDF PDF 편집, OndamViewer 이미지 뷰어.">
   <meta property="og:title" content="OndamSoft - 무료 데스크톱 소프트웨어">
-  <meta property="og:description" content="OndamZip 압축 프로그램, OndamPDF PDF 편집기. Windows, macOS 무료.">
+  <meta property="og:description" content="OndamZip 압축, OndamPDF PDF 편집, OndamViewer 이미지 뷰어. Windows, macOS 무료.">
   <meta property="og:url" content="https://ondamsoft.com/">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://ondamsoft.com/logo.png">
@@ -56,7 +56,7 @@
   <section class="hero">
     <div class="hero-badge" data-i18n="home.badge">Windows · macOS 완전 무료</div>
     <h1 data-i18n-html="home.title">빠르고 안전한<br>데스크톱 소프트웨어</h1>
-    <p data-i18n-html="home.desc">압축부터 PDF 편집까지, 필요한 도구를 무료로 제공합니다.<br>광고 없는 깔끔한 소프트웨어, <strong>OndamSoft</strong></p>
+    <p data-i18n-html="home.desc">압축, PDF 편집, 이미지 뷰어까지 필요한 도구를 무료로 제공합니다.<br>광고 없는 깔끔한 소프트웨어, <strong>OndamSoft</strong></p>
     <div class="hero-buttons">
       <a href="#products" class="btn btn-primary">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
@@ -102,6 +102,22 @@
         </div>
         <p class="version-info">v1.0.9 · Windows / macOS</p>
         <p class="download-count" id="pdf-total-count"></p>
+      </div>
+
+      <!-- OndamViewer -->
+      <div class="product-card viewer-theme">
+        <div class="product-icon">🖼️</div>
+        <h3>OndamViewer</h3>
+        <p class="product-desc" data-i18n="home.viewer_desc">가볍고 빠른 이미지 뷰어. JPG, PNG, GIF, WebP, AVIF 등 지원. 인쇄, 영역 저장, EXIF 정보.</p>
+        <div class="product-tags">
+          <span>JPG</span><span>PNG</span><span>GIF</span><span>WebP</span><span>AVIF</span><span>BMP</span>
+        </div>
+        <div class="product-buttons">
+          <a href="/ondamviewer/" class="btn btn-viewer" data-i18n="home.detail">자세히 보기</a>
+          <a href="/ondamviewer/#download" class="btn btn-secondary" data-i18n="home.btn_download">무료 다운로드</a>
+        </div>
+        <p class="version-info">v1.0.0 · Windows</p>
+        <p class="download-count" id="viewer-total-count"></p>
       </div>
 
     </div>
@@ -196,6 +212,7 @@
       <div class="footer-links">
         <a href="/ondamzip/">OndamZip</a>
         <a href="/ondampdf/">OndamPDF</a>
+        <a href="/ondamviewer/">OndamViewer</a>
         <a href="/blog/" data-i18n="nav.blog">블로그</a>
         <a href="/developer.html" data-i18n="nav.developer">개발자</a>
         <a href="#donate" data-i18n="nav.donate">후원</a>
@@ -212,13 +229,14 @@
       ko: {
         'home.badge': 'Windows · macOS 완전 무료',
         'home.title': '빠르고 안전한<br>데스크톱 소프트웨어',
-        'home.desc': '압축부터 PDF 편집까지, 필요한 도구를 무료로 제공합니다.<br>광고 없는 깔끔한 소프트웨어, <strong>OndamSoft</strong>',
+        'home.desc': '압축, PDF 편집, 이미지 뷰어까지 필요한 도구를 무료로 제공합니다.<br>광고 없는 깔끔한 소프트웨어, <strong>OndamSoft</strong>',
         'home.btn_download': '무료 다운로드',
         'home.btn_blog': '블로그 보기',
         'home.products_title': '제품 소개',
         'home.products_subtitle': '모든 제품은 개인/기업/기관 무료입니다',
         'home.zip_desc': '초고속 압축/해제 프로그램. ZIP, 7Z, RAR 등 10가지 포맷, AES-256 암호화, 분할 압축 지원.',
         'home.pdf_desc': '무료 PDF 뷰어/편집기. 병합, 분할, 회전, 워터마크, 암호 설정, 소책자 인쇄까지.',
+        'home.viewer_desc': '가볍고 빠른 이미지 뷰어. JPG, PNG, GIF, WebP, AVIF 등 지원. 인쇄, 영역 저장, EXIF 정보.',
         'home.detail': '자세히 보기',
         'home.blog_title': '블로그',
         'home.blog_subtitle': '압축, PDF, 개발 이야기',
@@ -227,13 +245,14 @@
       en: {
         'home.badge': 'Free for Windows & macOS',
         'home.title': 'Fast & Secure<br>Desktop Software',
-        'home.desc': 'From compression to PDF editing, all the tools you need — for free.<br>Clean software, no ads. <strong>OndamSoft</strong>',
+        'home.desc': 'Compression, PDF editing, image viewer — all the tools you need, for free.<br>Clean software, no ads. <strong>OndamSoft</strong>',
         'home.btn_download': 'Free Download',
         'home.btn_blog': 'Visit Blog',
         'home.products_title': 'Our Products',
         'home.products_subtitle': 'Free for individuals, businesses, and institutions',
         'home.zip_desc': 'Ultra-fast compression tool. 10 formats including ZIP, 7Z, RAR. AES-256 encryption, split archives.',
         'home.pdf_desc': 'Free PDF viewer/editor. Merge, split, rotate, watermark, encryption, booklet printing.',
+        'home.viewer_desc': 'Light & fast image viewer. Supports JPG, PNG, GIF, WebP, AVIF. Print, crop & save, EXIF data.',
         'home.detail': 'Learn More',
         'home.blog_title': 'Blog',
         'home.blog_subtitle': 'Compression, PDF, and development stories',
@@ -253,6 +272,11 @@
       var total = win + mac;
       if (el && total > 0) el.innerHTML = '총 <strong>' + total.toLocaleString() + '</strong> downloads';
     }, 'OndamPDF');
+    fetchDownloadCounts('ondamsoft/ondamsoft.github.io', function(win, mac) {
+      var el = document.getElementById('viewer-total-count');
+      var total = win + mac;
+      if (el && total > 0) el.innerHTML = '총 <strong>' + total.toLocaleString() + '</strong> downloads';
+    }, 'OndamViewer');
   </script>
 
 </body>

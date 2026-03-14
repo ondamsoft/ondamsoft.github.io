@@ -246,6 +246,17 @@ nav a.active { color: #3b82f6; font-weight: 600; }
 .product-card.pdf-theme h3 { color: #7c3aed; }
 .product-card.pdf-theme .product-tags span { background: #f5f3ff; color: #7c3aed; }
 
+/* Viewer theme */
+.product-card.viewer-theme { border-top: 4px solid #10b981; }
+.product-card.viewer-theme h3 { color: #10b981; }
+.product-card.viewer-theme .product-tags span { background: #ecfdf5; color: #10b981; }
+.btn-viewer {
+  background: #10b981;
+  color: white;
+  box-shadow: 0 4px 14px rgba(16,185,129,0.35);
+}
+.btn-viewer:hover { background: #059669; transform: translateY(-1px); }
+
 /* === Feature Cards === */
 .feature-grid {
   display: grid;
