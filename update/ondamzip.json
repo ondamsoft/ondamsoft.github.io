@@ -1,11 +1,11 @@
 {
-  "version": "1.0.22",
-  "notes": "Shell Extension DLL로 컨텍스트 메뉴 완전 개선 (EXE 파일 포함 모든 파일 지원)",
+  "version": "1.0.23",
+  "notes": "Windows 11 1차 컨텍스트 메뉴 지원 (MSIX Sparse Package + IExplorerCommand)",
   "date": "2026-03-14",
   "windows": {
-    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.22/OndamZip_1.0.22_x64-setup.exe"
+    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.23/OndamZip_1.0.23_x64-setup.exe"
   },
   "macos": {
-    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.22/OndamZip_1.0.22_aarch64.dmg"
+    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.23/OndamZip_1.0.23_aarch64.dmg"
   }
 }

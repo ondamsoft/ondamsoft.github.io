@@ -1,11 +1,11 @@
 {
-  "version": "1.0.8",
-  "notes": "자동 업데이트 배너 개선 (프로그레스바 + 자동 설치)",
-  "date": "2026-03-13",
+  "version": "1.0.9",
+  "notes": "Windows 11 1차 컨텍스트 메뉴 지원 (OndamPDF로 열기, PDF 병합)",
+  "date": "2026-03-14",
   "windows": {
-    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.8/OndamPDF_1.0.8_x64-setup.exe"
+    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.9/OndamPDF_1.0.9_x64-setup.exe"
   },
   "macos": {
-    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.8/OndamPDF_1.0.8_aarch64.dmg"
+    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.9/OndamPDF_1.0.9_aarch64.dmg"
   }
 }
