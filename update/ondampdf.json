@@ -1,11 +1,11 @@
 {
-  "version": "1.0.9",
-  "notes": "Windows 11 1차 컨텍스트 메뉴 지원 (OndamPDF로 열기, PDF 병합)",
-  "date": "2026-03-14",
+  "version": "1.0.10",
+  "notes": "온담 패밀리 캐릭터 브랜딩 (고양이 마스코트, 개발자 탭 리뉴얼, PDF 확장자 아이콘)",
+  "date": "2026-03-15",
   "windows": {
-    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.9/OndamPDF_1.0.9_x64-setup.exe"
+    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.10/OndamPDF_1.0.10_x64-setup.exe"
   },
   "macos": {
-    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.9/OndamPDF_1.0.9_aarch64.dmg"
+    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.10/OndamPDF_1.0.10_aarch64.dmg"
   }
 }
