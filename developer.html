@@ -20,17 +20,43 @@
     .dev-cats {
       display: flex;
       justify-content: center;
-      gap: 12px;
-      margin: 0 auto 1rem;
+      gap: 24px;
+      margin: 0 auto 1.5rem;
+      flex-wrap: wrap;
     }
-    .dev-cats img {
-      width: 72px; height: 72px;
+    .dev-cats-group {
+      max-width: 420px;
+      width: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+      transition: transform 0.3s;
+    }
+    .dev-cats-group:hover {
+      transform: scale(1.02);
+    }
+    .dev-cats-group img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .dev-cats-individual {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 0.5rem;
+    }
+    .dev-cats-individual > div {
+      text-align: center;
+    }
+    .dev-cats-individual img {
+      width: 64px; height: 64px;
       border-radius: 50%;
       object-fit: cover;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       transition: transform 0.2s;
     }
-    .dev-cats img:hover {
+    .dev-cats-individual img:hover {
       transform: scale(1.1);
     }
     .dev-cats .cat-label {
@@ -149,9 +175,14 @@
 
   <section class="dev-hero">
     <div class="dev-cats">
-      <div><img src="/images/characters/ondami.jpg" alt="온담이"><div class="cat-label">온담이</div></div>
-      <div><img src="/images/characters/ondoki.jpg" alt="온독이"><div class="cat-label">온독이</div></div>
-      <div><img src="/images/characters/onnuni.jpg" alt="온눈이"><div class="cat-label">온눈이</div></div>
+      <div class="dev-cats-group">
+        <img src="/images/characters/3all2.png" alt="온담 패밀리 - 온담이, 온독이, 온눈이">
+      </div>
+      <div class="dev-cats-individual">
+        <div><img src="/images/characters/ondami.jpg" alt="온담이"><div class="cat-label">온담이</div></div>
+        <div><img src="/images/characters/ondoki.jpg" alt="온독이"><div class="cat-label">온독이</div></div>
+        <div><img src="/images/characters/onnuni.jpg" alt="온눈이"><div class="cat-label">온눈이</div></div>
+      </div>
     </div>
     <div class="dev-brand">OndamSoft<small>온담소프트</small></div>
     <div class="dev-name" data-i18n="dev.name">정재훈</div>
