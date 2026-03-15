@@ -1,11 +1,11 @@
 {
-  "version": "1.0.25",
+  "version": "1.0.26",
   "notes": "온담 패밀리 캐릭터 브랜딩 (고양이 마스코트 3종, 개발자 탭 리뉴얼, 확장자 아이콘)",
   "date": "2026-03-15",
   "windows": {
-    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.25/OndamZip_1.0.25_x64-setup.exe"
+    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.26/OndamZip_1.0.26_x64-setup.exe"
   },
   "macos": {
-    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.25/OndamZip_1.0.25_aarch64.dmg"
+    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.26/OndamZip_1.0.26_aarch64.dmg"
   }
 }
