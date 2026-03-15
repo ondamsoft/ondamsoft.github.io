@@ -1,0 +1,11 @@
+{
+  "version": "1.0.0",
+  "notes": "OndamCapture 최초 릴리즈. 전체 화면, 영역 선택, 윈도우 캡처. 멀티 모니터 지원, 글로벌 단축키.",
+  "date": "2026-03-15",
+  "windows": {
+    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.0-capture/OndamCapture_1.0.0_x64-setup.exe"
+  },
+  "macos": {
+    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.0-capture/OndamCapture_1.0.0_aarch64.dmg"
+  }
+}

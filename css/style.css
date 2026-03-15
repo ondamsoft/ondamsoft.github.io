@@ -176,9 +176,9 @@ nav a.active { color: #3b82f6; font-weight: 600; }
 }
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  max-width: 1100px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  max-width: 1200px;
   margin: 0 auto;
 }
 .product-card {
@@ -262,6 +262,17 @@ nav a.active { color: #3b82f6; font-weight: 600; }
   box-shadow: 0 4px 14px rgba(16,185,129,0.35);
 }
 .btn-viewer:hover { background: #059669; transform: translateY(-1px); }
+
+/* Capture theme */
+.product-card.capture-theme { border-top: 4px solid #f59e0b; }
+.product-card.capture-theme h3 { color: #f59e0b; }
+.product-card.capture-theme .product-tags span { background: #fffbeb; color: #d97706; }
+.btn-capture {
+  background: #f59e0b;
+  color: white;
+  box-shadow: 0 4px 14px rgba(245,158,11,0.35);
+}
+.btn-capture:hover { background: #d97706; transform: translateY(-1px); }
 
 /* === Feature Cards === */
 .feature-grid {
@@ -784,7 +795,7 @@ footer a:hover { text-decoration: underline; }
     width: 100%;
   }
   .feature-grid { grid-template-columns: 1fr; }
-  .product-grid { grid-template-columns: 1fr !important; }
+  .product-grid { grid-template-columns: repeat(2, 1fr) !important; }
   .compare-table { font-size: 12px; }
   .compare-table th, .compare-table td { padding: 8px 6px; }
   .article-wrap h1 { font-size: 1.5rem; }
