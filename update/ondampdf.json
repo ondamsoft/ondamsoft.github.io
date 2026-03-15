@@ -1,11 +1,11 @@
 {
-  "version": "1.0.11",
-  "notes": "온담 패밀리 캐릭터 브랜딩 (고양이 마스코트, 개발자 탭 리뉴얼, PDF 확장자 아이콘)",
+  "version": "1.0.12",
+  "notes": "개발자 소개 업데이트 (온캡이 추가, 나눔 약속 수정)",
   "date": "2026-03-15",
   "windows": {
-    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.11/OndamPDF_1.0.11_x64-setup.exe"
+    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.12/OndamPDF_1.0.12_x64-setup.exe"
   },
   "macos": {
-    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.11/OndamPDF_1.0.11_aarch64.dmg"
+    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.12/OndamPDF_1.0.12_aarch64.dmg"
   }
 }
