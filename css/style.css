@@ -233,13 +233,16 @@ nav a.active { color: #3b82f6; font-weight: 600; }
 }
 .product-card .product-buttons {
   display: flex;
-  gap: 10px;
-  justify-content: center;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
 }
 .product-card .product-buttons .btn {
   padding: 10px 20px;
-  font-size: 14px;
+  font-size: 13px;
+  white-space: nowrap;
+  width: 100%;
+  justify-content: center;
 }
 
 /* Zip theme */
