@@ -53,17 +53,17 @@
   </header>
 
   <div class="article-wrap">
-    <div class="breadcrumb">
+    <div class="breadcrumb" data-i18n-html="post.zipformat.breadcrumb">
       <a href="/">OndamSoft</a> &gt; <a href="/blog/">블로그</a> &gt; ZIP vs 7Z vs ZST: 압축 포맷 비교 가이드
     </div>
 
-    <h1>ZIP vs 7Z vs ZST: 압축 포맷 비교 가이드</h1>
-    <div class="post-meta">2025.08.22 · <span class="blog-category cat-compress" style="font-size:11px;padding:2px 8px;border-radius:4px;">압축</span> · 읽는 시간 약 7분</div>
+    <h1 data-i18n="post.zipformat.title">ZIP vs 7Z vs ZST: 압축 포맷 비교 가이드</h1>
+    <div class="post-meta" data-i18n-html="post.zipformat.meta">2025.08.22 · <span class="blog-category cat-compress" style="font-size:11px;padding:2px 8px;border-radius:4px;">압축</span> · 읽는 시간 약 7분</div>
 
     <div class="article-content">
-      <p>파일 압축은 컴퓨터 사용자라면 누구나 접하는 작업입니다. 그런데 막상 압축하려고 보면 ZIP, 7Z, RAR, TAR.GZ, ZST 등 포맷이 너무 많아서 어떤 걸 써야 할지 고민이 됩니다. 각 포맷이 왜 존재하는지, 어떤 상황에 어떤 포맷이 최선인지 실용적인 관점에서 비교해 보겠습니다.</p>
+      <p data-i18n="post.zipformat.intro">파일 압축은 컴퓨터 사용자라면 누구나 접하는 작업입니다. 그런데 막상 압축하려고 보면 ZIP, 7Z, RAR, TAR.GZ, ZST 등 포맷이 너무 많아서 어떤 걸 써야 할지 고민이 됩니다. 각 포맷이 왜 존재하는지, 어떤 상황에 어떤 포맷이 최선인지 실용적인 관점에서 비교해 보겠습니다.</p>
 
-      <h2>압축 포맷이 왜 이렇게 많을까?</h2>
+      <h2 data-i18n="post.zipformat.h2_why_many">압축 포맷이 왜 이렇게 많을까?</h2>
 
       <!-- AdSense -->
       <div class="ad-container">
@@ -71,68 +71,68 @@
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
       </div>
 
-      <p>압축 기술은 1980년대 LZW 알고리즘에서 시작해 40년 넘게 발전해 왔습니다. 새로운 알고리즘이 등장할 때마다 더 높은 압축률, 더 빠른 속도를 목표로 새로운 포맷이 만들어졌습니다. 하지만 이미 널리 퍼진 포맷을 하루아침에 교체할 수는 없기에, 오래된 포맷과 새로운 포맷이 공존하게 된 것입니다.</p>
+      <p data-i18n="post.zipformat.why_many_p1">압축 기술은 1980년대 LZW 알고리즘에서 시작해 40년 넘게 발전해 왔습니다. 새로운 알고리즘이 등장할 때마다 더 높은 압축률, 더 빠른 속도를 목표로 새로운 포맷이 만들어졌습니다. 하지만 이미 널리 퍼진 포맷을 하루아침에 교체할 수는 없기에, 오래된 포맷과 새로운 포맷이 공존하게 된 것입니다.</p>
 
-      <p>핵심은 <strong>압축률과 속도 사이의 트레이드오프</strong>입니다. 같은 파일이라도 시간을 더 들이면 더 작게 만들 수 있고, 빠르게 압축하면 용량이 좀 더 커집니다. 어디에 중점을 두느냐에 따라 최적의 포맷이 달라집니다.</p>
+      <p data-i18n-html="post.zipformat.why_many_p2">핵심은 <strong>압축률과 속도 사이의 트레이드오프</strong>입니다. 같은 파일이라도 시간을 더 들이면 더 작게 만들 수 있고, 빠르게 압축하면 용량이 좀 더 커집니다. 어디에 중점을 두느냐에 따라 최적의 포맷이 달라집니다.</p>
 
-      <h2>ZIP: 호환성의 왕</h2>
+      <h2 data-i18n="post.zipformat.h2_zip">ZIP: 호환성의 왕</h2>
 
-      <h3>역사와 특징</h3>
-      <p>ZIP은 1989년 PKZIP에서 시작된, 가장 오래되고 가장 널리 쓰이는 압축 포맷입니다. Windows, macOS, Linux 어디서든 운영체제 자체에서 ZIP 파일을 열 수 있습니다. 별도의 프로그램을 설치하지 않아도 된다는 것이 ZIP의 가장 큰 장점입니다.</p>
+      <h3 data-i18n="post.zipformat.h3_zip_history">역사와 특징</h3>
+      <p data-i18n="post.zipformat.zip_history_p">ZIP은 1989년 PKZIP에서 시작된, 가장 오래되고 가장 널리 쓰이는 압축 포맷입니다. Windows, macOS, Linux 어디서든 운영체제 자체에서 ZIP 파일을 열 수 있습니다. 별도의 프로그램을 설치하지 않아도 된다는 것이 ZIP의 가장 큰 장점입니다.</p>
 
-      <h3>압축 알고리즘</h3>
-      <p>기본 알고리즘은 <strong>Deflate</strong>입니다. 1990년대에 만들어진 알고리즘이라 현대 기준으로 압축률이 뛰어나다고 보기는 어렵습니다. 하지만 압축과 해제 속도가 빠르고, 모든 프로그램에서 지원한다는 안정성이 있습니다.</p>
+      <h3 data-i18n="post.zipformat.h3_zip_algo">압축 알고리즘</h3>
+      <p data-i18n-html="post.zipformat.zip_algo_p">기본 알고리즘은 <strong>Deflate</strong>입니다. 1990년대에 만들어진 알고리즘이라 현대 기준으로 압축률이 뛰어나다고 보기는 어렵습니다. 하지만 압축과 해제 속도가 빠르고, 모든 프로그램에서 지원한다는 안정성이 있습니다.</p>
 
-      <h3>장단점</h3>
+      <h3 data-i18n="post.zipformat.h3_zip_pros_cons">장단점</h3>
       <ul>
-        <li><strong>장점:</strong> 어디서든 열 수 있음, AES-256 암호화 지원, 각 파일을 개별 압축하므로 일부 파일만 추출 가능</li>
-        <li><strong>단점:</strong> 압축률이 상대적으로 낮음, 4GB 이상 파일은 ZIP64 필요, 유니코드 파일명 호환성 문제가 가끔 발생</li>
+        <li data-i18n-html="post.zipformat.zip_pros"><strong>장점:</strong> 어디서든 열 수 있음, AES-256 암호화 지원, 각 파일을 개별 압축하므로 일부 파일만 추출 가능</li>
+        <li data-i18n-html="post.zipformat.zip_cons"><strong>단점:</strong> 압축률이 상대적으로 낮음, 4GB 이상 파일은 ZIP64 필요, 유니코드 파일명 호환성 문제가 가끔 발생</li>
       </ul>
 
-      <blockquote>ZIP이 최선인 경우: 이메일 첨부, 다른 사람에게 파일 전달, 누구나 열 수 있어야 하는 상황</blockquote>
+      <blockquote data-i18n="post.zipformat.zip_best">ZIP이 최선인 경우: 이메일 첨부, 다른 사람에게 파일 전달, 누구나 열 수 있어야 하는 상황</blockquote>
 
-      <h2>7Z: 압축률의 끝판왕</h2>
+      <h2 data-i18n="post.zipformat.h2_7z">7Z: 압축률의 끝판왕</h2>
 
-      <h3>역사와 특징</h3>
-      <p>7Z는 Igor Pavlov가 만든 7-Zip 프로그램의 네이티브 포맷입니다. 1999년에 처음 등장했으며, 오픈소스(LGPL)로 누구나 자유롭게 사용할 수 있습니다. ZIP보다 확실히 높은 압축률을 제공하며, 특히 대용량 파일에서 차이가 두드러집니다.</p>
+      <h3 data-i18n="post.zipformat.h3_7z_history">역사와 특징</h3>
+      <p data-i18n="post.zipformat.7z_history_p">7Z는 Igor Pavlov가 만든 7-Zip 프로그램의 네이티브 포맷입니다. 1999년에 처음 등장했으며, 오픈소스(LGPL)로 누구나 자유롭게 사용할 수 있습니다. ZIP보다 확실히 높은 압축률을 제공하며, 특히 대용량 파일에서 차이가 두드러집니다.</p>
 
-      <h3>압축 알고리즘</h3>
-      <p>기본 알고리즘은 <strong>LZMA2</strong>입니다. LZMA(Lempel-Ziv-Markov chain Algorithm)는 사전 기반 압축에 범위 부호화를 결합한 방식으로, Deflate보다 훨씬 높은 압축률을 달성합니다. 다만 압축 시 메모리를 많이 사용하고, 압축 속도가 느린 편입니다.</p>
+      <h3 data-i18n="post.zipformat.h3_7z_algo">압축 알고리즘</h3>
+      <p data-i18n-html="post.zipformat.7z_algo_p">기본 알고리즘은 <strong>LZMA2</strong>입니다. LZMA(Lempel-Ziv-Markov chain Algorithm)는 사전 기반 압축에 범위 부호화를 결합한 방식으로, Deflate보다 훨씬 높은 압축률을 달성합니다. 다만 압축 시 메모리를 많이 사용하고, 압축 속도가 느린 편입니다.</p>
 
-      <h3>장단점</h3>
+      <h3 data-i18n="post.zipformat.h3_7z_pros_cons">장단점</h3>
       <ul>
-        <li><strong>장점:</strong> 최고 수준의 압축률, 멀티스레드 지원, AES-256 암호화(파일명까지 암호화 가능), 분할 압축 지원</li>
-        <li><strong>단점:</strong> OS 기본 지원 없음(별도 프로그램 필요), 압축 속도가 느림, 메모리 사용량이 높음, 에러 복구가 어려움</li>
+        <li data-i18n-html="post.zipformat.7z_pros"><strong>장점:</strong> 최고 수준의 압축률, 멀티스레드 지원, AES-256 암호화(파일명까지 암호화 가능), 분할 압축 지원</li>
+        <li data-i18n-html="post.zipformat.7z_cons"><strong>단점:</strong> OS 기본 지원 없음(별도 프로그램 필요), 압축 속도가 느림, 메모리 사용량이 높음, 에러 복구가 어려움</li>
       </ul>
 
-      <p>7Z의 "솔리드 압축" 기능은 여러 파일을 하나의 데이터 스트림으로 묶어 압축합니다. 비슷한 파일이 많을수록 압축 효과가 극대화되지만, 한 파일만 꺼내려 해도 앞의 파일을 모두 디코딩해야 하는 단점이 있습니다.</p>
+      <p data-i18n="post.zipformat.7z_solid_p">7Z의 "솔리드 압축" 기능은 여러 파일을 하나의 데이터 스트림으로 묶어 압축합니다. 비슷한 파일이 많을수록 압축 효과가 극대화되지만, 한 파일만 꺼내려 해도 앞의 파일을 모두 디코딩해야 하는 단점이 있습니다.</p>
 
-      <blockquote>7Z가 최선인 경우: 저장 공간 절약이 중요한 백업, 대용량 프로젝트 아카이빙, 보안이 중요한 문서(파일명 암호화)</blockquote>
+      <blockquote data-i18n="post.zipformat.7z_best">7Z가 최선인 경우: 저장 공간 절약이 중요한 백업, 대용량 프로젝트 아카이빙, 보안이 중요한 문서(파일명 암호화)</blockquote>
 
-      <h2>ZST (Zstandard): 속도와 압축률의 균형</h2>
+      <h2 data-i18n="post.zipformat.h2_zst">ZST (Zstandard): 속도와 압축률의 균형</h2>
 
-      <h3>역사와 특징</h3>
-      <p>Zstandard(zstd)는 Facebook(현 Meta)의 Yann Collet이 2015년에 개발한 비교적 새로운 압축 알고리즘입니다. BSD 라이선스의 오픈소스이며, 리눅스 커널에도 채택될 만큼 기술적으로 인정받았습니다. 핵심 목표는 "Deflate(ZIP) 수준의 압축률을 훨씬 빠른 속도로" 달성하는 것입니다.</p>
+      <h3 data-i18n="post.zipformat.h3_zst_history">역사와 특징</h3>
+      <p data-i18n="post.zipformat.zst_history_p">Zstandard(zstd)는 Facebook(현 Meta)의 Yann Collet이 2015년에 개발한 비교적 새로운 압축 알고리즘입니다. BSD 라이선스의 오픈소스이며, 리눅스 커널에도 채택될 만큼 기술적으로 인정받았습니다. 핵심 목표는 "Deflate(ZIP) 수준의 압축률을 훨씬 빠른 속도로" 달성하는 것입니다.</p>
 
-      <h3>압축 알고리즘</h3>
-      <p>zstd는 유한상태 엔트로피(FSE) 부호화와 LZ77 변형을 결합한 알고리즘입니다. 압축 레벨을 1~22까지 세밀하게 조절할 수 있어, 낮은 레벨에서는 LZ4에 근접하는 속도를, 높은 레벨에서는 LZMA에 가까운 압축률을 보여줍니다.</p>
+      <h3 data-i18n="post.zipformat.h3_zst_algo">압축 알고리즘</h3>
+      <p data-i18n="post.zipformat.zst_algo_p">zstd는 유한상태 엔트로피(FSE) 부호화와 LZ77 변형을 결합한 알고리즘입니다. 압축 레벨을 1~22까지 세밀하게 조절할 수 있어, 낮은 레벨에서는 LZ4에 근접하는 속도를, 높은 레벨에서는 LZMA에 가까운 압축률을 보여줍니다.</p>
 
-      <h3>장단점</h3>
+      <h3 data-i18n="post.zipformat.h3_zst_pros_cons">장단점</h3>
       <ul>
-        <li><strong>장점:</strong> 압축/해제 모두 빠름(특히 해제 속도가 매우 빠름), 멀티스레드 네이티브 지원, 사전(dictionary) 압축으로 작은 파일도 효율적, 스트리밍 압축 가능</li>
-        <li><strong>단점:</strong> 일반 사용자에게 아직 낯선 포맷, Windows 기본 지원 없음, 단일 파일 압축만 가능(아카이브 기능은 tar와 조합 필요), 암호화 미지원</li>
+        <li data-i18n-html="post.zipformat.zst_pros"><strong>장점:</strong> 압축/해제 모두 빠름(특히 해제 속도가 매우 빠름), 멀티스레드 네이티브 지원, 사전(dictionary) 압축으로 작은 파일도 효율적, 스트리밍 압축 가능</li>
+        <li data-i18n-html="post.zipformat.zst_cons"><strong>단점:</strong> 일반 사용자에게 아직 낯선 포맷, Windows 기본 지원 없음, 단일 파일 압축만 가능(아카이브 기능은 tar와 조합 필요), 암호화 미지원</li>
       </ul>
 
-      <p>zstd의 가장 큰 특징은 <strong>해제 속도</strong>입니다. 어떤 압축 레벨로 압축했든 해제 속도는 거의 일정하게 빠릅니다. 이 특성 덕분에 게임 에셋 배포, 패키지 매니저(apt, pacman 등), 데이터베이스 백업 등 실시간 처리가 중요한 분야에서 빠르게 보급되고 있습니다.</p>
+      <p data-i18n-html="post.zipformat.zst_speed_p">zstd의 가장 큰 특징은 <strong>해제 속도</strong>입니다. 어떤 압축 레벨로 압축했든 해제 속도는 거의 일정하게 빠릅니다. 이 특성 덕분에 게임 에셋 배포, 패키지 매니저(apt, pacman 등), 데이터베이스 백업 등 실시간 처리가 중요한 분야에서 빠르게 보급되고 있습니다.</p>
 
-      <blockquote>ZST가 최선인 경우: 대용량 로그 파일 압축, 서버 백업, 빠른 압축/해제가 필요한 개발 환경, 실시간 데이터 전송</blockquote>
+      <blockquote data-i18n="post.zipformat.zst_best">ZST가 최선인 경우: 대용량 로그 파일 압축, 서버 백업, 빠른 압축/해제가 필요한 개발 환경, 실시간 데이터 전송</blockquote>
 
-      <h2>세 포맷 비교 표</h2>
+      <h2 data-i18n="post.zipformat.h2_comparison">세 포맷 비교 표</h2>
 
       <table>
         <thead>
           <tr>
-            <th>항목</th>
+            <th data-i18n="post.zipformat.th_category">항목</th>
             <th>ZIP</th>
             <th>7Z</th>
             <th>ZST</th>
@@ -140,132 +140,132 @@
         </thead>
         <tbody>
           <tr>
-            <td>압축 알고리즘</td>
+            <td data-i18n="post.zipformat.td_algo">압축 알고리즘</td>
             <td>Deflate</td>
             <td>LZMA2</td>
             <td>Zstandard</td>
           </tr>
           <tr>
-            <td>압축률</td>
-            <td>보통</td>
-            <td>최고</td>
-            <td>좋음 (ZIP보다 우수)</td>
+            <td data-i18n="post.zipformat.td_ratio">압축률</td>
+            <td data-i18n="post.zipformat.td_ratio_zip">보통</td>
+            <td data-i18n="post.zipformat.td_ratio_7z">최고</td>
+            <td data-i18n="post.zipformat.td_ratio_zst">좋음 (ZIP보다 우수)</td>
           </tr>
           <tr>
-            <td>압축 속도</td>
-            <td>빠름</td>
-            <td>느림</td>
-            <td>매우 빠름</td>
+            <td data-i18n="post.zipformat.td_comp_speed">압축 속도</td>
+            <td data-i18n="post.zipformat.td_fast">빠름</td>
+            <td data-i18n="post.zipformat.td_slow">느림</td>
+            <td data-i18n="post.zipformat.td_very_fast">매우 빠름</td>
           </tr>
           <tr>
-            <td>해제 속도</td>
-            <td>빠름</td>
-            <td>보통</td>
-            <td>매우 빠름</td>
+            <td data-i18n="post.zipformat.td_decomp_speed">해제 속도</td>
+            <td data-i18n="post.zipformat.td_fast">빠름</td>
+            <td data-i18n="post.zipformat.td_moderate">보통</td>
+            <td data-i18n="post.zipformat.td_very_fast">매우 빠름</td>
           </tr>
           <tr>
-            <td>OS 기본 지원</td>
+            <td data-i18n="post.zipformat.td_os_support">OS 기본 지원</td>
             <td>Windows/macOS/Linux</td>
-            <td>없음</td>
-            <td>Linux (일부)</td>
+            <td data-i18n="post.zipformat.td_none">없음</td>
+            <td data-i18n="post.zipformat.td_linux_partial">Linux (일부)</td>
           </tr>
           <tr>
-            <td>멀티스레드</td>
-            <td>프로그램에 따라 다름</td>
-            <td>지원</td>
-            <td>네이티브 지원</td>
+            <td data-i18n="post.zipformat.td_multithread">멀티스레드</td>
+            <td data-i18n="post.zipformat.td_depends">프로그램에 따라 다름</td>
+            <td data-i18n="post.zipformat.td_supported">지원</td>
+            <td data-i18n="post.zipformat.td_native">네이티브 지원</td>
           </tr>
           <tr>
-            <td>암호화</td>
+            <td data-i18n="post.zipformat.td_encryption">암호화</td>
             <td>AES-256</td>
-            <td>AES-256 (파일명 포함)</td>
-            <td>미지원</td>
+            <td data-i18n="post.zipformat.td_aes_filename">AES-256 (파일명 포함)</td>
+            <td data-i18n="post.zipformat.td_not_supported">미지원</td>
           </tr>
           <tr>
-            <td>아카이브(다중 파일)</td>
-            <td>지원</td>
-            <td>지원</td>
-            <td>미지원 (tar 조합 필요)</td>
+            <td data-i18n="post.zipformat.td_archive">아카이브(다중 파일)</td>
+            <td data-i18n="post.zipformat.td_supported">지원</td>
+            <td data-i18n="post.zipformat.td_supported">지원</td>
+            <td data-i18n="post.zipformat.td_need_tar">미지원 (tar 조합 필요)</td>
           </tr>
           <tr>
-            <td>분할 압축</td>
-            <td>프로그램에 따라 다름</td>
-            <td>지원</td>
-            <td>미지원</td>
+            <td data-i18n="post.zipformat.td_split">분할 압축</td>
+            <td data-i18n="post.zipformat.td_depends">프로그램에 따라 다름</td>
+            <td data-i18n="post.zipformat.td_supported">지원</td>
+            <td data-i18n="post.zipformat.td_not_supported">미지원</td>
           </tr>
           <tr>
-            <td>적합한 용도</td>
-            <td>파일 공유, 이메일</td>
-            <td>백업, 아카이빙</td>
-            <td>서버, 개발, 실시간</td>
+            <td data-i18n="post.zipformat.td_use_case">적합한 용도</td>
+            <td data-i18n="post.zipformat.td_use_zip">파일 공유, 이메일</td>
+            <td data-i18n="post.zipformat.td_use_7z">백업, 아카이빙</td>
+            <td data-i18n="post.zipformat.td_use_zst">서버, 개발, 실시간</td>
           </tr>
         </tbody>
       </table>
 
-      <h2>실측 비교: 같은 파일로 테스트해 보면?</h2>
+      <h2 data-i18n="post.zipformat.h2_benchmark">실측 비교: 같은 파일로 테스트해 보면?</h2>
 
-      <p>1GB 크기의 텍스트 기반 로그 파일로 테스트한 결과를 참고해 보겠습니다. (결과는 파일 특성에 따라 달라질 수 있습니다.)</p>
+      <p data-i18n="post.zipformat.benchmark_intro">1GB 크기의 텍스트 기반 로그 파일로 테스트한 결과를 참고해 보겠습니다. (결과는 파일 특성에 따라 달라질 수 있습니다.)</p>
 
       <table>
         <thead>
           <tr>
-            <th>포맷</th>
-            <th>압축 후 크기</th>
-            <th>압축 시간</th>
-            <th>해제 시간</th>
+            <th data-i18n="post.zipformat.th_format">포맷</th>
+            <th data-i18n="post.zipformat.th_comp_size">압축 후 크기</th>
+            <th data-i18n="post.zipformat.th_comp_time">압축 시간</th>
+            <th data-i18n="post.zipformat.th_decomp_time">해제 시간</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>ZIP (Deflate)</td>
-            <td>약 120MB</td>
-            <td>약 25초</td>
-            <td>약 8초</td>
+            <td data-i18n="post.zipformat.bench_zip_size">약 120MB</td>
+            <td data-i18n="post.zipformat.bench_zip_comp">약 25초</td>
+            <td data-i18n="post.zipformat.bench_zip_decomp">약 8초</td>
           </tr>
           <tr>
             <td>7Z (LZMA2)</td>
-            <td>약 65MB</td>
-            <td>약 90초</td>
-            <td>약 12초</td>
+            <td data-i18n="post.zipformat.bench_7z_size">약 65MB</td>
+            <td data-i18n="post.zipformat.bench_7z_comp">약 90초</td>
+            <td data-i18n="post.zipformat.bench_7z_decomp">약 12초</td>
           </tr>
           <tr>
-            <td>ZST (레벨 3)</td>
-            <td>약 105MB</td>
-            <td>약 5초</td>
-            <td>약 2초</td>
+            <td data-i18n="post.zipformat.bench_zst3_label">ZST (레벨 3)</td>
+            <td data-i18n="post.zipformat.bench_zst3_size">약 105MB</td>
+            <td data-i18n="post.zipformat.bench_zst3_comp">약 5초</td>
+            <td data-i18n="post.zipformat.bench_zst3_decomp">약 2초</td>
           </tr>
           <tr>
-            <td>ZST (레벨 19)</td>
-            <td>약 72MB</td>
-            <td>약 120초</td>
-            <td>약 2초</td>
+            <td data-i18n="post.zipformat.bench_zst19_label">ZST (레벨 19)</td>
+            <td data-i18n="post.zipformat.bench_zst19_size">약 72MB</td>
+            <td data-i18n="post.zipformat.bench_zst19_comp">약 120초</td>
+            <td data-i18n="post.zipformat.bench_zst19_decomp">약 2초</td>
           </tr>
         </tbody>
       </table>
 
-      <p>눈에 띄는 점은 ZST의 해제 속도입니다. 압축 레벨을 19로 높여서 압축 시간은 7Z보다 오래 걸리지만, 해제는 여전히 2초입니다. 한번 압축해두고 여러 번 풀어야 하는 배포용 파일에 매우 유리합니다.</p>
+      <p data-i18n="post.zipformat.benchmark_note">눈에 띄는 점은 ZST의 해제 속도입니다. 압축 레벨을 19로 높여서 압축 시간은 7Z보다 오래 걸리지만, 해제는 여전히 2초입니다. 한번 압축해두고 여러 번 풀어야 하는 배포용 파일에 매우 유리합니다.</p>
 
-      <h2>그 외 알아두면 좋은 포맷들</h2>
+      <h2 data-i18n="post.zipformat.h2_others">그 외 알아두면 좋은 포맷들</h2>
 
       <h3>RAR</h3>
-      <p>WinRAR의 독점 포맷입니다. 압축률은 7Z에 근접하고, 에러 복구(Recovery Record) 기능이 독보적입니다. 하지만 압축하려면 WinRAR 라이선스가 필요하며(해제만 무료), 오픈소스가 아니라는 한계가 있습니다.</p>
+      <p data-i18n="post.zipformat.rar_p">WinRAR의 독점 포맷입니다. 압축률은 7Z에 근접하고, 에러 복구(Recovery Record) 기능이 독보적입니다. 하지만 압축하려면 WinRAR 라이선스가 필요하며(해제만 무료), 오픈소스가 아니라는 한계가 있습니다.</p>
 
       <h3>TAR.GZ / TAR.XZ</h3>
-      <p>Linux/Unix 세계의 표준입니다. TAR로 파일을 하나로 묶고, GZIP이나 XZ로 압축하는 2단계 방식입니다. 파일 권한 정보를 보존하므로 소스코드 배포에 많이 사용됩니다. 최근에는 TAR.ZST 조합도 늘어나는 추세입니다.</p>
+      <p data-i18n="post.zipformat.tar_p">Linux/Unix 세계의 표준입니다. TAR로 파일을 하나로 묶고, GZIP이나 XZ로 압축하는 2단계 방식입니다. 파일 권한 정보를 보존하므로 소스코드 배포에 많이 사용됩니다. 최근에는 TAR.ZST 조합도 늘어나는 추세입니다.</p>
 
-      <h2>결론: 용도별 추천</h2>
+      <h2 data-i18n="post.zipformat.h2_conclusion">결론: 용도별 추천</h2>
 
-      <p>포맷 선택은 결국 "누가 이 파일을 받느냐"와 "무엇이 더 중요한가"에 달려 있습니다.</p>
+      <p data-i18n="post.zipformat.conclusion_intro">포맷 선택은 결국 "누가 이 파일을 받느냐"와 "무엇이 더 중요한가"에 달려 있습니다.</p>
 
       <ul>
-        <li><strong>다른 사람에게 전달:</strong> ZIP이 무난합니다. 받는 사람이 별도 프로그램 없이 열 수 있으니까요.</li>
-        <li><strong>장기 보관/백업:</strong> 7Z가 적합합니다. 한번 압축하면 오래 두는 용도이므로 느린 속도는 문제가 되지 않습니다.</li>
-        <li><strong>개발/서버 환경:</strong> ZST를 추천합니다. 빠른 속도와 적절한 압축률이 생산성을 높여줍니다.</li>
-        <li><strong>보안이 중요:</strong> 7Z의 파일명 암호화를 활용하세요. ZIP의 AES-256도 파일 내용은 보호하지만 파일명은 노출됩니다.</li>
-        <li><strong>크로스플랫폼:</strong> ZIP이 가장 안전합니다. macOS와 Windows 간 파일 교환에서 문제가 가장 적습니다.</li>
+        <li data-i18n-html="post.zipformat.rec_share"><strong>다른 사람에게 전달:</strong> ZIP이 무난합니다. 받는 사람이 별도 프로그램 없이 열 수 있으니까요.</li>
+        <li data-i18n-html="post.zipformat.rec_backup"><strong>장기 보관/백업:</strong> 7Z가 적합합니다. 한번 압축하면 오래 두는 용도이므로 느린 속도는 문제가 되지 않습니다.</li>
+        <li data-i18n-html="post.zipformat.rec_dev"><strong>개발/서버 환경:</strong> ZST를 추천합니다. 빠른 속도와 적절한 압축률이 생산성을 높여줍니다.</li>
+        <li data-i18n-html="post.zipformat.rec_security"><strong>보안이 중요:</strong> 7Z의 파일명 암호화를 활용하세요. ZIP의 AES-256도 파일 내용은 보호하지만 파일명은 노출됩니다.</li>
+        <li data-i18n-html="post.zipformat.rec_cross"><strong>크로스플랫폼:</strong> ZIP이 가장 안전합니다. macOS와 Windows 간 파일 교환에서 문제가 가장 적습니다.</li>
       </ul>
 
-      <p>어떤 포맷이든 중요한 건 신뢰할 수 있는 프로그램으로 작업하는 것입니다. <a href="/ondamzip/">OndamZip</a>은 ZIP, 7Z, ZST를 포함한 10가지 포맷을 모두 지원하며, Rust 기반 멀티스레드 엔진으로 빠르게 처리합니다. Windows와 macOS에서 무료로 사용할 수 있습니다.</p>
+      <p data-i18n-html="post.zipformat.cta">어떤 포맷이든 중요한 건 신뢰할 수 있는 프로그램으로 작업하는 것입니다. <a href="/ondamzip/">OndamZip</a>은 ZIP, 7Z, ZST를 포함한 10가지 포맷을 모두 지원하며, Rust 기반 멀티스레드 엔진으로 빠르게 처리합니다. Windows와 macOS에서 무료로 사용할 수 있습니다.</p>
 
       <!-- AdSense -->
       <div class="ad-container">
@@ -342,6 +342,210 @@
     </div>
   </footer>
 
+  <script>
+    var PAGE_LANG = {
+      ko: {
+        'post.zipformat.breadcrumb': '<a href="/">OndamSoft</a> &gt; <a href="/blog/">블로그</a> &gt; ZIP vs 7Z vs ZST: 압축 포맷 비교 가이드',
+        'post.zipformat.title': 'ZIP vs 7Z vs ZST: 압축 포맷 비교 가이드',
+        'post.zipformat.meta': '2025.08.22 · <span class="blog-category cat-compress" style="font-size:11px;padding:2px 8px;border-radius:4px;">압축</span> · 읽는 시간 약 7분',
+        'post.zipformat.intro': '파일 압축은 컴퓨터 사용자라면 누구나 접하는 작업입니다. 그런데 막상 압축하려고 보면 ZIP, 7Z, RAR, TAR.GZ, ZST 등 포맷이 너무 많아서 어떤 걸 써야 할지 고민이 됩니다. 각 포맷이 왜 존재하는지, 어떤 상황에 어떤 포맷이 최선인지 실용적인 관점에서 비교해 보겠습니다.',
+        'post.zipformat.h2_why_many': '압축 포맷이 왜 이렇게 많을까?',
+        'post.zipformat.why_many_p1': '압축 기술은 1980년대 LZW 알고리즘에서 시작해 40년 넘게 발전해 왔습니다. 새로운 알고리즘이 등장할 때마다 더 높은 압축률, 더 빠른 속도를 목표로 새로운 포맷이 만들어졌습니다. 하지만 이미 널리 퍼진 포맷을 하루아침에 교체할 수는 없기에, 오래된 포맷과 새로운 포맷이 공존하게 된 것입니다.',
+        'post.zipformat.why_many_p2': '핵심은 <strong>압축률과 속도 사이의 트레이드오프</strong>입니다. 같은 파일이라도 시간을 더 들이면 더 작게 만들 수 있고, 빠르게 압축하면 용량이 좀 더 커집니다. 어디에 중점을 두느냐에 따라 최적의 포맷이 달라집니다.',
+        'post.zipformat.h2_zip': 'ZIP: 호환성의 왕',
+        'post.zipformat.h3_zip_history': '역사와 특징',
+        'post.zipformat.zip_history_p': 'ZIP은 1989년 PKZIP에서 시작된, 가장 오래되고 가장 널리 쓰이는 압축 포맷입니다. Windows, macOS, Linux 어디서든 운영체제 자체에서 ZIP 파일을 열 수 있습니다. 별도의 프로그램을 설치하지 않아도 된다는 것이 ZIP의 가장 큰 장점입니다.',
+        'post.zipformat.h3_zip_algo': '압축 알고리즘',
+        'post.zipformat.zip_algo_p': '기본 알고리즘은 <strong>Deflate</strong>입니다. 1990년대에 만들어진 알고리즘이라 현대 기준으로 압축률이 뛰어나다고 보기는 어렵습니다. 하지만 압축과 해제 속도가 빠르고, 모든 프로그램에서 지원한다는 안정성이 있습니다.',
+        'post.zipformat.h3_zip_pros_cons': '장단점',
+        'post.zipformat.zip_pros': '<strong>장점:</strong> 어디서든 열 수 있음, AES-256 암호화 지원, 각 파일을 개별 압축하므로 일부 파일만 추출 가능',
+        'post.zipformat.zip_cons': '<strong>단점:</strong> 압축률이 상대적으로 낮음, 4GB 이상 파일은 ZIP64 필요, 유니코드 파일명 호환성 문제가 가끔 발생',
+        'post.zipformat.zip_best': 'ZIP이 최선인 경우: 이메일 첨부, 다른 사람에게 파일 전달, 누구나 열 수 있어야 하는 상황',
+        'post.zipformat.h2_7z': '7Z: 압축률의 끝판왕',
+        'post.zipformat.h3_7z_history': '역사와 특징',
+        'post.zipformat.7z_history_p': '7Z는 Igor Pavlov가 만든 7-Zip 프로그램의 네이티브 포맷입니다. 1999년에 처음 등장했으며, 오픈소스(LGPL)로 누구나 자유롭게 사용할 수 있습니다. ZIP보다 확실히 높은 압축률을 제공하며, 특히 대용량 파일에서 차이가 두드러집니다.',
+        'post.zipformat.h3_7z_algo': '압축 알고리즘',
+        'post.zipformat.7z_algo_p': '기본 알고리즘은 <strong>LZMA2</strong>입니다. LZMA(Lempel-Ziv-Markov chain Algorithm)는 사전 기반 압축에 범위 부호화를 결합한 방식으로, Deflate보다 훨씬 높은 압축률을 달성합니다. 다만 압축 시 메모리를 많이 사용하고, 압축 속도가 느린 편입니다.',
+        'post.zipformat.h3_7z_pros_cons': '장단점',
+        'post.zipformat.7z_pros': '<strong>장점:</strong> 최고 수준의 압축률, 멀티스레드 지원, AES-256 암호화(파일명까지 암호화 가능), 분할 압축 지원',
+        'post.zipformat.7z_cons': '<strong>단점:</strong> OS 기본 지원 없음(별도 프로그램 필요), 압축 속도가 느림, 메모리 사용량이 높음, 에러 복구가 어려움',
+        'post.zipformat.7z_solid_p': '7Z의 "솔리드 압축" 기능은 여러 파일을 하나의 데이터 스트림으로 묶어 압축합니다. 비슷한 파일이 많을수록 압축 효과가 극대화되지만, 한 파일만 꺼내려 해도 앞의 파일을 모두 디코딩해야 하는 단점이 있습니다.',
+        'post.zipformat.7z_best': '7Z가 최선인 경우: 저장 공간 절약이 중요한 백업, 대용량 프로젝트 아카이빙, 보안이 중요한 문서(파일명 암호화)',
+        'post.zipformat.h2_zst': 'ZST (Zstandard): 속도와 압축률의 균형',
+        'post.zipformat.h3_zst_history': '역사와 특징',
+        'post.zipformat.zst_history_p': 'Zstandard(zstd)는 Facebook(현 Meta)의 Yann Collet이 2015년에 개발한 비교적 새로운 압축 알고리즘입니다. BSD 라이선스의 오픈소스이며, 리눅스 커널에도 채택될 만큼 기술적으로 인정받았습니다. 핵심 목표는 "Deflate(ZIP) 수준의 압축률을 훨씬 빠른 속도로" 달성하는 것입니다.',
+        'post.zipformat.h3_zst_algo': '압축 알고리즘',
+        'post.zipformat.zst_algo_p': 'zstd는 유한상태 엔트로피(FSE) 부호화와 LZ77 변형을 결합한 알고리즘입니다. 압축 레벨을 1~22까지 세밀하게 조절할 수 있어, 낮은 레벨에서는 LZ4에 근접하는 속도를, 높은 레벨에서는 LZMA에 가까운 압축률을 보여줍니다.',
+        'post.zipformat.h3_zst_pros_cons': '장단점',
+        'post.zipformat.zst_pros': '<strong>장점:</strong> 압축/해제 모두 빠름(특히 해제 속도가 매우 빠름), 멀티스레드 네이티브 지원, 사전(dictionary) 압축으로 작은 파일도 효율적, 스트리밍 압축 가능',
+        'post.zipformat.zst_cons': '<strong>단점:</strong> 일반 사용자에게 아직 낯선 포맷, Windows 기본 지원 없음, 단일 파일 압축만 가능(아카이브 기능은 tar와 조합 필요), 암호화 미지원',
+        'post.zipformat.zst_speed_p': 'zstd의 가장 큰 특징은 <strong>해제 속도</strong>입니다. 어떤 압축 레벨로 압축했든 해제 속도는 거의 일정하게 빠릅니다. 이 특성 덕분에 게임 에셋 배포, 패키지 매니저(apt, pacman 등), 데이터베이스 백업 등 실시간 처리가 중요한 분야에서 빠르게 보급되고 있습니다.',
+        'post.zipformat.zst_best': 'ZST가 최선인 경우: 대용량 로그 파일 압축, 서버 백업, 빠른 압축/해제가 필요한 개발 환경, 실시간 데이터 전송',
+        'post.zipformat.h2_comparison': '세 포맷 비교 표',
+        'post.zipformat.th_category': '항목',
+        'post.zipformat.td_algo': '압축 알고리즘',
+        'post.zipformat.td_ratio': '압축률',
+        'post.zipformat.td_ratio_zip': '보통',
+        'post.zipformat.td_ratio_7z': '최고',
+        'post.zipformat.td_ratio_zst': '좋음 (ZIP보다 우수)',
+        'post.zipformat.td_comp_speed': '압축 속도',
+        'post.zipformat.td_fast': '빠름',
+        'post.zipformat.td_slow': '느림',
+        'post.zipformat.td_very_fast': '매우 빠름',
+        'post.zipformat.td_decomp_speed': '해제 속도',
+        'post.zipformat.td_moderate': '보통',
+        'post.zipformat.td_os_support': 'OS 기본 지원',
+        'post.zipformat.td_none': '없음',
+        'post.zipformat.td_linux_partial': 'Linux (일부)',
+        'post.zipformat.td_multithread': '멀티스레드',
+        'post.zipformat.td_depends': '프로그램에 따라 다름',
+        'post.zipformat.td_supported': '지원',
+        'post.zipformat.td_native': '네이티브 지원',
+        'post.zipformat.td_encryption': '암호화',
+        'post.zipformat.td_aes_filename': 'AES-256 (파일명 포함)',
+        'post.zipformat.td_not_supported': '미지원',
+        'post.zipformat.td_archive': '아카이브(다중 파일)',
+        'post.zipformat.td_need_tar': '미지원 (tar 조합 필요)',
+        'post.zipformat.td_split': '분할 압축',
+        'post.zipformat.td_use_case': '적합한 용도',
+        'post.zipformat.td_use_zip': '파일 공유, 이메일',
+        'post.zipformat.td_use_7z': '백업, 아카이빙',
+        'post.zipformat.td_use_zst': '서버, 개발, 실시간',
+        'post.zipformat.h2_benchmark': '실측 비교: 같은 파일로 테스트해 보면?',
+        'post.zipformat.benchmark_intro': '1GB 크기의 텍스트 기반 로그 파일로 테스트한 결과를 참고해 보겠습니다. (결과는 파일 특성에 따라 달라질 수 있습니다.)',
+        'post.zipformat.th_format': '포맷',
+        'post.zipformat.th_comp_size': '압축 후 크기',
+        'post.zipformat.th_comp_time': '압축 시간',
+        'post.zipformat.th_decomp_time': '해제 시간',
+        'post.zipformat.bench_zip_size': '약 120MB',
+        'post.zipformat.bench_zip_comp': '약 25초',
+        'post.zipformat.bench_zip_decomp': '약 8초',
+        'post.zipformat.bench_7z_size': '약 65MB',
+        'post.zipformat.bench_7z_comp': '약 90초',
+        'post.zipformat.bench_7z_decomp': '약 12초',
+        'post.zipformat.bench_zst3_label': 'ZST (레벨 3)',
+        'post.zipformat.bench_zst3_size': '약 105MB',
+        'post.zipformat.bench_zst3_comp': '약 5초',
+        'post.zipformat.bench_zst3_decomp': '약 2초',
+        'post.zipformat.bench_zst19_label': 'ZST (레벨 19)',
+        'post.zipformat.bench_zst19_size': '약 72MB',
+        'post.zipformat.bench_zst19_comp': '약 120초',
+        'post.zipformat.bench_zst19_decomp': '약 2초',
+        'post.zipformat.benchmark_note': '눈에 띄는 점은 ZST의 해제 속도입니다. 압축 레벨을 19로 높여서 압축 시간은 7Z보다 오래 걸리지만, 해제는 여전히 2초입니다. 한번 압축해두고 여러 번 풀어야 하는 배포용 파일에 매우 유리합니다.',
+        'post.zipformat.h2_others': '그 외 알아두면 좋은 포맷들',
+        'post.zipformat.rar_p': 'WinRAR의 독점 포맷입니다. 압축률은 7Z에 근접하고, 에러 복구(Recovery Record) 기능이 독보적입니다. 하지만 압축하려면 WinRAR 라이선스가 필요하며(해제만 무료), 오픈소스가 아니라는 한계가 있습니다.',
+        'post.zipformat.tar_p': 'Linux/Unix 세계의 표준입니다. TAR로 파일을 하나로 묶고, GZIP이나 XZ로 압축하는 2단계 방식입니다. 파일 권한 정보를 보존하므로 소스코드 배포에 많이 사용됩니다. 최근에는 TAR.ZST 조합도 늘어나는 추세입니다.',
+        'post.zipformat.h2_conclusion': '결론: 용도별 추천',
+        'post.zipformat.conclusion_intro': '포맷 선택은 결국 "누가 이 파일을 받느냐"와 "무엇이 더 중요한가"에 달려 있습니다.',
+        'post.zipformat.rec_share': '<strong>다른 사람에게 전달:</strong> ZIP이 무난합니다. 받는 사람이 별도 프로그램 없이 열 수 있으니까요.',
+        'post.zipformat.rec_backup': '<strong>장기 보관/백업:</strong> 7Z가 적합합니다. 한번 압축하면 오래 두는 용도이므로 느린 속도는 문제가 되지 않습니다.',
+        'post.zipformat.rec_dev': '<strong>개발/서버 환경:</strong> ZST를 추천합니다. 빠른 속도와 적절한 압축률이 생산성을 높여줍니다.',
+        'post.zipformat.rec_security': '<strong>보안이 중요:</strong> 7Z의 파일명 암호화를 활용하세요. ZIP의 AES-256도 파일 내용은 보호하지만 파일명은 노출됩니다.',
+        'post.zipformat.rec_cross': '<strong>크로스플랫폼:</strong> ZIP이 가장 안전합니다. macOS와 Windows 간 파일 교환에서 문제가 가장 적습니다.',
+        'post.zipformat.cta': '어떤 포맷이든 중요한 건 신뢰할 수 있는 프로그램으로 작업하는 것입니다. <a href="/ondamzip/">OndamZip</a>은 ZIP, 7Z, ZST를 포함한 10가지 포맷을 모두 지원하며, Rust 기반 멀티스레드 엔진으로 빠르게 처리합니다. Windows와 macOS에서 무료로 사용할 수 있습니다.'
+      },
+      en: {
+        'post.zipformat.breadcrumb': '<a href="/">OndamSoft</a> &gt; <a href="/blog/">Blog</a> &gt; ZIP vs 7Z vs ZST: Compression Format Comparison Guide',
+        'post.zipformat.title': 'ZIP vs 7Z vs ZST: Compression Format Comparison Guide',
+        'post.zipformat.meta': '2025.08.22 · <span class="blog-category cat-compress" style="font-size:11px;padding:2px 8px;border-radius:4px;">Compression</span> · 7 min read',
+        'post.zipformat.intro': 'File compression is something every computer user encounters. But when you actually go to compress files, there are so many formats — ZIP, 7Z, RAR, TAR.GZ, ZST — that it can be hard to decide which one to use. Let\'s compare these formats from a practical perspective: why each one exists and which is best for different situations.',
+        'post.zipformat.h2_why_many': 'Why Are There So Many Compression Formats?',
+        'post.zipformat.why_many_p1': 'Compression technology has evolved for over 40 years, starting with the LZW algorithm in the 1980s. Each time a new algorithm emerged targeting higher compression ratios or faster speeds, a new format was created. But since widely adopted formats can\'t be replaced overnight, old and new formats coexist.',
+        'post.zipformat.why_many_p2': 'The key is the <strong>trade-off between compression ratio and speed</strong>. The same file can be made smaller by spending more time, while faster compression results in slightly larger output. The optimal format depends on what you prioritize.',
+        'post.zipformat.h2_zip': 'ZIP: The King of Compatibility',
+        'post.zipformat.h3_zip_history': 'History and Features',
+        'post.zipformat.zip_history_p': 'ZIP originated from PKZIP in 1989 and is the oldest and most widely used compression format. Windows, macOS, and Linux can all open ZIP files natively without any additional software. This universal support is ZIP\'s greatest advantage.',
+        'post.zipformat.h3_zip_algo': 'Compression Algorithm',
+        'post.zipformat.zip_algo_p': 'The default algorithm is <strong>Deflate</strong>. Created in the 1990s, its compression ratio isn\'t impressive by modern standards. However, it offers fast compression and decompression speeds, with the reliability of being supported by every program.',
+        'post.zipformat.h3_zip_pros_cons': 'Pros and Cons',
+        'post.zipformat.zip_pros': '<strong>Pros:</strong> Opens anywhere, AES-256 encryption support, files are compressed individually so you can extract specific files',
+        'post.zipformat.zip_cons': '<strong>Cons:</strong> Relatively low compression ratio, files over 4GB require ZIP64, occasional Unicode filename compatibility issues',
+        'post.zipformat.zip_best': 'ZIP is best for: Email attachments, sharing files with others, situations where anyone needs to open the file',
+        'post.zipformat.h2_7z': '7Z: The Compression Champion',
+        'post.zipformat.h3_7z_history': 'History and Features',
+        'post.zipformat.7z_history_p': '7Z is the native format of the 7-Zip program created by Igor Pavlov. First introduced in 1999, it\'s open source (LGPL) and free for anyone to use. It provides noticeably higher compression ratios than ZIP, especially with large files.',
+        'post.zipformat.h3_7z_algo': 'Compression Algorithm',
+        'post.zipformat.7z_algo_p': 'The default algorithm is <strong>LZMA2</strong>. LZMA (Lempel-Ziv-Markov chain Algorithm) combines dictionary-based compression with range coding, achieving much higher compression ratios than Deflate. However, it uses more memory and compresses more slowly.',
+        'post.zipformat.h3_7z_pros_cons': 'Pros and Cons',
+        'post.zipformat.7z_pros': '<strong>Pros:</strong> Best-in-class compression ratio, multi-threading support, AES-256 encryption (including filenames), split archive support',
+        'post.zipformat.7z_cons': '<strong>Cons:</strong> No native OS support (requires separate software), slow compression speed, high memory usage, difficult error recovery',
+        'post.zipformat.7z_solid_p': '7Z\'s "solid compression" feature bundles multiple files into a single data stream for compression. The more similar files there are, the better the compression. However, extracting a single file requires decoding all preceding files.',
+        'post.zipformat.7z_best': '7Z is best for: Backups where saving storage space matters, archiving large projects, security-sensitive documents (filename encryption)',
+        'post.zipformat.h2_zst': 'ZST (Zstandard): Balancing Speed and Compression',
+        'post.zipformat.h3_zst_history': 'History and Features',
+        'post.zipformat.zst_history_p': 'Zstandard (zstd) is a relatively new compression algorithm developed by Yann Collet at Facebook (now Meta) in 2015. It\'s open source under the BSD license and has been adopted by the Linux kernel, proving its technical merit. Its core goal is to achieve "Deflate-level compression ratios at much faster speeds."',
+        'post.zipformat.h3_zst_algo': 'Compression Algorithm',
+        'post.zipformat.zst_algo_p': 'zstd combines Finite State Entropy (FSE) coding with a variant of LZ77. Compression levels range from 1 to 22, offering speeds approaching LZ4 at low levels and compression ratios near LZMA at high levels.',
+        'post.zipformat.h3_zst_pros_cons': 'Pros and Cons',
+        'post.zipformat.zst_pros': '<strong>Pros:</strong> Fast compression and decompression (especially decompression), native multi-threading, dictionary compression for efficient small file handling, streaming compression',
+        'post.zipformat.zst_cons': '<strong>Cons:</strong> Still unfamiliar to general users, no native Windows support, single-file compression only (archiving requires combining with tar), no encryption',
+        'post.zipformat.zst_speed_p': 'The standout feature of zstd is its <strong>decompression speed</strong>. Regardless of the compression level used, decompression speed remains consistently fast. This characteristic has driven rapid adoption in fields where real-time processing matters, such as game asset distribution, package managers (apt, pacman, etc.), and database backups.',
+        'post.zipformat.zst_best': 'ZST is best for: Large log file compression, server backups, development environments needing fast compression/decompression, real-time data transfer',
+        'post.zipformat.h2_comparison': 'Three-Format Comparison Table',
+        'post.zipformat.th_category': 'Category',
+        'post.zipformat.td_algo': 'Algorithm',
+        'post.zipformat.td_ratio': 'Compression Ratio',
+        'post.zipformat.td_ratio_zip': 'Average',
+        'post.zipformat.td_ratio_7z': 'Best',
+        'post.zipformat.td_ratio_zst': 'Good (better than ZIP)',
+        'post.zipformat.td_comp_speed': 'Compression Speed',
+        'post.zipformat.td_fast': 'Fast',
+        'post.zipformat.td_slow': 'Slow',
+        'post.zipformat.td_very_fast': 'Very Fast',
+        'post.zipformat.td_decomp_speed': 'Decompression Speed',
+        'post.zipformat.td_moderate': 'Moderate',
+        'post.zipformat.td_os_support': 'Native OS Support',
+        'post.zipformat.td_none': 'None',
+        'post.zipformat.td_linux_partial': 'Linux (partial)',
+        'post.zipformat.td_multithread': 'Multi-threading',
+        'post.zipformat.td_depends': 'Depends on software',
+        'post.zipformat.td_supported': 'Supported',
+        'post.zipformat.td_native': 'Native support',
+        'post.zipformat.td_encryption': 'Encryption',
+        'post.zipformat.td_aes_filename': 'AES-256 (incl. filenames)',
+        'post.zipformat.td_not_supported': 'Not supported',
+        'post.zipformat.td_archive': 'Archive (multi-file)',
+        'post.zipformat.td_need_tar': 'Not supported (requires tar)',
+        'post.zipformat.td_split': 'Split Archives',
+        'post.zipformat.td_use_case': 'Best Use Case',
+        'post.zipformat.td_use_zip': 'File sharing, email',
+        'post.zipformat.td_use_7z': 'Backups, archiving',
+        'post.zipformat.td_use_zst': 'Servers, development, real-time',
+        'post.zipformat.h2_benchmark': 'Real-World Benchmarks: Testing with the Same File',
+        'post.zipformat.benchmark_intro': 'Here are test results using a 1GB text-based log file. (Results may vary depending on file characteristics.)',
+        'post.zipformat.th_format': 'Format',
+        'post.zipformat.th_comp_size': 'Compressed Size',
+        'post.zipformat.th_comp_time': 'Compression Time',
+        'post.zipformat.th_decomp_time': 'Decompression Time',
+        'post.zipformat.bench_zip_size': '~120MB',
+        'post.zipformat.bench_zip_comp': '~25 sec',
+        'post.zipformat.bench_zip_decomp': '~8 sec',
+        'post.zipformat.bench_7z_size': '~65MB',
+        'post.zipformat.bench_7z_comp': '~90 sec',
+        'post.zipformat.bench_7z_decomp': '~12 sec',
+        'post.zipformat.bench_zst3_label': 'ZST (Level 3)',
+        'post.zipformat.bench_zst3_size': '~105MB',
+        'post.zipformat.bench_zst3_comp': '~5 sec',
+        'post.zipformat.bench_zst3_decomp': '~2 sec',
+        'post.zipformat.bench_zst19_label': 'ZST (Level 19)',
+        'post.zipformat.bench_zst19_size': '~72MB',
+        'post.zipformat.bench_zst19_comp': '~120 sec',
+        'post.zipformat.bench_zst19_decomp': '~2 sec',
+        'post.zipformat.benchmark_note': 'The standout result is ZST\'s decompression speed. Even at level 19, where compression takes longer than 7Z, decompression still takes just 2 seconds. This makes it highly advantageous for distribution files that are compressed once and extracted many times.',
+        'post.zipformat.h2_others': 'Other Formats Worth Knowing',
+        'post.zipformat.rar_p': 'RAR is a proprietary format by WinRAR. Its compression ratio approaches 7Z, and its error recovery (Recovery Record) feature is unmatched. However, creating RAR archives requires a WinRAR license (decompression only is free), and it\'s not open source.',
+        'post.zipformat.tar_p': 'TAR.GZ and TAR.XZ are the standard in the Linux/Unix world. TAR bundles files together, then GZIP or XZ compresses the bundle — a two-step process. Since it preserves file permissions, it\'s widely used for source code distribution. The TAR.ZST combination is also gaining popularity.',
+        'post.zipformat.h2_conclusion': 'Conclusion: Recommendations by Use Case',
+        'post.zipformat.conclusion_intro': 'Choosing a format ultimately comes down to "who will receive this file" and "what matters most."',
+        'post.zipformat.rec_share': '<strong>Sharing with others:</strong> ZIP is the safe choice. Recipients can open it without installing any additional software.',
+        'post.zipformat.rec_backup': '<strong>Long-term storage/backups:</strong> 7Z is ideal. Since these files are compressed once and stored for a long time, slow compression speed isn\'t an issue.',
+        'post.zipformat.rec_dev': '<strong>Development/server environments:</strong> ZST is recommended. Its fast speed and decent compression ratio boost productivity.',
+        'post.zipformat.rec_security': '<strong>Security matters:</strong> Use 7Z\'s filename encryption. ZIP\'s AES-256 protects file contents but exposes filenames.',
+        'post.zipformat.rec_cross': '<strong>Cross-platform:</strong> ZIP is the safest bet. It causes the fewest issues when exchanging files between macOS and Windows.',
+        'post.zipformat.cta': 'Regardless of format, what matters is using reliable software. <a href="/ondamzip/">OndamZip</a> supports all 10 formats including ZIP, 7Z, and ZST, with a Rust-based multi-threaded engine for fast processing. Free for Windows and macOS.'
+      }
+    };
+  </script>
   <script src="/js/main.js"></script>
 
 </body>
