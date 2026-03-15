@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>캐릭터 소개 - OndamSoft</title>
+  <meta name="description" content="OndamSoft 마스코트 고양이 캐릭터 소개. 온담이, 온독이, 온눈이를 만나보세요!">
+  <meta property="og:title" content="OndamSoft 캐릭터 소개">
+  <meta property="og:description" content="온담이, 온독이, 온눈이 - OndamSoft의 귀여운 고양이 마스코트를 소개합니다.">
+  <meta property="og:url" content="https://ondamsoft.com/characters.html">
+  <link rel="canonical" href="https://ondamsoft.com/characters.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .char-hero {
+      background: linear-gradient(135deg, #fef3c7, #fde68a);
+      padding: 4rem 2rem 3rem;
+      text-align: center;
+    }
+    .char-hero h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #1e293b;
+      margin-bottom: 0.5rem;
+    }
+    .char-hero p {
+      color: #64748b;
+      font-size: 1.1rem;
+    }
+    .char-section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+    .char-card {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      background: white;
+      border-radius: 20px;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      transition: transform 0.2s;
+    }
+    .char-card:hover {
+      transform: translateY(-4px);
+    }
+    .char-card.reverse {
+      flex-direction: row-reverse;
+    }
+    .char-img {
+      flex-shrink: 0;
+    }
+    .char-img img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid white;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .char-info {
+      flex: 1;
+    }
+    .char-name {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 0.25rem;
+    }
+    .char-name-ko {
+      font-size: 0.9rem;
+      color: #94a3b8;
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+    }
+    .char-badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .badge-zip { background: #dbeafe; color: #2563eb; }
+    .badge-pdf { background: #fee2e2; color: #dc2626; }
+    .badge-viewer { background: #dcfce7; color: #16a34a; }
+    .char-desc {
+      color: #475569;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+    .char-traits {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .char-trait {
+      background: #f1f5f9;
+      color: #64748b;
+      padding: 0.3rem 0.7rem;
+      border-radius: 12px;
+      font-size: 0.8rem;
+    }
+    .char-app-link {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.5rem 1.2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: opacity 0.2s;
+    }
+    .char-app-link:hover { opacity: 0.8; }
+    .link-zip { background: #3b82f6; color: white; }
+    .link-pdf { background: #dc2626; color: white; }
+    .link-viewer { background: #16a34a; color: white; }
+
+    .char-family {
+      text-align: center;
+      padding: 3rem 2rem;
+      background: linear-gradient(135deg, #f0f7ff, #fef3c7);
+      border-radius: 20px;
+      margin: 2rem auto;
+      max-width: 900px;
+    }
+    .char-family h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .char-family p {
+      color: #64748b;
+      margin-bottom: 1.5rem;
+    }
+    .char-family-grid {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .char-family-item img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .char-family-item p {
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-top: 0.5rem;
+      color: #1e293b;
+    }
+
+    @media (max-width: 700px) {
+      .char-card, .char-card.reverse {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 1.5rem;
+      }
+      .char-img img {
+        width: 160px;
+        height: 160px;
+      }
+      .char-traits {
+        justify-content: center;
+      }
+      .char-hero h1 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-inner">
+      <a href="/" class="logo"><img src="/logo.png" alt="OndamSoft"></a>
+      <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      </button>
+      <div class="nav-wrap">
+        <nav>
+          <a href="/#products" data-i18n="nav.products">제품</a>
+          <a href="/blog/" data-i18n="nav.blog">블로그</a>
+          <a href="/characters.html" class="active" data-i18n="nav.characters">캐릭터</a>
+          <a href="/developer.html" data-i18n="nav.developer">개발자</a>
+          <a href="/#donate" data-i18n="nav.donate">후원</a>
+          <a href="mailto:ondamsoft@gmail.com" data-i18n="nav.contact">문의</a>
+        </nav>
+        <select id="lang-select" onchange="switchLang(this.value)">
+          <option value="ko">한국어</option>
+          <option value="en">English</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="char-hero">
+    <h1 data-i18n="char.title">OndamSoft 패밀리를 소개합니다!</h1>
+    <p data-i18n="char.subtitle">세 마리 고양이와 함께하는 즐거운 소프트웨어</p>
+  </section>
+
+  <!-- Characters -->
+  <section class="char-section">
+
+    <!-- 온담이 -->
+    <div class="char-card">
+      <div class="char-img">
+        <img src="/images/characters/ondami.jpg" alt="온담이">
+      </div>
+      <div class="char-info">
+        <div class="char-name" data-i18n="char.ondami_name">온담이</div>
+        <div class="char-name-ko">Ondami · OndamZip</div>
+        <span class="char-badge badge-zip">압축 전문가</span>
+        <p class="char-desc" data-i18n="char.ondami_desc">
+          박스라면 사족을 못 쓰는 치즈색 고양이! 어떤 파일이든 쏙쏙 넣어 깔끔하게 정리하는 게 특기예요.
+          ZIP, 7Z, RAR... 포맷은 가리지 않아요. 박스 안이 제일 편하다옹~ 🐱📦
+        </p>
+        <div class="char-traits">
+          <span class="char-trait">치즈냥</span>
+          <span class="char-trait">박스 러버</span>
+          <span class="char-trait">정리 덕후</span>
+          <span class="char-trait">AES-256 보안관</span>
+        </div>
+        <a href="/ondamzip/" class="char-app-link link-zip" data-i18n="char.meet_app">온담이 만나기 →</a>
+      </div>
+    </div>
+
+    <!-- 온독이 -->
+    <div class="char-card reverse">
+      <div class="char-img">
+        <img src="/images/characters/ondoki.jpg" alt="온독이">
+      </div>
+      <div class="char-info">
+        <div class="char-name" data-i18n="char.ondoki_name">온독이</div>
+        <div class="char-name-ko">Ondoki · OndamPDF</div>
+        <span class="char-badge badge-pdf">PDF 박사</span>
+        <p class="char-desc" data-i18n="char.ondoki_desc">
+          동그란 안경 너머로 세상의 모든 문서를 읽는 고등어색 고양이!
+          PDF를 합치고, 나누고, 워터마크 찍고... 뭐든 척척이에요. 지식은 나눌수록 커진다옹~ 🐱📖
+        </p>
+        <div class="char-traits">
+          <span class="char-trait">고등어냥</span>
+          <span class="char-trait">안경 지식인</span>
+          <span class="char-trait">문서 달인</span>
+          <span class="char-trait">독서광</span>
+        </div>
+        <a href="/ondampdf/" class="char-app-link link-pdf" data-i18n="char.meet_app">온독이 만나기 →</a>
+      </div>
+    </div>
+
+    <!-- 온눈이 -->
+    <div class="char-card">
+      <div class="char-img">
+        <img src="/images/characters/onnuni.jpg" alt="온눈이">
+      </div>
+      <div class="char-info">
+        <div class="char-name" data-i18n="char.onnuni_name">온눈이</div>
+        <div class="char-name-ko">Onnuni · OndamViewer</div>
+        <span class="char-badge badge-viewer">사진작가</span>
+        <p class="char-desc" data-i18n="char.onnuni_desc">
+          카메라를 손에서 놓지 않는 까만색 고양이!
+          세상의 모든 아름다운 순간을 포착하는 게 꿈이에요. EXIF 데이터도 꼼꼼히 챙기는 프로다옹~ 🐱📷
+        </p>
+        <div class="char-traits">
+          <span class="char-trait">까망냥</span>
+          <span class="char-trait">카메라 매니아</span>
+          <span class="char-trait">디테일 장인</span>
+          <span class="char-trait">사진 감별사</span>
+        </div>
+        <a href="/ondamviewer/" class="char-app-link link-viewer" data-i18n="char.meet_app">온눈이 만나기 →</a>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Family -->
+  <section class="char-family">
+    <h2 data-i18n="char.family_title">온담 패밀리 🐱🐱🐱</h2>
+    <p data-i18n="char.family_desc">세 마리 고양이가 힘을 합쳐 여러분의 PC를 더 편리하게 만들어 드려요!</p>
+    <div class="char-family-grid">
+      <div class="char-family-item">
+        <img src="/images/characters/ondami.jpg" alt="온담이">
+        <p>온담이</p>
+      </div>
+      <div class="char-family-item">
+        <img src="/images/characters/ondoki.jpg" alt="온독이">
+        <p>온독이</p>
+      </div>
+      <div class="char-family-item">
+        <img src="/images/characters/onnuni.jpg" alt="온눈이">
+        <p>온눈이</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo"><img src="/logo-icon.png" alt="OndamSoft" style="height:40px;width:auto;margin-bottom:8px;"></div>
+      <p data-i18n-html="footer.desc">문의: <a href="mailto:ondamsoft@gmail.com">ondamsoft@gmail.com</a></p>
+      <div class="footer-links">
+        <a href="/ondamzip/">OndamZip</a>
+        <a href="/ondampdf/">OndamPDF</a>
+        <a href="/ondamviewer/">OndamViewer</a>
+        <a href="/blog/" data-i18n="nav.blog">블로그</a>
+        <a href="/characters.html" data-i18n="nav.characters">캐릭터</a>
+        <a href="/developer.html" data-i18n="nav.developer">개발자</a>
+        <a href="/#donate" data-i18n="nav.donate">후원</a>
+        <a href="/privacy.html" data-i18n="footer.privacy">개인정보처리방침</a>
+        <a href="/terms.html" data-i18n="footer.terms">이용약관</a>
+      </div>
+      <p style="margin-top:1.5rem;font-size:12px;color:#64748b;">&copy; 2025 OndamSoft. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- i18n -->
+  <script>
+    var PAGE_LANG = {
+      ko: {
+        'char.title': 'OndamSoft 패밀리를 소개합니다!',
+        'char.subtitle': '세 마리 고양이와 함께하는 즐거운 소프트웨어',
+        'char.ondami_name': '온담이',
+        'char.ondami_desc': '박스라면 사족을 못 쓰는 치즈색 고양이! 어떤 파일이든 쏙쏙 넣어 깔끔하게 정리하는 게 특기예요. ZIP, 7Z, RAR... 포맷은 가리지 않아요. 박스 안이 제일 편하다옹~ 🐱📦',
+        'char.ondoki_name': '온독이',
+        'char.ondoki_desc': '동그란 안경 너머로 세상의 모든 문서를 읽는 고등어색 고양이! PDF를 합치고, 나누고, 워터마크 찍고... 뭐든 척척이에요. 지식은 나눌수록 커진다옹~ 🐱📖',
+        'char.onnuni_name': '온눈이',
+        'char.onnuni_desc': '카메라를 손에서 놓지 않는 까만색 고양이! 세상의 모든 아름다운 순간을 포착하는 게 꿈이에요. EXIF 데이터도 꼼꼼히 챙기는 프로다옹~ 🐱📷',
+        'char.meet_app': '만나기 →',
+        'char.family_title': '온담 패밀리 🐱🐱🐱',
+        'char.family_desc': '세 마리 고양이가 힘을 합쳐 여러분의 PC를 더 편리하게 만들어 드려요!'
+      },
+      en: {
+        'char.title': 'Meet the OndamSoft Family!',
+        'char.subtitle': 'Three adorable cats making your software fun',
+        'char.ondami_name': 'Ondami',
+        'char.ondami_desc': 'An orange tabby cat who can\'t resist boxes! Packing files neatly is her specialty. ZIP, 7Z, RAR... she handles them all. Nothing beats being inside a box~ meow! 🐱📦',
+        'char.ondoki_name': 'Ondoki',
+        'char.ondoki_desc': 'A gray tabby who reads every document through round glasses! Merging, splitting, watermarking PDFs... she does it all. Knowledge grows when shared~ meow! 🐱📖',
+        'char.onnuni_name': 'Onnuni',
+        'char.onnuni_desc': 'A black cat who never puts down her camera! Capturing every beautiful moment is her dream. She even checks EXIF data carefully~ meow! 🐱📷',
+        'char.meet_app': 'Meet →',
+        'char.family_title': 'Ondam Family 🐱🐱🐱',
+        'char.family_desc': 'Three cats working together to make your PC more convenient!'
+      }
+    };
+  </script>
+  <script src="/js/main.js"></script>
+
+</body>
+</html>
