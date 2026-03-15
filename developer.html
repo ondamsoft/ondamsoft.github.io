@@ -17,13 +17,27 @@
       padding: 4rem 2rem 3rem;
       text-align: center;
     }
-    .dev-avatar {
-      width: 96px;
-      margin: 0 auto 0.75rem;
+    .dev-cats {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin: 0 auto 1rem;
     }
-    .dev-avatar img {
-      width: 100%; height: auto;
-      object-fit: contain;
+    .dev-cats img {
+      width: 72px; height: 72px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+    .dev-cats img:hover {
+      transform: scale(1.1);
+    }
+    .dev-cats .cat-label {
+      text-align: center;
+      font-size: 11px;
+      color: #64748b;
+      margin-top: 4px;
     }
     .dev-brand {
       font-size: 1.1rem;
@@ -134,7 +148,11 @@
   </header>
 
   <section class="dev-hero">
-    <div class="dev-avatar"><img src="/logo1_square_transparent.png" alt="OndamSoft"></div>
+    <div class="dev-cats">
+      <div><img src="/images/characters/ondami.jpg" alt="온담이"><div class="cat-label">온담이</div></div>
+      <div><img src="/images/characters/ondoki.jpg" alt="온독이"><div class="cat-label">온독이</div></div>
+      <div><img src="/images/characters/onnuni.jpg" alt="온눈이"><div class="cat-label">온눈이</div></div>
+    </div>
     <div class="dev-brand">OndamSoft<small>온담소프트</small></div>
     <div class="dev-name" data-i18n="dev.name">정재훈</div>
     <div class="dev-role" data-i18n="dev.role">대한민국 · 소프트웨어 개발자</div>
