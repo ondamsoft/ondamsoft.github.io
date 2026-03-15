@@ -1,11 +1,11 @@
 {
-  "version": "1.0.5",
-  "notes": "개발자 소개 업데이트 (온캡이 추가, 나눔 약속 수정)",
-  "date": "2026-03-15",
+  "version": "1.0.6",
+  "notes": "Home/End 키, 방향키 패닝, Shift+Delete 영구 삭제, 선택 영역 인쇄, 하위 폴더 재귀 탐색, 폴더 우클릭, AVIF 지원 복원",
+  "date": "2026-03-16",
   "windows": {
-    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.5-viewer/OndamViewer_1.0.5_x64-setup.exe"
+    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.6-viewer/OndamViewer_1.0.6_x64-setup.exe"
   },
   "macos": {
-    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.5-viewer/OndamViewer_1.0.5_aarch64.dmg"
+    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.6-viewer/OndamViewer_1.0.6_aarch64.dmg"
   }
 }
