@@ -1,11 +1,11 @@
 {
-  "version": "1.0.12",
-  "notes": "개발자 소개 업데이트 (온캡이 추가, 나눔 약속 수정)",
-  "date": "2026-03-15",
+  "version": "1.0.13",
+  "notes": "공지사항 동적 로딩 기능 추가",
+  "date": "2026-03-16",
   "windows": {
-    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.12/OndamPDF_1.0.12_x64-setup.exe"
+    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.13/OndamPDF_1.0.13_x64-setup.exe"
   },
   "macos": {
-    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.12/OndamPDF_1.0.12_aarch64.dmg"
+    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.13/OndamPDF_1.0.13_aarch64.dmg"
   }
 }
