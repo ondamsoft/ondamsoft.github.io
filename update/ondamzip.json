@@ -1,11 +1,11 @@
 {
-  "version": "1.0.28",
-  "notes": "공지사항 동적 로딩 기능 추가",
-  "date": "2026-03-16",
+  "version": "1.0.29",
+  "notes": "자동 업데이트 관리자 권한 요청 수정",
+  "date": "2026-03-18",
   "windows": {
-    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.28/OndamZip_1.0.28_x64-setup.exe"
+    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.29/OndamZip_1.0.29_x64-setup.exe"
   },
   "macos": {
-    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.28/OndamZip_1.0.28_aarch64.dmg"
+    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.29/OndamZip_1.0.29_aarch64.dmg"
   }
 }
