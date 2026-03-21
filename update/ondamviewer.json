@@ -1,11 +1,11 @@
 {
-  "version": "1.0.8",
-  "notes": "이미지 드래그앤드롭 수정, 자동 업데이트 관리자 권한 요청 수정",
-  "date": "2026-03-18",
+  "version": "1.0.9",
+  "notes": "인쇄 개선 (꽉채우기, 회전 인쇄, 여백 설정), 바탕화면 배경 설정, 파일 탐색기 (Enter), 보기 모드 옵션, 슬라이드쇼 설정, F2 파일명 변경, 전체화면 UI 개선",
+  "date": "2026-03-21",
   "windows": {
-    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.8-viewer/OndamViewer_1.0.8_x64-setup.exe"
+    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.9-viewer/OndamViewer_1.0.9_x64-setup.exe"
   },
   "macos": {
-    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.8-viewer/OndamViewer_1.0.8_aarch64.dmg"
+    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.9-viewer/OndamViewer_1.0.9_aarch64.dmg"
   }
 }
