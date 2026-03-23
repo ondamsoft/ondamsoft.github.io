@@ -1,8 +1,11 @@
 {
-  "version": "1.0.0",
-  "notes": "최초 릴리즈 — 전체화면/영역/창 녹화, 시스템 오디오(WASAPI loopback), 마이크 녹음, 일시정지/재개, GPU 인코더 자동 감지",
-  "date": "2026-03-22",
+  "version": "1.0.1",
+  "notes": "모니터 선택 버그 수정, 음소거 싱크 수정, 녹화 중지 버튼 수정, About 다이얼로그 개선, 보라색 클래퍼보드 아이콘",
+  "date": "2026-03-23",
   "windows": {
-    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.0-cam/OndamCAM_1.0.0_x64-setup.exe"
+    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.1-cam/OndamCAM_1.0.1_x64-setup.exe"
+  },
+  "macos": {
+    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.1-cam/OndamCAM_1.0.1_aarch64.dmg"
   }
 }
