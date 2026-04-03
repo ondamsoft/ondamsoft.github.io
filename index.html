@@ -38,7 +38,6 @@
       <div class="nav-wrap">
         <nav>
           <a href="#products" data-i18n="nav.products" onclick="closeMenu()">제품</a>
-          <a href="/blog/" data-i18n="nav.blog" onclick="closeMenu()">블로그</a>
           <a href="/characters.html" data-i18n="nav.characters" onclick="closeMenu()">캐릭터</a>
           <a href="/developer.html" data-i18n="nav.developer" onclick="closeMenu()">개발자</a>
 <a href="/contact.html" data-i18n="nav.contact">문의</a>
@@ -64,7 +63,6 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
         <span data-i18n="home.btn_download">무료 다운로드</span>
       </a>
-      <a href="/blog/" class="btn btn-secondary" data-i18n="home.btn_blog">블로그 보기</a>
     </div>
   </section>
 
@@ -144,7 +142,7 @@
 
       <!-- OndamCAM -->
       <div class="product-card" style="--accent:#ef4444;">
-        <div class="product-icon" style="font-size:56px;">🎬</div>
+        <div class="product-icon"><img src="/images/characters/ondamcam.png" alt="OndamCAM" style="width:80px;height:80px;border-radius:50%;object-fit:cover;"></div>
         <h3>Ondam<br>CAM</h3>
         <p class="product-mascot">📹 화면 녹화</p>
         <p class="product-desc" data-i18n="home.cam_desc">무료 화면 녹화. 영역 지정, 시스템 오디오 녹음, GPU 인코더 자동 감지.</p>
@@ -162,35 +160,6 @@
     </div>
   </section>
 
-  <!-- Blog Preview -->
-  <section class="blog-preview" id="blog">
-    <h2 style="text-align:center;font-size:2rem;font-weight:700;margin-bottom:0.5rem;" data-i18n="home.blog_title">블로그</h2>
-    <p style="text-align:center;color:#64748b;margin-bottom:3rem;" data-i18n="home.blog_subtitle">압축, PDF, 개발 이야기</p>
-    <div class="blog-grid">
-      <a href="/blog/ondamcam-release.html" class="blog-card">
-        <span class="blog-category cat-dev" data-i18n="home.bp1_cat">개발 이야기</span>
-        <h3 data-i18n="home.bp1_title">🎬 OndamCAM 출시! 무료 화면 녹화 프로그램</h3>
-        <p class="blog-excerpt" data-i18n="home.bp1_excerpt">직관적이고 가벼운 무료 녹화 프로그램. 전체 화면, 영역 지정, 창 녹화, 시스템 오디오 지원.</p>
-        <span class="blog-meta">2026.03.23</span>
-      </a>
-      <a href="/blog/ondamviewer-release.html" class="blog-card">
-        <span class="blog-category cat-dev" data-i18n="home.bp2_cat">개발 이야기</span>
-        <h3 data-i18n="home.bp2_title">🐱 온눈이가 태어났다옹! OndamViewer 출시</h3>
-        <p class="blog-excerpt" data-i18n="home.bp2_excerpt">찰칵! 온눈이와 함께하는 이미지 뷰어. 인쇄, 영역 저장, EXIF 정보까지.</p>
-        <span class="blog-meta">2026.03.15</span>
-      </a>
-      <a href="/blog/best-free-image-viewer-2026.html" class="blog-card">
-        <span class="blog-category cat-review" data-i18n="home.bp3_cat">비교/리뷰</span>
-        <h3 data-i18n="home.bp3_title">🐱 온눈이가 직접 써본 이미지 뷰어 TOP 5</h3>
-        <p class="blog-excerpt" data-i18n="home.bp3_excerpt">온눈이의 꼼꼼한 리뷰! IrfanView, XnView, FastStone 비교 분석.</p>
-        <span class="blog-meta">2026.03.15</span>
-      </a>
-    </div>
-    <div style="text-align:center;margin-top:2rem;">
-      <a href="/blog/" class="btn btn-secondary" data-i18n="home.blog_more">블로그 전체 보기 →</a>
-    </div>
-  </section>
-
 <!-- Footer -->
   <footer>
     <div class="footer-inner">
@@ -202,7 +171,6 @@
         <a href="/ondamviewer/">OndamViewer</a>
         <a href="/ondamcapture/">OndamCapture</a>
         <a href="/ondamcam/">OndamCAM</a>
-        <a href="/blog/" data-i18n="nav.blog">블로그</a>
         <a href="/characters.html" data-i18n="nav.characters">캐릭터</a>
         <a href="/developer.html" data-i18n="nav.developer">개발자</a>
 <a href="/contact.html">문의하기</a>
@@ -222,7 +190,6 @@
         'home.title': '빠르고 안전한<br>데스크톱 소프트웨어',
         'home.desc': '압축 · PDF · 이미지 뷰어 · 화면 캡처<br>광고 없는 무료 소프트웨어, <strong>OndamSoft</strong>',
         'home.btn_download': '무료 다운로드',
-        'home.btn_blog': '블로그 보기',
         'home.products_title': '제품 소개',
         'home.products_subtitle': '모든 제품은 개인/기업/기관 무료입니다',
         'home.zip_desc': '초고속 압축/해제 프로그램. ZIP, 7Z, RAR 등 10가지 포맷, AES-256 암호화, 분할 압축 지원.',
@@ -230,26 +197,13 @@
         'home.viewer_desc': '가볍고 빠른 이미지 뷰어. JPG, PNG, GIF, WebP, AVIF 등 지원. 인쇄, 영역 저장, EXIF 정보.',
         'home.capture_desc': '빠르고 간편한 화면 캡처 도구. 전체 화면, 영역 선택, 윈도우 캡처. 멀티 모니터 지원.',
         'home.cam_desc': '무료 화면 녹화. 영역 지정, 시스템 오디오 녹음, GPU 인코더 자동 감지.',
-        'home.detail': '자세히 보기',
-        'home.blog_title': '블로그',
-        'home.blog_subtitle': '압축, PDF, 개발 이야기',
-        'home.blog_more': '블로그 전체 보기 →',
-        'home.bp1_cat': '개발 이야기',
-        'home.bp1_title': '🎬 OndamCAM 출시! 무료 화면 녹화 프로그램',
-        'home.bp1_excerpt': '직관적이고 가벼운 무료 녹화 프로그램. 전체 화면, 영역 지정, 창 녹화, 시스템 오디오 지원.',
-        'home.bp2_cat': '개발 이야기',
-        'home.bp2_title': '🐱 온눈이가 태어났다옹! OndamViewer 출시',
-        'home.bp2_excerpt': '찰칵! 온눈이와 함께하는 이미지 뷰어. 인쇄, 영역 저장, EXIF 정보까지.',
-        'home.bp3_cat': '비교/리뷰',
-        'home.bp3_title': '🐱 온눈이가 직접 써본 이미지 뷰어 TOP 5',
-        'home.bp3_excerpt': '온눈이의 꼼꼼한 리뷰! IrfanView, XnView, FastStone 비교 분석.'
+        'home.detail': '자세히 보기'
       },
       en: {
         'home.badge': 'Free for Windows & macOS',
         'home.title': 'Fast & Secure<br>Desktop Software',
         'home.desc': 'Compression · PDF · Image Viewer · Screen Capture<br>Free software, no ads. <strong>OndamSoft</strong>',
         'home.btn_download': 'Free Download',
-        'home.btn_blog': 'Visit Blog',
         'home.products_title': 'Our Products',
         'home.products_subtitle': 'Free for individuals, businesses, and institutions',
         'home.zip_desc': 'Ultra-fast compression tool. 10 formats including ZIP, 7Z, RAR. AES-256 encryption, split archives.',
@@ -257,19 +211,7 @@
         'home.viewer_desc': 'Light & fast image viewer. Supports JPG, PNG, GIF, WebP, AVIF. Print, crop & save, EXIF data.',
         'home.capture_desc': 'Fast & easy screen capture tool. Fullscreen, region selection, window capture. Multi-monitor support.',
         'home.cam_desc': 'Free screen recording. Region selection, system audio recording, GPU encoder auto-detection.',
-        'home.detail': 'Learn More',
-        'home.blog_title': 'Blog',
-        'home.blog_subtitle': 'Compression, PDF, and development stories',
-        'home.blog_more': 'View All Posts →',
-        'home.bp1_cat': 'Dev Story',
-        'home.bp1_title': '🎬 OndamCAM Launch! Free Screen Recording Software',
-        'home.bp1_excerpt': 'Intuitive and lightweight free screen recorder. Full screen, region select, window recording, system audio support.',
-        'home.bp2_cat': 'Dev Story',
-        'home.bp2_title': '🐱 Onnuni is Born! OndamViewer Released',
-        'home.bp2_excerpt': 'Click! An image viewer with Onnuni. Print, crop & save regions, EXIF data and more.',
-        'home.bp3_cat': 'Review',
-        'home.bp3_title': '🐱 Onnuni\'s Top 5 Free Image Viewers',
-        'home.bp3_excerpt': 'Onnuni\'s detailed review! Comparing IrfanView, XnView, FastStone and more.'
+        'home.detail': 'Learn More'
       }
     };
   </script>
