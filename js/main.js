@@ -5,7 +5,6 @@ var LANG = {
   ko: {
     'nav.products': '제품',
     'nav.blog': '블로그',
-    'nav.donate': '후원',
     'nav.developer': '개발자',
     'nav.characters': '캐릭터',
     'nav.contact': '문의',
@@ -20,17 +19,10 @@ var LANG = {
     'dev.sharing_title': '🐾 나눔 약속',
     'dev.sharing_content': '만약 후원금이나 광고 수익이 실제로 발생한다면, 유기동물 보호 단체와 소외 계층을 위한 일부는 실제 기부에 사용할 계획입니다. 온담 패밀리처럼, 따뜻한 집을 찾는 모든 존재를 응원합니다.',
     'dev.sign': '— OndamSoft 개발자 정재훈',
-    'donate.title': '커피 한 잔 쏘기',
-    'donate.desc': '좋은 소프트웨어를 만드는 데<br>커피 한 잔의 응원이 큰 힘이 됩니다',
-    'donate.kakao': '☕ 커피 한 잔 보내기',
-    'donate.crypto_title': '💲 암호화폐로 후원',
-    'donate.crypto_note': '주소를 클릭하면 복사됩니다 · RedotPay',
-    'donate.copied': '복사됨!',
     'footer.desc': '문의: <a href="mailto:ondamsoft@gmail.com">ondamsoft@gmail.com</a>',
     'footer.privacy': '개인정보처리방침',
     'footer.terms': '이용약관',
     'footer.blog': '블로그',
-    'footer.donate': '후원',
     'footer.business': '상호: 온담소프트 | 사업자등록번호: 180-18-02712 | 대표: 정재훈',
     'blog.title': '블로그',
     'blog.subtitle': '압축, PDF, 개발에 관한 유용한 이야기',
@@ -44,7 +36,6 @@ var LANG = {
   en: {
     'nav.products': 'Products',
     'nav.blog': 'Blog',
-    'nav.donate': 'Donate',
     'nav.developer': 'Developer',
     'nav.characters': 'Characters',
     'nav.contact': 'Contact',
@@ -59,17 +50,10 @@ var LANG = {
     'dev.sharing_title': '🐾 Sharing Promise',
     'dev.sharing_content': 'If donations or advertising revenue become available, I plan to donate a portion to animal protection organizations and those in need. Like the Ondam Family, I support all beings seeking a warm home.',
     'dev.sign': '— Jaehun Jeong, Developer at OndamSoft',
-    'donate.title': 'Buy Me a Coffee',
-    'donate.desc': 'A cup of coffee goes a long way<br>in helping us build great software',
-    'donate.kakao': '☕ Buy a Coffee',
-    'donate.crypto_title': '💲 Crypto',
-    'donate.crypto_note': 'Click address to copy · RedotPay',
-    'donate.copied': 'Copied!',
     'footer.desc': 'Contact: <a href="mailto:ondamsoft@gmail.com">ondamsoft@gmail.com</a>',
     'footer.privacy': 'Privacy Policy',
     'footer.terms': 'Terms of Service',
     'footer.blog': 'Blog',
-    'footer.donate': 'Donate',
     'footer.business': 'OndamSoft | Business No: 180-18-02712 | CEO: Jaehun Jeong',
     'blog.title': 'Blog',
     'blog.subtitle': 'Useful stories about compression, PDF, and development',
@@ -135,26 +119,6 @@ function toggleMenu() {
 function closeMenu() {
   var nw = document.querySelector('.nav-wrap');
   if (nw) nw.classList.remove('open');
-}
-
-// Toggle crypto addresses
-function toggleCrypto() {
-  var list = document.getElementById('cryptoList');
-  var note = document.getElementById('cryptoNote');
-  if (list) list.classList.toggle('open');
-  if (note) note.classList.toggle('open');
-}
-
-// Copy crypto address
-function copyCrypto(el) {
-  var text = el.textContent;
-  navigator.clipboard.writeText(text).then(function() {
-    var badge = el.parentElement.querySelector('.crypto-copied');
-    if (badge) {
-      badge.classList.add('show');
-      setTimeout(function() { badge.classList.remove('show'); }, 1500);
-    }
-  });
 }
 
 // Init
