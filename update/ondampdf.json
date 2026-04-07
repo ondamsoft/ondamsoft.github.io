@@ -1,11 +1,15 @@
 {
-  "version": "1.0.14",
+  "version": "1.0.17",
   "notes": "자동 업데이트 관리자 권한 요청 수정",
   "date": "2026-03-18",
   "windows": {
-    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.14/OndamPDF_1.0.14_x64-setup.exe"
+    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.17/OndamPDF_1.0.17_x64-setup.exe",
+    "sha256": "74e95d5a15652307a79bb5ea7931f83bf09e7fc39f771a9c148112c979c7bcf3",
+    "signature": "KTlrRdO67nrg94PU00YPgZ984PACYvZhXZySwQ1xa7jR/lRqMPL7tyXOAL2HnH6bXexoszrkcMXQma0fvPVXDA=="
   },
   "macos": {
-    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.14/OndamPDF_1.0.14_aarch64.dmg"
+    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.17/OndamPDF_1.0.17_aarch64.dmg",
+    "sha256": "ee0bc613b5e03fdda4e42e37f3e5ac2efe725dac1685c469b50fc124d28be4ec",
+    "signature": "6Kblyrgzim0l+d3+YzizjDvn5+at9rBvYtw159TE7WuLvbQANFACjuXwLaXgzQTri9ZSmOtiePXTRvqWBTj4Cw=="
   }
 }
