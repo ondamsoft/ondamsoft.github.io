@@ -1,11 +1,15 @@
 {
-  "version": "1.0.29",
+  "version": "1.0.32",
   "notes": "자동 업데이트 관리자 권한 요청 수정",
   "date": "2026-03-18",
   "windows": {
-    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.29/OndamZip_1.0.29_x64-setup.exe"
+    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.32/OndamZip_1.0.32_x64-setup.exe",
+    "sha256": "aca1e8532fb82c21026b40ec987f0d1d11c3ea04d47fe5cda79e5698ee9b6367",
+    "signature": "sdHEkAPFkvxAXnZCP4x/k/nMiSEHVnxLWIU6hhni9kSZXICzqt1NcLk1KS9M4u6OtOVEc7D1SccxeIrh5qeMCw=="
   },
   "macos": {
-    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.29/OndamZip_1.0.29_aarch64.dmg"
+    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.32/OndamZip_1.0.32_aarch64.dmg",
+    "sha256": "c52307bd1e6707be2a7c3516f84231002c1547e109a5cfc4c6151ff463b3b836",
+    "signature": "ffsgNqh79mX/xURc+o9kDiYT4CfpPe8KTw1rzucCYcjzGNZ7MNZTm69FSBM3/Y6ra5zLVHJetXCLqzhUJ5kjBQ=="
   }
 }
