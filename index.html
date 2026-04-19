@@ -2,232 +2,25 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OndamSoft - 온담소프트 | 무료 데스크톱 소프트웨어</title>
-  <meta name="description" content="OndamSoft - 빠르고 안전한 무료 데스크톱 소프트웨어. OndamZip 압축, OndamPDF PDF 편집, OndamViewer 이미지 뷰어, OndamCapture 화면 캡처.">
-  <meta property="og:title" content="OndamSoft - 무료 데스크톱 소프트웨어">
-  <meta property="og:description" content="OndamZip 압축, OndamPDF PDF 편집, OndamViewer 이미지 뷰어, OndamCapture 화면 캡처. Windows, macOS 무료.">
-  <meta property="og:url" content="https://ondamsoft.com/">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://ondamsoft.com/logo.png">
-  <meta name="twitter:card" content="summary_large_image">
+  <meta http-equiv="refresh" content="0; url=https://ondamsoft.com/">
   <link rel="canonical" href="https://ondamsoft.com/">
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="stylesheet" href="/css/style.css">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "OndamSoft",
-    "url": "https://ondamsoft.com",
-    "logo": "https://ondamsoft.com/logo.png",
-    "email": "ondamsoft@gmail.com",
-    "description": "빠르고 안전한 무료 데스크톱 소프트웨어"
-  }
-  </script>
+  <meta name="robots" content="noindex, follow">
+  <title>OndamSoft — ondamsoft.com 으로 이동</title>
+  <script>window.location.replace('https://ondamsoft.com/');</script>
+  <style>
+    body{margin:0;padding:0;font-family:system-ui,-apple-system,sans-serif;background:#f8fafc;color:#334155;display:flex;align-items:center;justify-content:center;min-height:100vh;}
+    .wrap{text-align:center;padding:2rem;max-width:480px;}
+    h1{font-size:1.25rem;font-weight:700;color:#1e3a5f;margin-bottom:0.75rem;}
+    p{font-size:0.95rem;line-height:1.6;margin:0.5rem 0;}
+    a{color:#2563eb;text-decoration:none;font-weight:600;}
+    a:hover{text-decoration:underline;}
+  </style>
 </head>
 <body>
-
-  <!-- Header -->
-  <header>
-    <div class="header-inner">
-      <a href="/" class="logo"><img src="/logo.png" alt="OndamSoft"></a>
-      <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
-      </button>
-      <div class="nav-wrap">
-        <nav>
-          <a href="#products" data-i18n="nav.products" onclick="closeMenu()">제품</a>
-          <a href="/developer.html" data-i18n="nav.developer" onclick="closeMenu()">개발자</a>
-<a href="/contact.html" data-i18n="nav.contact">문의</a>
-        </nav>
-        <select id="lang-select" onchange="switchLang(this.value)">
-          <option value="ko">한국어</option>
-          <option value="en">English</option>
-        </select>
-      </div>
-    </div>
-  </header>
-
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-badge" data-i18n="home.badge">Windows · macOS 완전 무료</div>
-    <h1 data-i18n-html="home.title">빠르고 안전한<br>데스크톱 소프트웨어</h1>
-    <p data-i18n-html="home.desc">압축 · PDF · 이미지 뷰어 · 화면 캡처<br>광고 없는 무료 소프트웨어, <strong>OndamSoft</strong></p>
-    <div class="hero-buttons">
-      <a href="#products" class="btn btn-primary">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-        <span data-i18n="home.btn_download">무료 다운로드</span>
-      </a>
-    </div>
-  </section>
-
-  <!-- Products -->
-  <section class="products" id="products">
-    <h2 style="text-align:center;font-size:2rem;font-weight:700;margin-bottom:0.5rem;" data-i18n="home.products_title">제품 소개</h2>
-    <p style="text-align:center;color:#64748b;margin-bottom:3rem;" data-i18n="home.products_subtitle">모든 제품은 개인/기업/기관 무료입니다</p>
-    <div class="product-grid">
-
-      <!-- OndamZip -->
-      <div class="product-card zip-theme">
-        <div class="product-icon" style="width:80px;height:80px;border-radius:50%;background:var(--accent,#1e3a5f);display:flex;align-items:center;justify-content:center;font-size:36px;">📦</div>
-        <h3>OndamZip</h3>
-        <p class="product-desc" data-i18n="home.zip_desc">초고속 압축/해제 프로그램. ZIP, 7Z, RAR 등 10가지 포맷, AES-256 암호화, 분할 압축 지원.</p>
-        <div class="product-tags">
-          <span>ZIP</span><span>7Z</span><span>RAR</span><span>TAR</span><span>ZST</span><span>GZ</span>
-        </div>
-        <div class="product-buttons">
-          <a href="/ondamzip/" class="btn btn-zip" data-i18n="home.detail">자세히 보기</a>
-          <a href="/ondamzip/#download" class="btn btn-secondary" data-i18n="home.btn_download">무료 다운로드</a>
-        </div>
-        <p class="version-info">v1.0.29 · Windows / macOS</p>
-        <p class="download-count" id="zip-total-count"></p>
-      </div>
-
-      <!-- OndamPDF -->
-      <div class="product-card pdf-theme">
-        <div class="product-icon" style="width:80px;height:80px;border-radius:50%;background:var(--accent,#1e3a5f);display:flex;align-items:center;justify-content:center;font-size:36px;">📄</div>
-        <h3>OndamPDF</h3>
-        <p class="product-desc" data-i18n="home.pdf_desc">무료 PDF 뷰어/편집기. 병합, 분할, 회전, 워터마크, 암호 설정, 소책자 인쇄까지.</p>
-        <div class="product-tags">
-          <span>PDF 보기</span><span>병합</span><span>분할</span><span>워터마크</span><span>암호화</span><span>인쇄</span>
-        </div>
-        <div class="product-buttons">
-          <a href="/ondampdf/" class="btn btn-pdf" data-i18n="home.detail">자세히 보기</a>
-          <a href="/ondampdf/#download" class="btn btn-secondary" data-i18n="home.btn_download">무료 다운로드</a>
-        </div>
-        <p class="version-info">v1.0.14 · Windows / macOS</p>
-        <p class="download-count" id="pdf-total-count"></p>
-      </div>
-
-      <!-- OndamViewer -->
-      <div class="product-card viewer-theme">
-        <div class="product-icon" style="width:80px;height:80px;border-radius:50%;background:var(--accent,#1e3a5f);display:flex;align-items:center;justify-content:center;font-size:36px;">🖼️</div>
-        <h3>Ondam<br>Viewer</h3>
-        <p class="product-desc" data-i18n="home.viewer_desc">가볍고 빠른 이미지 뷰어. JPG, PNG, GIF, WebP, AVIF 등 지원. 인쇄, 영역 저장, EXIF 정보.</p>
-        <div class="product-tags">
-          <span>JPG</span><span>PNG</span><span>GIF</span><span>WebP</span><span>AVIF</span><span>BMP</span>
-        </div>
-        <div class="product-buttons">
-          <a href="/ondamviewer/" class="btn btn-viewer" data-i18n="home.detail">자세히 보기</a>
-          <a href="/ondamviewer/#download" class="btn btn-secondary" data-i18n="home.btn_download">무료 다운로드</a>
-        </div>
-        <p class="version-info">v1.0.8 · Windows / macOS</p>
-        <p class="download-count" id="viewer-total-count"></p>
-      </div>
-
-      <!-- OndamCapture -->
-      <div class="product-card capture-theme">
-        <div class="product-icon" style="width:80px;height:80px;border-radius:50%;background:var(--accent,#1e3a5f);display:flex;align-items:center;justify-content:center;font-size:36px;">📸</div>
-        <h3>Ondam<br>Capture</h3>
-        <p class="product-desc" data-i18n="home.capture_desc">빠르고 간편한 화면 캡처 도구. 전체 화면, 영역 선택, 윈도우 캡처. 멀티 모니터 지원.</p>
-        <div class="product-tags">
-          <span>전체 화면</span><span>영역 선택</span><span>윈도우</span><span>멀티모니터</span><span>단축키</span>
-        </div>
-        <div class="product-buttons">
-          <a href="/ondamcapture/" class="btn btn-capture" data-i18n="home.detail">자세히 보기</a>
-          <a href="/ondamcapture/#download" class="btn btn-secondary" data-i18n="home.btn_download">무료 다운로드</a>
-        </div>
-        <p class="version-info">v1.0.4 · Windows / macOS</p>
-        <p class="download-count" id="capture-total-count"></p>
-      </div>
-
-      <!-- OndamCAM -->
-      <div class="product-card" style="--accent:#ef4444;">
-        <div class="product-icon" style="width:80px;height:80px;border-radius:50%;background:var(--accent,#1e3a5f);display:flex;align-items:center;justify-content:center;font-size:36px;">🎥</div>
-        <h3>Ondam<br>CAM</h3>
-        <p class="product-desc" data-i18n="home.cam_desc">무료 화면 녹화. 영역 지정, 시스템 오디오 녹음, GPU 인코더 자동 감지.</p>
-        <div class="product-tags">
-          <span>전체 화면</span><span>영역 지정</span><span>시스템 오디오</span><span>GPU 인코더</span><span>일시정지</span>
-        </div>
-        <div class="product-buttons">
-          <a href="/ondamcam/" class="btn" style="background:#ef4444;color:#fff;" data-i18n="home.detail">자세히 보기</a>
-          <a href="/ondamcam/#download" class="btn btn-secondary" data-i18n="home.btn_download">무료 다운로드</a>
-        </div>
-        <p class="version-info">v1.0.0 · Windows / macOS</p>
-        <p class="download-count" id="cam-total-count"></p>
-      </div>
-
-    </div>
-  </section>
-
-<!-- Footer -->
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-logo"><img src="/logo-icon.png" alt="OndamSoft" style="height:40px;width:auto;margin-bottom:8px;"></div>
-      <p data-i18n-html="footer.desc">문의: <a href="mailto:ondamsoft@gmail.com">ondamsoft@gmail.com</a></p>
-      <div class="footer-links">
-        <a href="/ondamzip/">OndamZip</a>
-        <a href="/ondampdf/">OndamPDF</a>
-        <a href="/ondamviewer/">OndamViewer</a>
-        <a href="/ondamcapture/">OndamCapture</a>
-        <a href="/ondamcam/">OndamCAM</a>
-          <a href="/developer.html" data-i18n="nav.developer">개발자</a>
-<a href="/contact.html">문의하기</a>
-        <a href="/privacy.html" data-i18n="footer.privacy">개인정보처리방침</a>
-        <a href="/terms.html" data-i18n="footer.terms">이용약관</a>
-      </div>
-      <p style="margin-top:1.5rem;font-size:12px;color:#64748b;">© 2026 OndamSoft. All rights reserved.</p>
-      <p data-i18n="footer.business" style="margin-top:0.5rem;font-size:11px;color:#64748b;">상호: 온담소프트 | 사업자등록번호: 180-18-02712 | 대표: 정재훈</p>
-    </div>
-  </footer>
-
-  <!-- i18n (page-specific) -->
-  <script>
-    var PAGE_LANG = {
-      ko: {
-        'home.badge': 'Windows · macOS 완전 무료',
-        'home.title': '빠르고 안전한<br>데스크톱 소프트웨어',
-        'home.desc': '압축 · PDF · 이미지 뷰어 · 화면 캡처<br>광고 없는 무료 소프트웨어, <strong>OndamSoft</strong>',
-        'home.btn_download': '무료 다운로드',
-        'home.products_title': '제품 소개',
-        'home.products_subtitle': '모든 제품은 개인/기업/기관 무료입니다',
-        'home.zip_desc': '초고속 압축/해제 프로그램. ZIP, 7Z, RAR 등 10가지 포맷, AES-256 암호화, 분할 압축 지원.',
-        'home.pdf_desc': '무료 PDF 뷰어/편집기. 병합, 분할, 회전, 워터마크, 암호 설정, 소책자 인쇄까지.',
-        'home.viewer_desc': '가볍고 빠른 이미지 뷰어. JPG, PNG, GIF, WebP, AVIF 등 지원. 인쇄, 영역 저장, EXIF 정보.',
-        'home.capture_desc': '빠르고 간편한 화면 캡처 도구. 전체 화면, 영역 선택, 윈도우 캡처. 멀티 모니터 지원.',
-        'home.cam_desc': '무료 화면 녹화. 영역 지정, 시스템 오디오 녹음, GPU 인코더 자동 감지.',
-        'home.detail': '자세히 보기'
-      },
-      en: {
-        'home.badge': 'Free for Windows & macOS',
-        'home.title': 'Fast & Secure<br>Desktop Software',
-        'home.desc': 'Compression · PDF · Image Viewer · Screen Capture<br>Free software, no ads. <strong>OndamSoft</strong>',
-        'home.btn_download': 'Free Download',
-        'home.products_title': 'Our Products',
-        'home.products_subtitle': 'Free for individuals, businesses, and institutions',
-        'home.zip_desc': 'Ultra-fast compression tool. 10 formats including ZIP, 7Z, RAR. AES-256 encryption, split archives.',
-        'home.pdf_desc': 'Free PDF viewer/editor. Merge, split, rotate, watermark, encryption, booklet printing.',
-        'home.viewer_desc': 'Light & fast image viewer. Supports JPG, PNG, GIF, WebP, AVIF. Print, crop & save, EXIF data.',
-        'home.capture_desc': 'Fast & easy screen capture tool. Fullscreen, region selection, window capture. Multi-monitor support.',
-        'home.cam_desc': 'Free screen recording. Region selection, system audio recording, GPU encoder auto-detection.',
-        'home.detail': 'Learn More'
-      }
-    };
-  </script>
-  <script src="/js/main.js"></script>
-  <script>
-    fetchDownloadCounts('ondamsoft/ondamsoft.github.io', function(win, mac) {
-      var el = document.getElementById('zip-total-count');
-      var total = win + mac;
-      if (el && total > 0) el.innerHTML = '총 <strong>' + total.toLocaleString() + '</strong> downloads';
-    }, 'OndamZip');
-    fetchDownloadCounts('ondamsoft/ondamsoft.github.io', function(win, mac) {
-      var el = document.getElementById('pdf-total-count');
-      var total = win + mac;
-      if (el && total > 0) el.innerHTML = '총 <strong>' + total.toLocaleString() + '</strong> downloads';
-    }, 'OndamPDF');
-    fetchDownloadCounts('ondamsoft/ondamsoft.github.io', function(win, mac) {
-      var el = document.getElementById('viewer-total-count');
-      var total = win + mac;
-      if (el && total > 0) el.innerHTML = '총 <strong>' + total.toLocaleString() + '</strong> downloads';
-    }, 'OndamViewer');
-    fetchDownloadCounts('ondamsoft/ondamsoft.github.io', function(win, mac) {
-      var el = document.getElementById('capture-total-count');
-      var total = win + mac;
-      if (el && total > 0) el.innerHTML = '총 <strong>' + total.toLocaleString() + '</strong> downloads';
-    }, 'OndamCapture');
-  </script>
-
+  <div class="wrap">
+    <h1>OndamSoft 공식 사이트가 이전되었습니다</h1>
+    <p>자동으로 <a href="https://ondamsoft.com/">ondamsoft.com</a> 으로 이동합니다.</p>
+    <p>이동되지 않으면 위 링크를 클릭하세요.</p>
+  </div>
 </body>
 </html>
