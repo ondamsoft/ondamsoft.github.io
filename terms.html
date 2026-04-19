@@ -14,13 +14,7 @@
       padding: 3rem 2rem 2rem;
       text-align: center;
     }
-    .terms-cat {
-      width: 72px; height: 72px;
-      border-radius: 50%;
-      object-fit: cover;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      margin-bottom: 0.75rem;
-    }
+    
     .terms-intro {
       font-size: 15px;
       color: #475569;
@@ -55,7 +49,7 @@
       align-items: center;
       gap: 8px;
     }
-    .terms-section h2 .cat-badge {
+    .terms-section h2 .section-badge {
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -91,15 +85,7 @@
       font-size: 13px;
       font-weight: 600;
     }
-    .cat-tip {
-      background: #fffbeb;
-      border-radius: 10px;
-      padding: 0.75rem 1rem;
-      margin-top: 0.75rem;
-      font-size: 13px;
-      color: #92400e;
-      line-height: 1.6;
-    }
+    
   </style>
 </head>
 <body>
@@ -113,8 +99,7 @@
       <div class="nav-wrap">
         <nav>
           <a href="/#products" data-i18n="nav.products">제품</a>
-          <a href="/characters.html" data-i18n="nav.characters">캐릭터</a>
-          <a href="/developer.html" data-i18n="nav.developer">개발자</a>
+        <a href="/developer.html" data-i18n="nav.developer">개발자</a>
 <a href="mailto:ondamsoft@gmail.com" data-i18n="nav.contact">문의</a>
         </nav>
         <select id="lang-select" onchange="switchLang(this.value)">
@@ -126,10 +111,7 @@
   </header>
 
   <section class="terms-hero">
-    <img src="/images/characters/ondami.jpg" alt="온담이" class="terms-cat">
-    <p class="terms-intro">
-      안녕하세요, 온담이예요! 🐾<br>
-      온담 패밀리 소프트웨어를 사용하기 전에<br>
+    <p class="terms-intro">온담 패밀리 소프트웨어를 사용하기 전에<br>
       아래 약관을 꼭 읽어주세요.
     </p>
   </section>
@@ -139,12 +121,12 @@
     <p class="post-meta" style="color:#94a3b8;font-size:13px;margin-bottom:1.5rem;">최종 수정: 2026년 3월 15일</p>
 
     <div class="terms-section">
-      <h2><span class="cat-badge" style="background:#dbeafe;">1</span> 목적</h2>
+      <h2><span class="section-badge" style="background:#dbeafe;">1</span> 목적</h2>
       <p>이 약관은 OndamSoft(이하 "회사")가 제공하는 소프트웨어 및 관련 서비스(이하 "서비스")의 이용에 관한 기본적인 사항을 규정하는 것을 목적으로 합니다.</p>
     </div>
 
     <div class="terms-section">
-      <h2><span class="cat-badge" style="background:#dbeafe;">2</span> 서비스 개요</h2>
+      <h2><span class="section-badge" style="background:#dbeafe;">2</span> 서비스 개요</h2>
       <p>회사는 다음과 같은 무료 데스크톱 소프트웨어를 제공합니다:</p>
       <div class="product-list">
         <span class="product-tag">OndamZip — 파일 압축/해제</span>
@@ -152,11 +134,10 @@
         <span class="product-tag">OndamViewer — 이미지 뷰어</span>
       </div>
       <p style="margin-top:0.5rem;">모든 소프트웨어는 개인, 기업, 공공기관 구분 없이 <strong>무료</strong>로 사용할 수 있습니다.</p>
-      <div class="cat-tip">🐾 온담이 한마디: "무료라고 막 쓰면 안 돼요! 아래 규칙은 지켜주세요~"</div>
     </div>
 
     <div class="terms-section">
-      <h2><span class="cat-badge" style="background:#dbeafe;">3</span> 이용 조건</h2>
+      <h2><span class="section-badge" style="background:#dbeafe;">3</span> 이용 조건</h2>
       <ul>
         <li>서비스는 "있는 그대로(AS IS)" 제공되며, 회사는 서비스의 완전성, 정확성을 보증하지 않습니다.</li>
         <li>사용자는 소프트웨어를 합법적인 목적으로만 사용해야 합니다.</li>
@@ -167,49 +148,48 @@
     </div>
 
     <div class="terms-section">
-      <h2><span class="cat-badge" style="background:#dbeafe;">4</span> 지적재산권</h2>
+      <h2><span class="section-badge" style="background:#dbeafe;">4</span> 지적재산권</h2>
       <p>소프트웨어 및 관련 콘텐츠(아이콘, 캐릭터, 로고 포함)의 저작권, 상표권 등 모든 지적재산권은 회사에 귀속됩니다. 사용자는 소프트웨어에 대한 사용 허가(라이선스)를 부여받는 것이며, 소유권을 취득하는 것이 아닙니다.</p>
-      <p>온담 패밀리 캐릭터(온담이, 온독이, 온눈이)의 무단 사용, 복제, 변형은 금지됩니다.</p>
+      <p></p>
     </div>
 
     <div class="terms-section">
-      <h2><span class="cat-badge" style="background:#dbeafe;">5</span> 면책 조항</h2>
+      <h2><span class="section-badge" style="background:#dbeafe;">5</span> 면책 조항</h2>
       <ul>
         <li>회사는 소프트웨어 사용으로 인해 발생하는 직접적, 간접적, 부수적, 특별한 또는 결과적 손해에 대해 책임을 지지 않습니다.</li>
         <li>데이터 손실, 시스템 장애 등에 대한 책임은 사용자에게 있으며, 중요한 데이터는 사전에 백업하시기 바랍니다.</li>
         <li>회사는 서비스의 중단, 변경, 종료에 대해 사전 고지 없이 결정할 수 있습니다.</li>
       </ul>
-      <div class="cat-tip">🐾 온독이 한마디: "중요한 파일은 꼭 백업해두라냥! 사고는 예고 없이 온다냥~"</div>
     </div>
 
     <div class="terms-section">
-      <h2><span class="cat-badge" style="background:#dbeafe;">6</span> 개인정보</h2>
+      <h2><span class="section-badge" style="background:#dbeafe;">6</span> 개인정보</h2>
       <p>회사의 개인정보 처리에 관한 사항은 <a href="/privacy.html" style="color:#2563eb;font-weight:600;">개인정보처리방침</a>에 따릅니다.</p>
       <p>소프트웨어는 사용자의 컴퓨터에서 로컬로 실행되며, 업데이트 확인 외에 어떠한 개인정보도 외부로 전송하지 않습니다.</p>
     </div>
 
     <div class="terms-section">
-      <h2><span class="cat-badge" style="background:#dbeafe;">7</span> 자동 업데이트</h2>
+      <h2><span class="section-badge" style="background:#dbeafe;">7</span> 자동 업데이트</h2>
       <p>소프트웨어는 실행 시 ondamsoft.com 서버에 최신 버전 정보를 요청합니다. 이 과정에서 수집되는 정보는 소프트웨어 버전 확인에 필요한 최소한의 기술 정보(버전 번호)이며, 개인식별정보는 수집되지 않습니다.</p>
     </div>
 
     <div class="terms-section">
-      <h2><span class="cat-badge" style="background:#dbeafe;">8</span> 후원</h2>
+      <h2><span class="section-badge" style="background:#dbeafe;">8</span> 후원</h2>
       <p>카카오페이, 암호화폐 등을 통한 후원은 자발적이며, 환불이 불가합니다. 후원금은 서비스 유지 및 개선, 유기동물 보호 단체 기부에 사용됩니다.</p>
     </div>
 
     <div class="terms-section">
-      <h2><span class="cat-badge" style="background:#dbeafe;">9</span> 계약 해지</h2>
+      <h2><span class="section-badge" style="background:#dbeafe;">9</span> 계약 해지</h2>
       <p>사용자가 본 약관의 조건을 위반하는 경우 사용권은 자동으로 해지됩니다. 해지 시 사용자는 소프트웨어의 모든 사본을 삭제해야 합니다. 사용자는 소프트웨어를 삭제함으로써 언제든지 계약을 해지할 수 있습니다.</p>
     </div>
 
     <div class="terms-section">
-      <h2><span class="cat-badge" style="background:#dbeafe;">10</span> 약관의 변경</h2>
+      <h2><span class="section-badge" style="background:#dbeafe;">10</span> 약관의 변경</h2>
       <p>회사는 필요 시 약관을 변경할 수 있으며, 변경된 약관은 웹사이트에 게시한 시점부터 효력이 발생합니다. 중대한 변경 시에는 소프트웨어 내 공지 또는 웹사이트를 통해 안내합니다.</p>
     </div>
 
     <div class="terms-section">
-      <h2><span class="cat-badge" style="background:#dbeafe;">11</span> 준거법 및 분쟁 해결</h2>
+      <h2><span class="section-badge" style="background:#dbeafe;">11</span> 준거법 및 분쟁 해결</h2>
       <p>이 약관은 대한민국 법률에 따라 해석되며, 서비스 이용과 관련한 분쟁은 대한민국 민사소송법에 따른 관할 법원에서 해결합니다.</p>
     </div>
 
@@ -227,7 +207,6 @@
         <a href="/ondamzip/">OndamZip</a>
         <a href="/ondampdf/">OndamPDF</a>
         <a href="/ondamviewer/">OndamViewer</a>
-        <a href="/characters.html" data-i18n="nav.characters">캐릭터</a>
         <a href="/developer.html" data-i18n="nav.developer">개발자</a>
 <a href="/privacy.html" data-i18n="footer.privacy">개인정보처리방침</a>
         <a href="/terms.html" data-i18n="footer.terms">이용약관</a>
