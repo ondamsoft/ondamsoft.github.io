@@ -38,7 +38,6 @@
       <div class="nav-wrap">
         <nav>
           <a href="#products" data-i18n="nav.products" onclick="closeMenu()">제품</a>
-          <a href="/characters.html" data-i18n="nav.characters" onclick="closeMenu()">캐릭터</a>
           <a href="/developer.html" data-i18n="nav.developer" onclick="closeMenu()">개발자</a>
 <a href="/contact.html" data-i18n="nav.contact">문의</a>
         </nav>
@@ -55,9 +54,6 @@
     <div class="hero-badge" data-i18n="home.badge">Windows · macOS 완전 무료</div>
     <h1 data-i18n-html="home.title">빠르고 안전한<br>데스크톱 소프트웨어</h1>
     <p data-i18n-html="home.desc">압축 · PDF · 이미지 뷰어 · 화면 캡처<br>광고 없는 무료 소프트웨어, <strong>OndamSoft</strong></p>
-    <div class="hero-cats" style="margin:1.5rem auto 1.5rem;max-width:560px;">
-      <img src="/images/characters/4all.png" alt="온담 패밀리 - 온담이, 온독이, 온눈이, 온캡이" loading="eager" style="width:100%;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,0.12);">
-    </div>
     <div class="hero-buttons">
       <a href="#products" class="btn btn-primary">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
@@ -74,9 +70,8 @@
 
       <!-- OndamZip -->
       <div class="product-card zip-theme">
-        <div class="product-icon"><img src="/images/characters/ondami.jpg" alt="온담이" style="width:80px;height:80px;border-radius:50%;object-fit:cover;"></div>
+        <div class="product-icon" style="width:80px;height:80px;border-radius:50%;background:var(--accent,#1e3a5f);display:flex;align-items:center;justify-content:center;font-size:36px;">📦</div>
         <h3>OndamZip</h3>
-        <p class="product-mascot">🐱 온담이 (치즈냥)</p>
         <p class="product-desc" data-i18n="home.zip_desc">초고속 압축/해제 프로그램. ZIP, 7Z, RAR 등 10가지 포맷, AES-256 암호화, 분할 압축 지원.</p>
         <div class="product-tags">
           <span>ZIP</span><span>7Z</span><span>RAR</span><span>TAR</span><span>ZST</span><span>GZ</span>
@@ -91,9 +86,8 @@
 
       <!-- OndamPDF -->
       <div class="product-card pdf-theme">
-        <div class="product-icon"><img src="/images/characters/ondoki.jpg" alt="온독이" style="width:80px;height:80px;border-radius:50%;object-fit:cover;"></div>
+        <div class="product-icon" style="width:80px;height:80px;border-radius:50%;background:var(--accent,#1e3a5f);display:flex;align-items:center;justify-content:center;font-size:36px;">📄</div>
         <h3>OndamPDF</h3>
-        <p class="product-mascot">🐱 온독이 (고등어냥)</p>
         <p class="product-desc" data-i18n="home.pdf_desc">무료 PDF 뷰어/편집기. 병합, 분할, 회전, 워터마크, 암호 설정, 소책자 인쇄까지.</p>
         <div class="product-tags">
           <span>PDF 보기</span><span>병합</span><span>분할</span><span>워터마크</span><span>암호화</span><span>인쇄</span>
@@ -108,9 +102,8 @@
 
       <!-- OndamViewer -->
       <div class="product-card viewer-theme">
-        <div class="product-icon"><img src="/images/characters/onnuni.jpg" alt="온눈이" style="width:80px;height:80px;border-radius:50%;object-fit:cover;"></div>
+        <div class="product-icon" style="width:80px;height:80px;border-radius:50%;background:var(--accent,#1e3a5f);display:flex;align-items:center;justify-content:center;font-size:36px;">🖼️</div>
         <h3>Ondam<br>Viewer</h3>
-        <p class="product-mascot">🐱 온눈이 (까망냥)</p>
         <p class="product-desc" data-i18n="home.viewer_desc">가볍고 빠른 이미지 뷰어. JPG, PNG, GIF, WebP, AVIF 등 지원. 인쇄, 영역 저장, EXIF 정보.</p>
         <div class="product-tags">
           <span>JPG</span><span>PNG</span><span>GIF</span><span>WebP</span><span>AVIF</span><span>BMP</span>
@@ -125,9 +118,8 @@
 
       <!-- OndamCapture -->
       <div class="product-card capture-theme">
-        <div class="product-icon"><img src="/images/characters/oncapi.png" alt="온캡이" style="width:80px;height:80px;border-radius:50%;object-fit:cover;"></div>
+        <div class="product-icon" style="width:80px;height:80px;border-radius:50%;background:var(--accent,#1e3a5f);display:flex;align-items:center;justify-content:center;font-size:36px;">📸</div>
         <h3>Ondam<br>Capture</h3>
-        <p class="product-mascot">🐱 온캡이 (삼색냥)</p>
         <p class="product-desc" data-i18n="home.capture_desc">빠르고 간편한 화면 캡처 도구. 전체 화면, 영역 선택, 윈도우 캡처. 멀티 모니터 지원.</p>
         <div class="product-tags">
           <span>전체 화면</span><span>영역 선택</span><span>윈도우</span><span>멀티모니터</span><span>단축키</span>
@@ -142,9 +134,8 @@
 
       <!-- OndamCAM -->
       <div class="product-card" style="--accent:#ef4444;">
-        <div class="product-icon"><img src="/images/characters/ondamcam.png" alt="OndamCAM" style="width:80px;height:80px;border-radius:50%;object-fit:cover;"></div>
+        <div class="product-icon" style="width:80px;height:80px;border-radius:50%;background:var(--accent,#1e3a5f);display:flex;align-items:center;justify-content:center;font-size:36px;">🎥</div>
         <h3>Ondam<br>CAM</h3>
-        <p class="product-mascot">📹 화면 녹화</p>
         <p class="product-desc" data-i18n="home.cam_desc">무료 화면 녹화. 영역 지정, 시스템 오디오 녹음, GPU 인코더 자동 감지.</p>
         <div class="product-tags">
           <span>전체 화면</span><span>영역 지정</span><span>시스템 오디오</span><span>GPU 인코더</span><span>일시정지</span>
@@ -171,8 +162,7 @@
         <a href="/ondamviewer/">OndamViewer</a>
         <a href="/ondamcapture/">OndamCapture</a>
         <a href="/ondamcam/">OndamCAM</a>
-        <a href="/characters.html" data-i18n="nav.characters">캐릭터</a>
-        <a href="/developer.html" data-i18n="nav.developer">개발자</a>
+          <a href="/developer.html" data-i18n="nav.developer">개발자</a>
 <a href="/contact.html">문의하기</a>
         <a href="/privacy.html" data-i18n="footer.privacy">개인정보처리방침</a>
         <a href="/terms.html" data-i18n="footer.terms">이용약관</a>
