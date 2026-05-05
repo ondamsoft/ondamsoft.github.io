@@ -3,12 +3,12 @@
   "notes": "모니터 선택 버그 수정, 음소거 싱크 수정, 녹화 중지 버튼 수정, About 다이얼로그 개선, 보라색 클래퍼보드 아이콘",
   "date": "2026-03-23",
   "windows": {
-    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.4/OndamCAM_1.0.4_x64-setup.exe",
+    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.4-cam/OndamCAM_1.0.4_x64-setup.exe",
     "sha256": "b27d8c926bea4daae696322c9265cda983e2bcdfead32ee6cedadd4728f2c7eb",
     "signature": "kAiTwTXgP6k0X/gY6k1XywBaFfItjYg0Qpp0EBt1saJsHnp1LMiErAxGR9sypBdFj+9YEbt24KeK307tlVQzBQ=="
   },
   "macos": {
-    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.4/OndamCAM_1.0.4_aarch64.dmg",
+    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.4-cam/OndamCAM_1.0.4_aarch64.dmg",
     "sha256": "cc45be872ce686eb1265c0d8ea6a7043b3797e5ac995a4d3037a962bd2568100",
     "signature": "CItpOocq83esQ+GDYzY5KKW4rRRwwYW3htJeGcrWdxDlZJoBeN8Wk1Pq7Qkz3EVkOdQu5LWGH0XWw/3/X5cVDQ=="
   }

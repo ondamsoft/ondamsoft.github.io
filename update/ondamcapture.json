@@ -3,12 +3,12 @@
   "notes": "자동 업데이트 관리자 권한 요청 수정",
   "date": "2026-03-18",
   "windows": {
-    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.7/OndamCapture_1.0.7_x64-setup.exe",
+    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.7-capture/OndamCapture_1.0.7_x64-setup.exe",
     "sha256": "b1f96b85e0272e2cf047c3c1e72104d34f8e7c7ed0b9036d63e217c65150dbc1",
     "signature": "Gm4x0/uHTg2G/WooxHjXRYwD36+MEd9RzQ70eT/MrpJc4K8oc8VhLY6+2fvD9cd3db5JQ0e17IxK459RsEr7AA=="
   },
   "macos": {
-    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.7/OndamCapture_1.0.7_aarch64.dmg",
+    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.7-capture/OndamCapture_1.0.7_aarch64.dmg",
     "sha256": "83f9583c47d6fb0c75e1511f6c646a9e71c5439e66dd1eebd26a4ac09cb2c2a9",
     "signature": "/2gVG8YEf2o3oGqIXNyVwQoJL9FdzhaBX/JMgn1PtabqPzrdG3kiFTaAJ59lFYnFWzjSQUHIbqGjQHwQhMCsAA=="
   }

@@ -1,15 +1,11 @@
 {
-  "version": "1.0.17",
-  "notes": "자동 업데이트 관리자 권한 요청 수정",
-  "date": "2026-03-18",
+  "version": "1.0.0",
+  "notes": "현재 GitHub Release v1.0.0 까지만 업로드됨. v1.0.1 ~ v1.0.17 빌드 누락 — 자동업데이트 알림 차단을 위해 v1.0.0 으로 되돌림. 다음 클로드 작업 항목.",
+  "date": "2026-03-12",
   "windows": {
-    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.17/OndamPDF_1.0.17_x64-setup.exe",
-    "sha256": "74e95d5a15652307a79bb5ea7931f83bf09e7fc39f771a9c148112c979c7bcf3",
-    "signature": "KTlrRdO67nrg94PU00YPgZ984PACYvZhXZySwQ1xa7jR/lRqMPL7tyXOAL2HnH6bXexoszrkcMXQma0fvPVXDA=="
+    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.0/OndamPDF_1.0.0_x64-setup.exe"
   },
   "macos": {
-    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.17/OndamPDF_1.0.17_aarch64.dmg",
-    "sha256": "ee0bc613b5e03fdda4e42e37f3e5ac2efe725dac1685c469b50fc124d28be4ec",
-    "signature": "6Kblyrgzim0l+d3+YzizjDvn5+at9rBvYtw159TE7WuLvbQANFACjuXwLaXgzQTri9ZSmOtiePXTRvqWBTj4Cw=="
+    "download_url": "https://github.com/ondamsoft/ondamsoft.github.io/releases/download/v1.0.0/OndamPDF_1.0.0_aarch64.dmg"
   }
 }
